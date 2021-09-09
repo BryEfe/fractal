@@ -1,23 +1,23 @@
-import logo from './logo.svg';
+
+import { useState } from 'react';
 import './App.css';
+import Barranav from "./Barranav";
+import SubBarranav from './SubBarranav';
 
 function App() {
+
+  const [nombre, setNombre] = useState('Iniciar Sesion')
+
+  function Gustavo() {
+    setNombre('Gustavo Petro')
+  }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Barranav nombre={nombre}/>
+      <SubBarranav/>
+      {
+         //<button onClick={()=>Gustavo()}>CAMP ROCK</button> 
+      }
     </div>
   );
 }
