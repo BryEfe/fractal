@@ -1,11 +1,11 @@
 
 import { useState } from 'react';
+import './App.css';
 import IniciativeContext from "./providers/IniciativeContext";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Barranav from "./Barranav";
-import SubBarranav from './SubBarranav';
 import Card from './Card';
-import './App.css';
+import SubBarranav from './SubBarranav';
 function App() {
 
   const [nombre, setNombre] = useState('Iniciar Sesion')
