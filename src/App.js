@@ -4,12 +4,8 @@ import IniciativeContext from "./providers/IniciativeContext";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Barranav from "./Barranav";
 import SubBarranav from './SubBarranav';
-<<<<<<< Updated upstream
-
-=======
 import Card from './Card';
 import './App.css';
->>>>>>> Stashed changes
 function App() {
 
   const [nombre, setNombre] = useState('Iniciar Sesion')
@@ -19,15 +15,6 @@ function App() {
   }
 
   return (
-<<<<<<< Updated upstream
-    <div className="App">
-      <Barranav nombre={nombre}/>
-      <SubBarranav/>
-      {
-         //<button onClick={()=>Gustavo()}>CAMP ROCK</button> 
-      }
-    </div>
-=======
 
     <IniciativeContext>
       <BrowserRouter>
@@ -44,7 +31,6 @@ function App() {
       </BrowserRouter>
     </IniciativeContext>
 
->>>>>>> Stashed changes
   );
 }
 
