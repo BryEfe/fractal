@@ -1,11 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
+import SettingsContext from "./providers/SettingsContext";
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <SettingsContext>
+      <App />
+    </SettingsContext>
   </React.StrictMode>,
+
   document.getElementById('root')
 );
 

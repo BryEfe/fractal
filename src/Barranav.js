@@ -1,18 +1,23 @@
-import React from 'react'
-
+import React, { useContext } from 'react'
+import { Link } from "react-router-dom";
+import { SettingsContext } from "./providers/SettingsContext";
 function Barranav() {
+
+    const { toggleModalCreate } = useContext(SettingsContext)
     return (
-        <nav id="navbar">   
-            <a href><img id="logo"src="./svg/fractal.svg" alt="" /></a>
+        <nav className="navbar">
+            <Link to="/"><img className="logo" src="./svg/fractal.svg" alt="" /></Link>
             <ul>
-                <li><a>Inicio</a></li>
-                <li><a>Iniciativas</a></li>
-                <li><a>Reportes</a></li>
-                <li><a><img src="./svg/not_off.svg" /></a></li>
-                <li><a><img src="./svg/usuario.svg" /></a></li>
-                
+                <li><Link to="/inicio">Inicio</Link></li>
+                <li><Link to="/iniciativas">Iniciativas</Link></li>
+                <li><Link to="/reportes">Reportes</Link></li>
+                <button onClick={toggleModalCreate}> Nuevo </button>
+                <li><Link to=""><img src="./svg/not_off.svg" /></Link></li>
+                <li><Link to=""><img src="./svg/usuario.svg" /></Link></li>
+
+
             </ul>
-         </nav>
+        </nav>
     )
 }
 
