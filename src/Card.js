@@ -1,21 +1,23 @@
 import React, { useContext, useEffect } from 'react'
-import { IniciativeContext } from "./providers/IniciativeContext";
+import { InitiativeContext } from "./providers/InitiativeContext";
+import { Link } from "react-router-dom";
 
 function Card() {
 
-    const { iniciatives } = useContext(IniciativeContext)
+    const { initiatives, unSubscribeFromFeed, handleFeed } = useContext(InitiativeContext)
 
     useEffect(() => {
-        console.log("Hola", iniciatives)
-    }, [iniciatives])
+        handleFeed()
+        return () => { unSubscribeFromFeed() }
+    }, [])
 
     return (
         <div>
-            {iniciatives.length > 0
+            {initiatives
                 ?
-                iniciatives.map(i => {
+                initiatives.map(i => {
                     return <div className="container" key={i.id}>
-                        <h3>{i.name}</h3>
+                        <Link to={`iniciativas/${i.id}`}><h3>{i.name}</h3></Link>
                         <p>{i.description}</p>
                     </div>
                 })

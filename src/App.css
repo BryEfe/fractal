@@ -17,6 +17,9 @@
   --main-border-weight: 1px;
 }
 
+a {
+  text-decoration: none;
+}
 body {
   display: flex;
   flex-flow: row wrap;
@@ -126,10 +129,12 @@ nav > a > img {
   align-items: center;
   justify-content: center;
   background-color: rgba(0, 0, 0, 0.5);
+  z-index: 0;
 }
 
 .modal-body {
   background: white;
+  z-index: 1;
   height: 500px;
   width: 400px;
   padding: 10px;

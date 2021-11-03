@@ -3,37 +3,38 @@ import React, { useContext } from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Barranav from "./Barranav";
 import Card from './Card';
-import IniciativeModalCreate from "./IniciativeModalCreate";
-import IniciativeContext from "./providers/IniciativeContext";
+import InitiativeModalCreate from "./InitiativeModalCreate";
+import InitiativeContext from "./providers/InitiativeContext";
 import { SettingsContext } from "./providers/SettingsContext";
+import Iniciative from "./Iniciative";
 
 function App() {
 
-  const { modalCreate } = useContext(SettingsContext)
+  const { modalCreate, toggleModalCreate } = useContext(SettingsContext)
 
   return (
 
-    <IniciativeContext>
+    <InitiativeContext>
       <BrowserRouter>
         {modalCreate ?
-          <IniciativeModalCreate />
-          : ""
-
+          <InitiativeModalCreate />
+          : <button onClick={toggleModalCreate}> Nuevo </button>
         }
         <Barranav />
         <Switch>
           <Route exact path="/">
             <Card />
           </Route>
-          <Route exact path="/">
-            <Card />
-          </Route>
+
+          <Route path="/iniciativas/:iniciativeId">
+            <Iniciative />
+          </Route >
           <Route path="*">
             <h2>Error 404</h2>
           </Route>
         </Switch>
       </BrowserRouter>
-    </IniciativeContext>
+    </InitiativeContext>
 
   );
 }

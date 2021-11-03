@@ -1,5 +1,5 @@
 import { initializeApp } from "firebase/app"
-import { getFirestore, collection, onSnapshot, addDoc } from "@firebase/firestore";
+import { getFirestore, collection, onSnapshot, addDoc, serverTimestamp, deleteDoc, getDoc, doc } from "@firebase/firestore";
 
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
@@ -23,4 +23,14 @@ export const collectionF = collection;
 export const onSnapshotF = onSnapshot;
 
 export const addDocF = addDoc;
+
+export const serverTimestampF = serverTimestamp;
+
+export const deleteDocF = deleteDoc;
+
+export const getDocF = getDoc;
+
+export const docF = doc;
+
+
 

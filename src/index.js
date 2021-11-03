@@ -10,6 +10,7 @@ ReactDOM.render(
     </SettingsContext>
   </React.StrictMode>,
 
+
   document.getElementById('root')
 );
 
