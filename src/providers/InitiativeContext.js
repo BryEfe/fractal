@@ -1,5 +1,5 @@
-import React, { createContext, useState, useEffect } from "react";
-import { db, collectionF, onSnapshotF, addDocF, getDocF, docF } from "../firebase";
+import React, { createContext, useState } from "react";
+import { db, collectionF, onSnapshotF, addDocF, docF } from "../firebase";
 
 export const InitiativeContext = createContext();
 
@@ -15,7 +15,9 @@ const InitiativeContextProvider = (props) => {
  const handleFeed = () => {
   unsubscribeInititatives = onSnapshotF(initiativesCollectionRef, (data) => {
    console.log("Awake")
-   setInitiatives(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })))
+   setInitiatives(data.docs.map((doc) => ({ ...doc.data(), id: doc.id }), (error) => {
+    console.log("handle feed OnSnapshot errro:", error)
+   }))
   })
  }
 
@@ -33,7 +35,9 @@ const InitiativeContextProvider = (props) => {
   console.log("mount Doc")
   const docRef = docF(db, collection, ref);
   unsubscribeInititative = onSnapshotF(docRef, (doc) => {
-   setInitiative(doc.data());
+   setInitiative(doc.data())
+  }, (error) => {
+   console.log("handle get Doc OnSnapshot errro:", error)
   });
  }
 

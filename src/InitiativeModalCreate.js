@@ -5,23 +5,38 @@ import { serverTimestampF } from "./firebase";
 
 function IniciativeModalCreate() {
 
-  const [currentInitiative, setCurrent] = useState()
-  const [sent, setSent] = useState(false)
+  const [keywords, setKeywords] = useState([]);
+  const [file, setFile] = useState();
+  const [sent, setSent] = useState();
   const { handleNewInitiative } = useContext(InitiativeContext)
   const { toggleModalCreate } = useContext(SettingsContext)
+
   const titleRef = useRef();
   const descriptionRef = useRef();
+  const keyWordsRef = useRef();
 
 
   const handleNew = async () => {
+    console.log("keyword", keyWordsRef.current.value);
     const title = titleRef.current.value;
     const description = descriptionRef.current.value;
-    const referencia = await handleNewInitiative({ name: title, description: description, createdAt: serverTimestampF() })
+    const referencia = await handleNewInitiative(newInitiative(title, description))
     console.log("referencia es:", referencia)
     setSent(true);
     setTimeout(() => {
       toggleModalCreate();
-    }, 2000);
+    }, 5000);
+  }
+
+  const newInitiative = (name, description, keyWords) => {
+    return { name: name, description: description, keyWords: [], createdAt: serverTimestampF() }
+  }
+
+  const handleImages = (e) => {
+    console.log("SOmeting")
+    const url = URL.createObjectURL(e.target.files[0]);
+    console.log(url);
+    setFile(url);
 
   }
 
@@ -34,13 +49,34 @@ function IniciativeModalCreate() {
             <label> Titulo del Proyecto</label>
             <input ref={titleRef} type="text" placeholder="Titulo de tu proyecto" />
             <label> Descripción</label>
-            <input ref={descriptionRef} type="text" placeholder="Titulo de tu proyecto" maxlength="350" />
-            <label for="img">Select image:</label>
-            <input type="file" id="img" name="img" accept="image/*" />
+            <textarea ref={descriptionRef} type="text" placeholder="Titulo de tu proyecto" maxLength="350" />
+
+            <label>Añadir Imágenes</label>
+            <div className="modal-upload-images" >
+              <input type="file" id="file" name="img" accept="image/*" onChange={(e) => handleImages(e)} />
+              <label for="file">+</label>
+              <div className="image-added">
+
+                {file ? <img src={file} alt="" /> : ""}
+              </div>
+            </div>
+            <label>
+              Palabras Clave:
+
+            </label>
+            <input ref={keyWordsRef} list="browsers" name="myBrowser" />
+            <datalist id="browsers">
+              <option value="Seguridad" />
+              <option value="Infraestructura" />
+              <option value="Movilidad" />
+              <option value="Educación" />
+              <option value="Medio Ambiente" />
+              <option value="Transparencia" />
+            </datalist>
             <button onClick={handleNew}>Enviar</button>
           </div> : "Iniciativa Enviada"}
       </div>
-    </div>
+    </div >
   )
 }
 
