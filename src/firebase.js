@@ -1,5 +1,7 @@
 import { initializeApp } from "firebase/app"
 import { getFirestore, collection, onSnapshot, addDoc, serverTimestamp, deleteDoc, doc } from "@firebase/firestore";
+import { getStorage, ref, uploadBytesResumable, getDownloadURL } from "@firebase/storage";
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut, } from "firebase/auth";
 
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
@@ -29,6 +31,24 @@ export const serverTimestampF = serverTimestamp;
 export const deleteDocF = deleteDoc;
 
 export const docF = doc;
+
+export const getStorageF = getStorage;
+
+export const sRef = ref;
+
+export const uploadBytesResumableF = uploadBytesResumable;
+
+export const getDownloadURLF = getDownloadURL;
+
+export const createUserWithEmailAndPasswordF = createUserWithEmailAndPassword;
+
+export const signInWithEmailAndPasswordF = signInWithEmailAndPassword;
+
+export const onAuthStateChangedF = onAuthStateChanged;
+
+export const signOutF = signOut;
+
+export const auth = getAuth(app);
 
 
 

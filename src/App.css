@@ -4,6 +4,7 @@
   padding: 0;
   margin: 0;
   border-color: var(--secondary-gray);
+  box-sizing: border-box;
 }
 
 :root {
@@ -147,14 +148,47 @@ nav > a > img {
   flex-direction: column;
 }
 
-.modal-body textarea,
+.modal-form textarea,
 input {
-  max-width: 100%;
-  font-family: "Inter", sans-serif;
   padding: 8px;
+  width: 100%;
+  font-family: "Inter", sans-serif;
+}
+
+[type="file"] {
+  height: 0;
+  overflow: hidden;
+  width: 0;
+  padding: 0;
+}
+
+[type="file"] + label {
+  background: var(--main-gray);
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  font-weight: 900;
+  margin-bottom: 1rem;
+  outline: none;
+  height: 84px;
+  width: 128px;
+  transition: all 0.3s;
+}
+
+[type="file"] + label:hover {
+  background: var(--main-highlight-color-1);
 }
 
 .modal-upload-images {
+  display: flex;
+  flex-direction: row;
+  overflow: scroll;
+  padding: 4px;
+}
+
+.images {
   display: flex;
   flex-direction: row;
 }
@@ -179,39 +213,62 @@ input {
   margin: 0px 8px;
   border-radius: 5px;
   overflow: hidden;
-  background: var(--main-highlight-color-1);
 }
 
-.image-added::before {
-  content: "Eliminar";
-  position: absolute;
-  color: white;
-  z-index: 1;
+.keywords {
+  display: flex;
+  flex-wrap: wrap;
 }
+
+#ck-button {
+  margin: 4px;
+  background-color: #efefef;
+  border-radius: 4px;
+  border: 1px solid #d0d0d0;
+  overflow: auto;
+  float: left;
+}
+
+#ck-button {
+  margin: 4px;
+  background-color: #efefef;
+  border-radius: 4px;
+  border: 1px solid #d0d0d0;
+  overflow: auto;
+  float: left;
+}
+
+#ck-button:hover {
+  margin: 4px;
+  background-color: #efefef;
+  border-radius: 4px;
+  border: 1px solid red;
+  overflow: auto;
+  float: left;
+  color: red;
+}
+
+#ck-button label {
+  float: left;
+  width: 4em;
+}
+
+#ck-button label span {
+  text-align: center;
+  padding: 3px 0px;
+  display: block;
+}
+
+#ck-button label input {
+  position: absolute;
+  top: -20px;
+}
+
+#ck-button input:checked + span {
+  background-color: #911;
+  color: #fff;
+}
+
 /* Form-images **/
 
-[type="file"] {
-  height: 0;
-  overflow: hidden;
-  width: 0;
-  padding: 0;
-}
-
-[type="file"] + label {
-  background: var(--main-gray);
-  border: none;
-  border-radius: 5px;
-  color: #fff;
-  cursor: pointer;
-  display: inline-block;
-  text-align: center;
-  font-weight: 900;
-  margin-bottom: 1rem;
-  outline: none;
-  padding: 32px 40px;
-  transition: all 0.3s;
-  width: 10%;
-}
-[type="file"] + label:hover {
-  background: var(--main-highlight-color-1);
-}
+/*   **/

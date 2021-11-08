@@ -5,28 +5,28 @@ import { InitiativeContext } from "./providers/InitiativeContext";
 
 function Iniciative() {
 
- let { iniciativeId } = useParams();
+  let { iniciativeId } = useParams();
 
- const { handleGetDoc, initiative, unSubscribeFromDoc } = useContext(InitiativeContext)
+  const { handleGetDoc, initiative, unSubscribeFromDoc } = useContext(InitiativeContext)
 
- useEffect(() => {
-  handleGetDoc(iniciativeId);
-  return () => {
-   unSubscribeFromDoc();
-  }
+  useEffect(() => {
+    handleGetDoc(iniciativeId);
+    return () => {
+      unSubscribeFromDoc();
+    }
 
 
- }, [])
+  }, [])
 
- return (
-  <div>
-   {initiative ?
+  return (
     <div>
-     <h1>{initiative.name}</h1>
-     <p></p></div>
-    : "Loading..."}
-  </div>
- )
+      {initiative ?
+        <div>
+          <h1>{initiative.name}</h1>
+        </div>
+        : "Loading..."}
+    </div>
+  )
 }
 
 export default Iniciative
