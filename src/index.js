@@ -1,16 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
-import SettingsContext from "./providers/SettingsContext";
 
+import UserContext from "./providers/UserContext";
+import InitiativeContext from "./providers/InitiativeContext";
+import SettingsContext from "./providers/SettingsContext";
 ReactDOM.render(
   <React.StrictMode>
-    <SettingsContext>
-      <App />
-    </SettingsContext>
+    <UserContext>
+      <InitiativeContext>
+        <SettingsContext>
+          <App />
+        </SettingsContext>
+      </InitiativeContext>
+    </UserContext >
   </React.StrictMode>,
-
-
   document.getElementById('root')
 );
 

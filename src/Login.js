@@ -1,10 +1,21 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { UserContext } from "./providers/UserContext";
-
+import { useHistory } from "react-router-dom";
 
 function Login() {
 
  const { user, logout, login, register, setRegisterEmail, setRegisterPassword, setLoginEmail, setLoginPassword } = useContext(UserContext);
+
+ const history = useHistory();
+
+ useEffect(() => {
+  console.log("user info", user);
+  if (user?.email) {
+   history.push("/");
+  }
+
+ }, [history, user])
+
 
  return (
   <div>
@@ -41,7 +52,7 @@ function Login() {
      }}
     />
 
-    <button onClick={login}> Login</button>
+    <button onClick={login}>Login</button>
    </div>
 
    <h4> User Logged In: </h4>

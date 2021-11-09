@@ -11,9 +11,9 @@ function UserContextProvider(props) {
  const [user, setUser] = useState({});
 
  onAuthStateChangedF(auth, (currentUser) => {
-
   setUser(currentUser);
-  console.log(user)
+  console.log("User:", user)
+
  });
 
  const register = async () => {
@@ -36,7 +36,7 @@ function UserContextProvider(props) {
     loginEmail,
     loginPassword
    );
-   console.log(user);
+   console.log("user", user);
   } catch (error) {
    console.log(error.message);
   }

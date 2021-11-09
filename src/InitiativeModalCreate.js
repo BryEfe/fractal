@@ -1,6 +1,7 @@
 import React, { useRef, useState, useContext, useEffect } from 'react'
 import { InitiativeContext } from "./providers/InitiativeContext";
 import { SettingsContext } from "./providers/SettingsContext";
+import { UserContext } from "./providers/UserContext";
 import { serverTimestampF } from "./firebase";
 
 function IniciativeModalCreate() {
@@ -11,6 +12,7 @@ function IniciativeModalCreate() {
   const [sent, setSent] = useState();
   const { handleNewInitiative, uploadImage, progress } = useContext(InitiativeContext)
   const { toggleModalCreate } = useContext(SettingsContext)
+  const { user } = useContext(UserContext)
 
   const formEl = useRef();
 
@@ -21,7 +23,6 @@ function IniciativeModalCreate() {
     setSent(true);
     setTimeout(() => {
       toggleModalCreate();
-
     }, 5000);
   }
 
@@ -74,7 +75,7 @@ function IniciativeModalCreate() {
 
                 <div className="images">
                   <input type="file" id="file" name="img" accept="image/*" onChange={(e) => handleImages(e)} />
-                  <label for="file">+</label>
+                  <label htmlFor="file">+</label>
 
                   {file
                     ? file.map((f, index) => {
