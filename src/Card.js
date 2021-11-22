@@ -16,14 +16,14 @@ function Card() {
             {initiatives
                 ?
                 initiatives.map(i => {
-                    return <div className="container" key={i.id}>
-                        <img src={i.img[0]} alt="" width="100" />
-                        <Link to={`iniciativas/${i.id}`}><h3>{i.name}</h3></Link>
-                        <p>{i.description}</p>
-                        <p>{i.keywords.join(",")}</p>
-
-
-                    </div>
+                    return <Link to={`iniciativas/${i.id}`} key={i.id}>
+                        <div className="container">
+                            <img src={i.img[0]} alt="" width="100" />
+                            <h3>{i.name}</h3>
+                            <p>{i.description}</p>
+                            <p>{i.keywords.join(",")}</p>
+                        </div>
+                    </Link>
                 })
                 :
                 <h1>Loading...</h1>

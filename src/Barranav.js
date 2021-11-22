@@ -1,17 +1,13 @@
 import React, { useContext } from 'react'
 import { Link } from "react-router-dom";
 import { UserContext } from "./providers/UserContext";
-import { useHistory } from "react-router-dom";
+import { useHistory, } from "react-router-dom";
 
 function Barranav() {
 
-
-
     const history = useHistory();
+
     const goToLogin = () => history.push("/login");
-
-
-
 
     const { user, logout } = useContext(UserContext);
 
@@ -21,10 +17,10 @@ function Barranav() {
             <ul>
                 <li><Link to="/">Inicio</Link></li>
                 <li><Link to="/iniciativas">Iniciativas</Link></li>
-                <li><Link to="/reportes">Reportes</Link></li>
                 <li><Link to=""><img src="./svg/not_off.svg" /></Link></li>
                 <li><Link to=""><img src="./svg/usuario.svg" /></Link></li>
-                <li>{user?.email}</li>
+                <li>{user?.displayName}</li>
+
                 <button onClick={user?.email ? logout : goToLogin}> Sign {user?.email ? "Out" : "In"} </button>
 
             </ul>

@@ -5,15 +5,19 @@ export const InitiativeContext = createContext();
 
 const InitiativeContextProvider = (props) => {
  // Reference to the collection this context works for. 
- const collection = "initiatives"
+ const collection = "initiatives";
+
+ const initiativesCollectionRef = collectionF(db, collection);
  const [initiatives, setInitiatives] = useState([]);
  const [initiative, setInitiative] = useState(null);
- const [progress, setProgress] = useState(0)
+ const [progress, setProgress] = useState(0);
+
  var unsubscribeInititatives = () => { };
  var unsubscribeInititative = () => { };
- const initiativesCollectionRef = collectionF(db, collection);
+
 
  const handleFeed = () => {
+
   unsubscribeInititatives = onSnapshotF(initiativesCollectionRef, (data) => {
    console.log("Awake")
    setInitiatives(data.docs.map((doc) => ({ ...doc.data(), id: doc.id }), (error) => {
@@ -47,7 +51,7 @@ const InitiativeContextProvider = (props) => {
   unsubscribeInititative();
  }
 
- const uploadImage = async (imageToUpload, name) => {
+ const uploadImage = (imageToUpload, name) => {
 
   const storage = getStorageF();
 
@@ -55,15 +59,15 @@ const InitiativeContextProvider = (props) => {
 
   const uploadTask = uploadBytesResumableF(storageRef, imageToUpload, { contentType: "png" });
 
-  uploadTask.on('state_changed', (snap) => { setProgress((snap.bytesTransferred / snap.totalBytes) * 100); },
-   (error) => { setProgress(`Image ${name} wasnt uploaded. ${error}`) })
+  return new Promise((resolve, reject) => {
+   uploadTask.on('state_changed', (snap) => {
 
 
-  const d = await getDownloadURLF(uploadTask.snapshot.ref);
-
-
-  return d;
-
+    setProgress(Math.round((snap.bytesTransferred / snap.totalBytes) * 100));
+   }, (error) => { reject(error); },
+    () => getDownloadURLF(uploadTask.snapshot.ref).then((downloadURL) => { setProgress(0); resolve(downloadURL); })
+   )
+  })
  }
 
 

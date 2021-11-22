@@ -1,0 +1,2489 @@
+{
+ "b": [
+  {
+   "lugar": "Terron Colorado",
+   "id": 1,
+   "comuna": 1,
+   "tipo": 1,
+   "localidad": 1
+  },
+  {
+   "lugar": "Sector Patio Bonito",
+   "id": 2,
+   "comuna": 1,
+   "tipo": 1,
+   "localidad": 1
+  },
+  {
+   "lugar": "Vista Hermosa",
+   "id": 3,
+   "comuna": 1,
+   "tipo": 1,
+   "localidad": 1
+  },
+  {
+   "lugar": "Aguacatal",
+   "id": 4,
+   "comuna": 1,
+   "tipo": 1,
+   "localidad": 1
+  },
+  {
+   "lugar": "Santa Rita",
+   "id": 5,
+   "comuna": 2,
+   "tipo": 1,
+   "localidad": 1
+  },
+  {
+   "lugar": "Santa Teresita",
+   "id": 6,
+   "comuna": 2,
+   "tipo": 1,
+   "localidad": 1
+  },
+  {
+   "lugar": "Arboledas",
+   "id": 7,
+   "comuna": 2,
+   "tipo": 1,
+   "localidad": 1
+  },
+  {
+   "lugar": "Normandia",
+   "id": 8,
+   "comuna": 2,
+   "tipo": 1,
+   "localidad": 1
+  },
+  {
+   "lugar": "Juanambu",
+   "id": 9,
+   "comuna": 2,
+   "tipo": 1,
+   "localidad": 1
+  },
+  {
+   "lugar": "Centenario",
+   "id": 10,
+   "comuna": 2,
+   "tipo": 1,
+   "localidad": 1
+  },
+  {
+   "lugar": "Granada",
+   "id": 11,
+   "comuna": 2,
+   "tipo": 1,
+   "localidad": 1
+  },
+  {
+   "lugar": "Versalles ",
+   "id": 12,
+   "comuna": 2,
+   "tipo": 1,
+   "localidad": 1
+  },
+  {
+   "lugar": "San Vicente",
+   "id": 13,
+   "comuna": 2,
+   "tipo": 1,
+   "localidad": 1
+  },
+  {
+   "lugar": "Santa Monica ",
+   "id": 14,
+   "comuna": 2,
+   "tipo": 1,
+   "localidad": 1
+  },
+  {
+   "lugar": "Prados del Norte ",
+   "id": 15,
+   "comuna": 2,
+   "tipo": 1,
+   "localidad": 1
+  },
+  {
+   "lugar": "La Flora",
+   "id": 16,
+   "comuna": 2,
+   "tipo": 1,
+   "localidad": 1
+  },
+  {
+   "lugar": "La Campiña ",
+   "id": 17,
+   "comuna": 2,
+   "tipo": 1,
+   "localidad": 1
+  },
+  {
+   "lugar": "La Paz",
+   "id": 18,
+   "comuna": 2,
+   "tipo": 1,
+   "localidad": 1
+  },
+  {
+   "lugar": "El Bosque ",
+   "id": 19,
+   "comuna": 2,
+   "tipo": 1,
+   "localidad": 1
+  },
+  {
+   "lugar": "Menga",
+   "id": 20,
+   "comuna": 2,
+   "tipo": 1,
+   "localidad": 1
+  },
+  {
+   "lugar": "Ciudad los Alamos ",
+   "id": 21,
+   "comuna": 2,
+   "tipo": 1,
+   "localidad": 1
+  },
+  {
+   "lugar": "Chipichape",
+   "id": 22,
+   "comuna": 2,
+   "tipo": 1,
+   "localidad": 1
+  },
+  {
+   "lugar": "Brisas de los Alamos ",
+   "id": 23,
+   "comuna": 2,
+   "tipo": 1,
+   "localidad": 1
+  },
+  {
+   "lugar": "Urbanizacion la Merced",
+   "id": 24,
+   "comuna": 2,
+   "tipo": 1,
+   "localidad": 1
+  },
+  {
+   "lugar": "Vipasa",
+   "id": 25,
+   "comuna": 2,
+   "tipo": 1,
+   "localidad": 1
+  },
+  {
+   "lugar": "Urbanizacion la Flora",
+   "id": 26,
+   "comuna": 2,
+   "tipo": 1,
+   "localidad": 1
+  },
+  {
+   "lugar": "Altos de Menga ",
+   "id": 27,
+   "comuna": 2,
+   "tipo": 1,
+   "localidad": 1
+  },
+  {
+   "lugar": "Sector Altos de Normandia - Bataclan",
+   "id": 28,
+   "comuna": 2,
+   "tipo": 1,
+   "localidad": 1
+  },
+  {
+   "lugar": "Area en Desarrollo - Parque del Amor ",
+   "id": 29,
+   "comuna": 2,
+   "tipo": 1,
+   "localidad": 1
+  },
+  {
+   "lugar": "El Nacional ",
+   "id": 30,
+   "comuna": 3,
+   "tipo": 1,
+   "localidad": 1
+  },
+  {
+   "lugar": "El Peñon ",
+   "id": 31,
+   "comuna": 3,
+   "tipo": 1,
+   "localidad": 1
+  },
+  {
+   "lugar": "San Antonio",
+   "id": 32,
+   "comuna": 3,
+   "tipo": 1,
+   "localidad": 1
+  },
+  {
+   "lugar": "San Cayetano ",
+   "id": 33,
+   "comuna": 3,
+   "tipo": 1,
+   "localidad": 1
+  },
+  {
+   "lugar": "Los Libertadores ",
+   "id": 34,
+   "comuna": 3,
+   "tipo": 1,
+   "localidad": 1
+  },
+  {
+   "lugar": "San Juan Bosco ",
+   "id": 35,
+   "comuna": 3,
+   "tipo": 1,
+   "localidad": 1
+  },
+  {
+   "lugar": "Santa Rosa ",
+   "id": 36,
+   "comuna": 3,
+   "tipo": 1,
+   "localidad": 1
+  },
+  {
+   "lugar": "La Merced ",
+   "id": 37,
+   "comuna": 3,
+   "tipo": 1,
+   "localidad": 1
+  },
+  {
+   "lugar": "San Pascual",
+   "id": 38,
+   "comuna": 3,
+   "tipo": 1,
+   "localidad": 1
+  },
+  {
+   "lugar": "El Calvario ",
+   "id": 39,
+   "comuna": 3,
+   "tipo": 1,
+   "localidad": 1
+  },
+  {
+   "lugar": "San Pedro",
+   "id": 40,
+   "comuna": 3,
+   "tipo": 1,
+   "localidad": 1
+  },
+  {
+   "lugar": "San Nicolas ",
+   "id": 41,
+   "comuna": 3,
+   "tipo": 1,
+   "localidad": 1
+  },
+  {
+   "lugar": "El Hoyo",
+   "id": 42,
+   "comuna": 3,
+   "tipo": 1,
+   "localidad": 1
+  },
+  {
+   "lugar": "El Piloto ",
+   "id": 43,
+   "comuna": 3,
+   "tipo": 1,
+   "localidad": 1
+  },
+  {
+   "lugar": "Navarro ",
+   "id": 44,
+   "comuna": 3,
+   "tipo": 1,
+   "localidad": 1
+  },
+  {
+   "lugar": "La Chanca",
+   "id": 45,
+   "comuna": 3,
+   "tipo": 1,
+   "localidad": 1
+  },
+  {
+   "lugar": "Acueducto San Antonio ",
+   "id": 46,
+   "comuna": 3,
+   "tipo": 1,
+   "localidad": 1
+  },
+  {
+   "lugar": "Jorge Isaacs ",
+   "id": 47,
+   "comuna": 4,
+   "tipo": 1,
+   "localidad": 3
+  },
+  {
+   "lugar": "Santander ",
+   "id": 48,
+   "comuna": 4,
+   "tipo": 1,
+   "localidad": 3
+  },
+  {
+   "lugar": "Porvenir ",
+   "id": 49,
+   "comuna": 4,
+   "tipo": 1,
+   "localidad": 3
+  },
+  {
+   "lugar": "Las Delicias ",
+   "id": 50,
+   "comuna": 4,
+   "tipo": 1,
+   "localidad": 3
+  },
+  {
+   "lugar": "Manzanares",
+   "id": 51,
+   "comuna": 4,
+   "tipo": 1,
+   "localidad": 3
+  },
+  {
+   "lugar": "Salomia",
+   "id": 52,
+   "comuna": 4,
+   "tipo": 1,
+   "localidad": 3
+  },
+  {
+   "lugar": "Fatima ",
+   "id": 53,
+   "comuna": 4,
+   "tipo": 1,
+   "localidad": 3
+  },
+  {
+   "lugar": "Sultana - Berlin - San Francisco ",
+   "id": 54,
+   "comuna": 4,
+   "tipo": 1,
+   "localidad": 3
+  },
+  {
+   "lugar": "Popular",
+   "id": 55,
+   "comuna": 4,
+   "tipo": 1,
+   "localidad": 3
+  },
+  {
+   "lugar": "Ignacio Rengifo",
+   "id": 56,
+   "comuna": 4,
+   "tipo": 1,
+   "localidad": 3
+  },
+  {
+   "lugar": "La Isla ",
+   "id": 57,
+   "comuna": 4,
+   "tipo": 1,
+   "localidad": 3
+  },
+  {
+   "lugar": "Marco Fidel Suarez ",
+   "id": 58,
+   "comuna": 4,
+   "tipo": 1,
+   "localidad": 3
+  },
+  {
+   "lugar": "Evaristo Garcia ",
+   "id": 59,
+   "comuna": 4,
+   "tipo": 1,
+   "localidad": 3
+  },
+  {
+   "lugar": "Bolivariano",
+   "id": 60,
+   "comuna": 4,
+   "tipo": 1,
+   "localidad": 3
+  },
+  {
+   "lugar": "La Esmeralda ",
+   "id": 61,
+   "comuna": 4,
+   "tipo": 1,
+   "localidad": 3
+  },
+  {
+   "lugar": "Barrio Olaya Herrera ",
+   "id": 62,
+   "comuna": 4,
+   "tipo": 1,
+   "localidad": 3
+  },
+  {
+   "lugar": "Unidad Residencial Bueno Madrid ",
+   "id": 63,
+   "comuna": 4,
+   "tipo": 1,
+   "localidad": 3
+  },
+  {
+   "lugar": "Guillermo Valencia ",
+   "id": 64,
+   "comuna": 4,
+   "tipo": 1,
+   "localidad": 3
+  },
+  {
+   "lugar": "La Alianza ",
+   "id": 65,
+   "comuna": 4,
+   "tipo": 1,
+   "localidad": 3
+  },
+  {
+   "lugar": "Flora Industrial ",
+   "id": 66,
+   "comuna": 4,
+   "tipo": 1,
+   "localidad": 3
+  },
+  {
+   "lugar": "Calima ",
+   "id": 67,
+   "comuna": 4,
+   "tipo": 1,
+   "localidad": 3
+  },
+  {
+   "lugar": "Industria de Licores ",
+   "id": 68,
+   "comuna": 4,
+   "tipo": 1,
+   "localidad": 3
+  },
+  {
+   "lugar": "El Sena",
+   "id": 69,
+   "comuna": 5,
+   "tipo": 1,
+   "localidad": 3
+  },
+  {
+   "lugar": "Los Andes ",
+   "id": 70,
+   "comuna": 5,
+   "tipo": 1,
+   "localidad": 3
+  },
+  {
+   "lugar": "Los Guayacanes ",
+   "id": 71,
+   "comuna": 5,
+   "tipo": 1,
+   "localidad": 3
+  },
+  {
+   "lugar": "Chiminangos Primera Etapa",
+   "id": 72,
+   "comuna": 5,
+   "tipo": 1,
+   "localidad": 3
+  },
+  {
+   "lugar": "Chiminangos Segunda Etapa",
+   "id": 73,
+   "comuna": 5,
+   "tipo": 1,
+   "localidad": 3
+  },
+  {
+   "lugar": "Metropolitano del Norte ",
+   "id": 74,
+   "comuna": 5,
+   "tipo": 1,
+   "localidad": 3
+  },
+  {
+   "lugar": "Los Parques - Barranquila",
+   "id": 75,
+   "comuna": 5,
+   "tipo": 1,
+   "localidad": 3
+  },
+  {
+   "lugar": "Villa del Sol",
+   "id": 76,
+   "comuna": 5,
+   "tipo": 1,
+   "localidad": 3
+  },
+  {
+   "lugar": "Paseo de los Almendros ",
+   "id": 77,
+   "comuna": 5,
+   "tipo": 1,
+   "localidad": 3
+  },
+  {
+   "lugar": "Los Andes B - La Riviera ",
+   "id": 78,
+   "comuna": 5,
+   "tipo": 1,
+   "localidad": 3
+  },
+  {
+   "lugar": "Torres de Comfandi ",
+   "id": 79,
+   "comuna": 5,
+   "tipo": 1,
+   "localidad": 3
+  },
+  {
+   "lugar": "Villa del Prado ",
+   "id": 80,
+   "comuna": 5,
+   "tipo": 1,
+   "localidad": 3
+  },
+  {
+   "lugar": "El Guabito ",
+   "id": 81,
+   "comuna": 5,
+   "tipo": 1,
+   "localidad": 3
+  },
+  {
+   "lugar": "San Luis ",
+   "id": 82,
+   "comuna": 6,
+   "tipo": 1,
+   "localidad": 3
+  },
+  {
+   "lugar": "Jorge Eliecer Gaitan ",
+   "id": 83,
+   "comuna": 6,
+   "tipo": 1,
+   "localidad": 3
+  },
+  {
+   "lugar": "Paso del Comercio ",
+   "id": 84,
+   "comuna": 6,
+   "tipo": 1,
+   "localidad": 3
+  },
+  {
+   "lugar": "Los Alcazares ",
+   "id": 85,
+   "comuna": 6,
+   "tipo": 1,
+   "localidad": 3
+  },
+  {
+   "lugar": "Petecuy Primera Etapa ",
+   "id": 86,
+   "comuna": 6,
+   "tipo": 1,
+   "localidad": 3
+  },
+  {
+   "lugar": "Petecuy Segunda Etapa ",
+   "id": 87,
+   "comuna": 6,
+   "tipo": 1,
+   "localidad": 3
+  },
+  {
+   "lugar": "Petecuy Tercera Etapa ",
+   "id": 88,
+   "comuna": 6,
+   "tipo": 1,
+   "localidad": 3
+  },
+  {
+   "lugar": "La Rivera ",
+   "id": 89,
+   "comuna": 6,
+   "tipo": 1,
+   "localidad": 3
+  },
+  {
+   "lugar": "Los Guaduales ",
+   "id": 90,
+   "comuna": 6,
+   "tipo": 1,
+   "localidad": 3
+  },
+  {
+   "lugar": "Ciudadela Floralia ",
+   "id": 91,
+   "comuna": 6,
+   "tipo": 1,
+   "localidad": 3
+  },
+  {
+   "lugar": "Fonaviemcali",
+   "id": 92,
+   "comuna": 6,
+   "tipo": 1,
+   "localidad": 3
+  },
+  {
+   "lugar": "San Luis II",
+   "id": 93,
+   "comuna": 6,
+   "tipo": 1,
+   "localidad": 3
+  },
+  {
+   "lugar": "Urbanizacion Calimio ",
+   "id": 94,
+   "comuna": 6,
+   "tipo": 1,
+   "localidad": 3
+  },
+  {
+   "lugar": "Sector Puente del Comercio ",
+   "id": 95,
+   "comuna": 6,
+   "tipo": 1,
+   "localidad": 3
+  },
+  {
+   "lugar": "Alfonso Lopez Primera Etapa",
+   "id": 96,
+   "comuna": 7,
+   "tipo": 1,
+   "localidad": 3
+  },
+  {
+   "lugar": "Alfonso Lopez Segunda Etapa",
+   "id": 97,
+   "comuna": 7,
+   "tipo": 1,
+   "localidad": 3
+  },
+  {
+   "lugar": "Alfonso Lopez Tercera Etapa",
+   "id": 98,
+   "comuna": 7,
+   "tipo": 1,
+   "localidad": 3
+  },
+  {
+   "lugar": "Puerto Nuevo ",
+   "id": 99,
+   "comuna": 7,
+   "tipo": 1,
+   "localidad": 3
+  },
+  {
+   "lugar": "Puerto Mallarino ",
+   "id": 100,
+   "comuna": 7,
+   "tipo": 1,
+   "localidad": 7
+  },
+  {
+   "lugar": "Urbanizacion El Angel del Hogar ",
+   "id": 101,
+   "comuna": 7,
+   "tipo": 1,
+   "localidad": 7
+  },
+  {
+   "lugar": "Siete de Agosto ",
+   "id": 102,
+   "comuna": 7,
+   "tipo": 1,
+   "localidad": 6
+  },
+  {
+   "lugar": "Los Pinos ",
+   "id": 103,
+   "comuna": 7,
+   "tipo": 1,
+   "localidad": 3
+  },
+  {
+   "lugar": "San Marino ",
+   "id": 104,
+   "comuna": 7,
+   "tipo": 1,
+   "localidad": 3
+  },
+  {
+   "lugar": "Las Ceibas ",
+   "id": 105,
+   "comuna": 7,
+   "tipo": 1,
+   "localidad": 3
+  },
+  {
+   "lugar": "Base Aerea ",
+   "id": 106,
+   "comuna": 7,
+   "tipo": 1,
+   "localidad": 3
+  },
+  {
+   "lugar": "Parque de la Caña ",
+   "id": 107,
+   "comuna": 7,
+   "tipo": 1,
+   "localidad": 3
+  },
+  {
+   "lugar": "Fepicol ",
+   "id": 108,
+   "comuna": 7,
+   "tipo": 1,
+   "localidad": 3
+  },
+  {
+   "lugar": "Primitivo Crespo ",
+   "id": 109,
+   "comuna": 8,
+   "tipo": 1,
+   "localidad": 4
+  },
+  {
+   "lugar": "Simon Bolivar ",
+   "id": 110,
+   "comuna": 8,
+   "tipo": 1,
+   "localidad": 4
+  },
+  {
+   "lugar": "Saavedra Galindo ",
+   "id": 111,
+   "comuna": 8,
+   "tipo": 1,
+   "localidad": 4
+  },
+  {
+   "lugar": "Rafael Uribe Uribe ",
+   "id": 112,
+   "comuna": 8,
+   "tipo": 1,
+   "localidad": 4
+  },
+  {
+   "lugar": "Santa Monica Popular ",
+   "id": 113,
+   "comuna": 8,
+   "tipo": 1,
+   "localidad": 4
+  },
+  {
+   "lugar": "La Floresta ",
+   "id": 114,
+   "comuna": 8,
+   "tipo": 1,
+   "localidad": 4
+  },
+  {
+   "lugar": "Benjamin Herrera ",
+   "id": 115,
+   "comuna": 8,
+   "tipo": 1,
+   "localidad": 4
+  },
+  {
+   "lugar": "Municipal ",
+   "id": 116,
+   "comuna": 8,
+   "tipo": 1,
+   "localidad": 4
+  },
+  {
+   "lugar": "Industrial ",
+   "id": 117,
+   "comuna": 8,
+   "tipo": 1,
+   "localidad": 4
+  },
+  {
+   "lugar": "El Troncal ",
+   "id": 118,
+   "comuna": 8,
+   "tipo": 1,
+   "localidad": 4
+  },
+  {
+   "lugar": "Las Americas ",
+   "id": 119,
+   "comuna": 8,
+   "tipo": 1,
+   "localidad": 4
+  },
+  {
+   "lugar": "Atanasio Girardot ",
+   "id": 120,
+   "comuna": 8,
+   "tipo": 1,
+   "localidad": 4
+  },
+  {
+   "lugar": "Santa Fe ",
+   "id": 121,
+   "comuna": 8,
+   "tipo": 1,
+   "localidad": 4
+  },
+  {
+   "lugar": "Chapinero",
+   "id": 122,
+   "comuna": 8,
+   "tipo": 1,
+   "localidad": 4
+  },
+  {
+   "lugar": "Villa Colombia ",
+   "id": 123,
+   "comuna": 8,
+   "tipo": 1,
+   "localidad": 4
+  },
+  {
+   "lugar": "El Trebol ",
+   "id": 124,
+   "comuna": 8,
+   "tipo": 1,
+   "localidad": 4
+  },
+  {
+   "lugar": "La Base ",
+   "id": 125,
+   "comuna": 8,
+   "tipo": 1,
+   "localidad": 4
+  },
+  {
+   "lugar": "Urbanizacion La Nueva Base",
+   "id": 126,
+   "comuna": 8,
+   "tipo": 1,
+   "localidad": 4
+  },
+  {
+   "lugar": "Alameda",
+   "id": 127,
+   "comuna": 9,
+   "tipo": 1,
+   "localidad": 5
+  },
+  {
+   "lugar": "Bretaña ",
+   "id": 128,
+   "comuna": 9,
+   "tipo": 1,
+   "localidad": 5
+  },
+  {
+   "lugar": "Junin",
+   "id": 129,
+   "comuna": 9,
+   "tipo": 1,
+   "localidad": 5
+  },
+  {
+   "lugar": "Guayaquil ",
+   "id": 130,
+   "comuna": 9,
+   "tipo": 1,
+   "localidad": 5
+  },
+  {
+   "lugar": "Aranjuez",
+   "id": 131,
+   "comuna": 9,
+   "tipo": 1,
+   "localidad": 5
+  },
+  {
+   "lugar": "Manuel Maria Buenaventura",
+   "id": 132,
+   "comuna": 9,
+   "tipo": 1,
+   "localidad": 5
+  },
+  {
+   "lugar": "Santa Monica Belalcazar ",
+   "id": 133,
+   "comuna": 9,
+   "tipo": 1,
+   "localidad": 5
+  },
+  {
+   "lugar": "Belalcazar ",
+   "id": 134,
+   "comuna": 9,
+   "tipo": 1,
+   "localidad": 5
+  },
+  {
+   "lugar": "Sucre ",
+   "id": 135,
+   "comuna": 9,
+   "tipo": 1,
+   "localidad": 1
+  },
+  {
+   "lugar": "Barrio Obrero ",
+   "id": 136,
+   "comuna": 9,
+   "tipo": 1,
+   "localidad": 1
+  },
+  {
+   "lugar": "El Dorado ",
+   "id": 137,
+   "comuna": 10,
+   "tipo": 1,
+   "localidad": 4
+  },
+  {
+   "lugar": "El Guabal ",
+   "id": 138,
+   "comuna": 10,
+   "tipo": 1,
+   "localidad": 4
+  },
+  {
+   "lugar": "La Libertad ",
+   "id": 139,
+   "comuna": 10,
+   "tipo": 1,
+   "localidad": 4
+  },
+  {
+   "lugar": "Santa Elena ",
+   "id": 140,
+   "comuna": 10,
+   "tipo": 1,
+   "localidad": 4
+  },
+  {
+   "lugar": "Las Acacias ",
+   "id": 141,
+   "comuna": 10,
+   "tipo": 1,
+   "localidad": 4
+  },
+  {
+   "lugar": "Santo Domingo ",
+   "id": 142,
+   "comuna": 10,
+   "tipo": 1,
+   "localidad": 4
+  },
+  {
+   "lugar": "Jorge Zawadsky",
+   "id": 143,
+   "comuna": 10,
+   "tipo": 1,
+   "localidad": 4
+  },
+  {
+   "lugar": "Olimpico",
+   "id": 144,
+   "comuna": 10,
+   "tipo": 1,
+   "localidad": 4
+  },
+  {
+   "lugar": "Cristobal Colon ",
+   "id": 145,
+   "comuna": 10,
+   "tipo": 1,
+   "localidad": 4
+  },
+  {
+   "lugar": "La Selva ",
+   "id": 146,
+   "comuna": 10,
+   "tipo": 1,
+   "localidad": 4
+  },
+  {
+   "lugar": "Barrio Departamental ",
+   "id": 147,
+   "comuna": 10,
+   "tipo": 1,
+   "localidad": 4
+  },
+  {
+   "lugar": "Panamericano ",
+   "id": 148,
+   "comuna": 10,
+   "tipo": 1,
+   "localidad": 4
+  },
+  {
+   "lugar": "Pasoancho ",
+   "id": 149,
+   "comuna": 10,
+   "tipo": 1,
+   "localidad": 4
+  },
+  {
+   "lugar": "Colseguros Andes ",
+   "id": 150,
+   "comuna": 10,
+   "tipo": 1,
+   "localidad": 4
+  },
+  {
+   "lugar": "San Cristobal ",
+   "id": 151,
+   "comuna": 10,
+   "tipo": 1,
+   "localidad": 4
+  },
+  {
+   "lugar": "Las Granjas ",
+   "id": 152,
+   "comuna": 10,
+   "tipo": 1,
+   "localidad": 4
+  },
+  {
+   "lugar": "San Judas Tadeo I",
+   "id": 153,
+   "comuna": 10,
+   "tipo": 1,
+   "localidad": 4
+  },
+  {
+   "lugar": "San Judas Tadeo II",
+   "id": 154,
+   "comuna": 10,
+   "tipo": 1,
+   "localidad": 4
+  },
+  {
+   "lugar": "Barrio San Carlos ",
+   "id": 155,
+   "comuna": 11,
+   "tipo": 1,
+   "localidad": 4
+  },
+  {
+   "lugar": "Maracaibo ",
+   "id": 156,
+   "comuna": 11,
+   "tipo": 1,
+   "localidad": 4
+  },
+  {
+   "lugar": "La Independencia ",
+   "id": 157,
+   "comuna": 11,
+   "tipo": 1,
+   "localidad": 4
+  },
+  {
+   "lugar": "La Esperanza ",
+   "id": 158,
+   "comuna": 11,
+   "tipo": 1,
+   "localidad": 4
+  },
+  {
+   "lugar": "Urbanizacion Boyaca ",
+   "id": 159,
+   "comuna": 11,
+   "tipo": 1,
+   "localidad": 4
+  },
+  {
+   "lugar": "El Jardin ",
+   "id": 160,
+   "comuna": 11,
+   "tipo": 1,
+   "localidad": 4
+  },
+  {
+   "lugar": "La Fortaleza ",
+   "id": 161,
+   "comuna": 11,
+   "tipo": 1,
+   "localidad": 4
+  },
+  {
+   "lugar": "El Recuerdo",
+   "id": 162,
+   "comuna": 11,
+   "tipo": 1,
+   "localidad": 4
+  },
+  {
+   "lugar": "Aguablanca ",
+   "id": 163,
+   "comuna": 11,
+   "tipo": 1,
+   "localidad": 4
+  },
+  {
+   "lugar": "El Prado ",
+   "id": 164,
+   "comuna": 11,
+   "tipo": 1,
+   "localidad": 4
+  },
+  {
+   "lugar": "20 de Julio ",
+   "id": 165,
+   "comuna": 11,
+   "tipo": 1,
+   "localidad": 4
+  },
+  {
+   "lugar": "Prados del Oriente ",
+   "id": 166,
+   "comuna": 11,
+   "tipo": 1,
+   "localidad": 4
+  },
+  {
+   "lugar": "Los Sauces ",
+   "id": 167,
+   "comuna": 11,
+   "tipo": 1,
+   "localidad": 4
+  },
+  {
+   "lugar": "Villa del Sur ",
+   "id": 168,
+   "comuna": 11,
+   "tipo": 1,
+   "localidad": 4
+  },
+  {
+   "lugar": "Jose Holguin Garces",
+   "id": 169,
+   "comuna": 11,
+   "tipo": 1,
+   "localidad": 4
+  },
+  {
+   "lugar": "Leon XIII",
+   "id": 170,
+   "comuna": 11,
+   "tipo": 1,
+   "localidad": 4
+  },
+  {
+   "lugar": "Jose Maria Cordoba ",
+   "id": 171,
+   "comuna": 11,
+   "tipo": 1,
+   "localidad": 4
+  },
+  {
+   "lugar": "San Pedro Calver ",
+   "id": 172,
+   "comuna": 11,
+   "tipo": 1,
+   "localidad": 4
+  },
+  {
+   "lugar": "Los Conquistadores ",
+   "id": 173,
+   "comuna": 11,
+   "tipo": 1,
+   "localidad": 4
+  },
+  {
+   "lugar": "La Gran Colombia ",
+   "id": 174,
+   "comuna": 11,
+   "tipo": 1,
+   "localidad": 4
+  },
+  {
+   "lugar": "San Benito ",
+   "id": 175,
+   "comuna": 11,
+   "tipo": 1,
+   "localidad": 4
+  },
+  {
+   "lugar": "Primavera ",
+   "id": 176,
+   "comuna": 11,
+   "tipo": 1,
+   "localidad": 4
+  },
+  {
+   "lugar": "Ciudad Modelo",
+   "id": 177,
+   "comuna": 11,
+   "tipo": 1,
+   "localidad": 4
+  },
+  {
+   "lugar": "Villanueva ",
+   "id": 178,
+   "comuna": 12,
+   "tipo": 1,
+   "localidad": 4
+  },
+  {
+   "lugar": "Asturias ",
+   "id": 179,
+   "comuna": 12,
+   "tipo": 1,
+   "localidad": 4
+  },
+  {
+   "lugar": "Eduardo Santos",
+   "id": 180,
+   "comuna": 12,
+   "tipo": 1,
+   "localidad": 4
+  },
+  {
+   "lugar": "Barrio Alfonso Barberena A",
+   "id": 181,
+   "comuna": 12,
+   "tipo": 1,
+   "localidad": 4
+  },
+  {
+   "lugar": "El Paraiso ",
+   "id": 182,
+   "comuna": 12,
+   "tipo": 1,
+   "localidad": 4
+  },
+  {
+   "lugar": "Fenalco Kennedy ",
+   "id": 183,
+   "comuna": 12,
+   "tipo": 1,
+   "localidad": 4
+  },
+  {
+   "lugar": "Nueva Floresta ",
+   "id": 184,
+   "comuna": 12,
+   "tipo": 1,
+   "localidad": 4
+  },
+  {
+   "lugar": "Julio Rincon",
+   "id": 185,
+   "comuna": 12,
+   "tipo": 1,
+   "localidad": 4
+  },
+  {
+   "lugar": "Doce de Octubre ",
+   "id": 186,
+   "comuna": 12,
+   "tipo": 1,
+   "localidad": 4
+  },
+  {
+   "lugar": "El Rodeo ",
+   "id": 187,
+   "comuna": 12,
+   "tipo": 1,
+   "localidad": 4
+  },
+  {
+   "lugar": "Sindical",
+   "id": 188,
+   "comuna": 12,
+   "tipo": 1,
+   "localidad": 4
+  },
+  {
+   "lugar": "Bello Horizonte ",
+   "id": 189,
+   "comuna": 12,
+   "tipo": 1,
+   "localidad": 4
+  },
+  {
+   "lugar": "Ulpiano Lloreda ",
+   "id": 190,
+   "comuna": 13,
+   "tipo": 1,
+   "localidad": 6
+  },
+  {
+   "lugar": "El Vergel",
+   "id": 191,
+   "comuna": 13,
+   "tipo": 1,
+   "localidad": 6
+  },
+  {
+   "lugar": "El Poblado I",
+   "id": 192,
+   "comuna": 13,
+   "tipo": 1,
+   "localidad": 6
+  },
+  {
+   "lugar": "El Poblado II",
+   "id": 193,
+   "comuna": 13,
+   "tipo": 1,
+   "localidad": 6
+  },
+  {
+   "lugar": "Los Comuneros II Etapa",
+   "id": 194,
+   "comuna": 13,
+   "tipo": 1,
+   "localidad": 6
+  },
+  {
+   "lugar": "Ricardo Balcazar",
+   "id": 195,
+   "comuna": 13,
+   "tipo": 1,
+   "localidad": 6
+  },
+  {
+   "lugar": "Omar Torrijo ",
+   "id": 196,
+   "comuna": 13,
+   "tipo": 1,
+   "localidad": 6
+  },
+  {
+   "lugar": "El Diamante ",
+   "id": 197,
+   "comuna": 13,
+   "tipo": 1,
+   "localidad": 6
+  },
+  {
+   "lugar": "Lleras Restrepo",
+   "id": 198,
+   "comuna": 13,
+   "tipo": 1,
+   "localidad": 6
+  },
+  {
+   "lugar": "Villa del Lago ",
+   "id": 199,
+   "comuna": 13,
+   "tipo": 1,
+   "localidad": 6
+  },
+  {
+   "lugar": "Los Robles ",
+   "id": 200,
+   "comuna": 13,
+   "tipo": 1,
+   "localidad": 6
+  },
+  {
+   "lugar": "Rodrigo Lara Bonilla",
+   "id": 201,
+   "comuna": 13,
+   "tipo": 1,
+   "localidad": 6
+  },
+  {
+   "lugar": "Charco Azul ",
+   "id": 202,
+   "comuna": 13,
+   "tipo": 1,
+   "localidad": 6
+  },
+  {
+   "lugar": "Villablanca ",
+   "id": 203,
+   "comuna": 13,
+   "tipo": 1,
+   "localidad": 6
+  },
+  {
+   "lugar": "Calipso ",
+   "id": 204,
+   "comuna": 13,
+   "tipo": 1,
+   "localidad": 6
+  },
+  {
+   "lugar": "Yira Castro ",
+   "id": 205,
+   "comuna": 13,
+   "tipo": 1,
+   "localidad": 6
+  },
+  {
+   "lugar": "Lleras Restrepo II",
+   "id": 206,
+   "comuna": 13,
+   "tipo": 1,
+   "localidad": 6
+  },
+  {
+   "lugar": "Marroquin III",
+   "id": 207,
+   "comuna": 13,
+   "tipo": 1,
+   "localidad": 6
+  },
+  {
+   "lugar": "Los Lagos ",
+   "id": 208,
+   "comuna": 13,
+   "tipo": 1,
+   "localidad": 6
+  },
+  {
+   "lugar": "Sector Laguna el Pondaje ",
+   "id": 209,
+   "comuna": 13,
+   "tipo": 1,
+   "localidad": 6
+  },
+  {
+   "lugar": "El Pondaje ",
+   "id": 210,
+   "comuna": 13,
+   "tipo": 1,
+   "localidad": 6
+  },
+  {
+   "lugar": "Sector Asprosocial - Diamante ",
+   "id": 211,
+   "comuna": 13,
+   "tipo": 1,
+   "localidad": 6
+  },
+  {
+   "lugar": "Alfonso Bonilla Aragon ",
+   "id": 212,
+   "comuna": 14,
+   "tipo": 1,
+   "localidad": 7
+  },
+  {
+   "lugar": "Alirio Mora Beltran ",
+   "id": 213,
+   "comuna": 14,
+   "tipo": 1,
+   "localidad": 7
+  },
+  {
+   "lugar": "Manuela Beltran ",
+   "id": 214,
+   "comuna": 14,
+   "tipo": 1,
+   "localidad": 7
+  },
+  {
+   "lugar": "Las Orquideas ",
+   "id": 215,
+   "comuna": 14,
+   "tipo": 1,
+   "localidad": 7
+  },
+  {
+   "lugar": "Jose M. Marroquin I Etapa ",
+   "id": 216,
+   "comuna": 14,
+   "tipo": 1,
+   "localidad": 7
+  },
+  {
+   "lugar": "Jose M. Marroquin II Etapa ",
+   "id": 217,
+   "comuna": 14,
+   "tipo": 1,
+   "localidad": 7
+  },
+  {
+   "lugar": "Puertas del Sol",
+   "id": 218,
+   "comuna": 14,
+   "tipo": 1,
+   "localidad": 7
+  },
+  {
+   "lugar": "Los Naranjos I",
+   "id": 219,
+   "comuna": 14,
+   "tipo": 1,
+   "localidad": 7
+  },
+  {
+   "lugar": "Los Naranjos II",
+   "id": 220,
+   "comuna": 14,
+   "tipo": 1,
+   "localidad": 7
+  },
+  {
+   "lugar": "Promociones Populares B",
+   "id": 221,
+   "comuna": 14,
+   "tipo": 1,
+   "localidad": 7
+  },
+  {
+   "lugar": "El Retiro ",
+   "id": 222,
+   "comuna": 15,
+   "tipo": 1,
+   "localidad": 6
+  },
+  {
+   "lugar": "Los Comuneros I Etapa",
+   "id": 223,
+   "comuna": 15,
+   "tipo": 1,
+   "localidad": 6
+  },
+  {
+   "lugar": "Laureano Gomez ",
+   "id": 224,
+   "comuna": 15,
+   "tipo": 1,
+   "localidad": 6
+  },
+  {
+   "lugar": "El Vallado ",
+   "id": 225,
+   "comuna": 15,
+   "tipo": 1,
+   "localidad": 6
+  },
+  {
+   "lugar": "Ciudad Cordoba ",
+   "id": 226,
+   "comuna": 15,
+   "tipo": 1,
+   "localidad": 6
+  },
+  {
+   "lugar": "Mojica ",
+   "id": 227,
+   "comuna": 15,
+   "tipo": 1,
+   "localidad": 6
+  },
+  {
+   "lugar": "El Morichal ",
+   "id": 228,
+   "comuna": 15,
+   "tipo": 1,
+   "localidad": 6
+  },
+  {
+   "lugar": "Mariano Ramos ",
+   "id": 229,
+   "comuna": 16,
+   "tipo": 1,
+   "localidad": 6
+  },
+  {
+   "lugar": "Republica de Israel ",
+   "id": 230,
+   "comuna": 16,
+   "tipo": 1,
+   "localidad": 6
+  },
+  {
+   "lugar": "Union de Vivienda Popular ",
+   "id": 231,
+   "comuna": 16,
+   "tipo": 1,
+   "localidad": 6
+  },
+  {
+   "lugar": "Antonio Nariño ",
+   "id": 232,
+   "comuna": 16,
+   "tipo": 1,
+   "localidad": 6
+  },
+  {
+   "lugar": "Brisas del Limonar",
+   "id": 233,
+   "comuna": 16,
+   "tipo": 1,
+   "localidad": 5
+  },
+  {
+   "lugar": "Ciudad 2000",
+   "id": 234,
+   "comuna": 16,
+   "tipo": 1,
+   "localidad": 5
+  },
+  {
+   "lugar": "La Alborada ",
+   "id": 235,
+   "comuna": 16,
+   "tipo": 1,
+   "localidad": 5
+  },
+  {
+   "lugar": "La Playa ",
+   "id": 236,
+   "comuna": 17,
+   "tipo": 1,
+   "localidad": 5
+  },
+  {
+   "lugar": "Primero de Mayo ",
+   "id": 237,
+   "comuna": 17,
+   "tipo": 1,
+   "localidad": 5
+  },
+  {
+   "lugar": "Ciudadela Comfandi ",
+   "id": 238,
+   "comuna": 17,
+   "tipo": 1,
+   "localidad": 5
+  },
+  {
+   "lugar": "Ciudad Universidad ",
+   "id": 239,
+   "comuna": 17,
+   "tipo": 1,
+   "localidad": 5
+  },
+  {
+   "lugar": "Caney ",
+   "id": 240,
+   "comuna": 17,
+   "tipo": 1,
+   "localidad": 5
+  },
+  {
+   "lugar": "Valle del Lili",
+   "id": 241,
+   "comuna": 17,
+   "tipo": 1,
+   "localidad": 5
+  },
+  {
+   "lugar": "Santa Anita - La Selva ",
+   "id": 242,
+   "comuna": 17,
+   "tipo": 1,
+   "localidad": 5
+  },
+  {
+   "lugar": "El Ingenio ",
+   "id": 243,
+   "comuna": 17,
+   "tipo": 1,
+   "localidad": 5
+  },
+  {
+   "lugar": "Mayapan - Las Vegas",
+   "id": 244,
+   "comuna": 17,
+   "tipo": 1,
+   "localidad": 5
+  },
+  {
+   "lugar": "Las Quintas de Don Simon",
+   "id": 245,
+   "comuna": 17,
+   "tipo": 1,
+   "localidad": 5
+  },
+  {
+   "lugar": "Ciudad Capri ",
+   "id": 246,
+   "comuna": 17,
+   "tipo": 1,
+   "localidad": 5
+  },
+  {
+   "lugar": "La Hacienda ",
+   "id": 247,
+   "comuna": 17,
+   "tipo": 1,
+   "localidad": 5
+  },
+  {
+   "lugar": "Los Portales - Nuevo Rey ",
+   "id": 248,
+   "comuna": 17,
+   "tipo": 1,
+   "localidad": 5
+  },
+  {
+   "lugar": "Cañaverales -  Los Samanes ",
+   "id": 249,
+   "comuna": 17,
+   "tipo": 1,
+   "localidad": 5
+  },
+  {
+   "lugar": "El Limonar",
+   "id": 250,
+   "comuna": 17,
+   "tipo": 1,
+   "localidad": 5
+  },
+  {
+   "lugar": "Bosques del Limonar ",
+   "id": 251,
+   "comuna": 17,
+   "tipo": 1,
+   "localidad": 5
+  },
+  {
+   "lugar": "El Gran Limonar - Cataya ",
+   "id": 252,
+   "comuna": 17,
+   "tipo": 1,
+   "localidad": 5
+  },
+  {
+   "lugar": "El Gran Limonar",
+   "id": 253,
+   "comuna": 17,
+   "tipo": 1,
+   "localidad": 5
+  },
+  {
+   "lugar": "Unicentro Cali",
+   "id": 254,
+   "comuna": 17,
+   "tipo": 1,
+   "localidad": 5
+  },
+  {
+   "lugar": "Ciudadela Pasoancho",
+   "id": 255,
+   "comuna": 17,
+   "tipo": 1,
+   "localidad": 5
+  },
+  {
+   "lugar": "Prados del Limonar",
+   "id": 256,
+   "comuna": 17,
+   "tipo": 1,
+   "localidad": 5
+  },
+  {
+   "lugar": "Urbanizacion San Juaquin ",
+   "id": 257,
+   "comuna": 17,
+   "tipo": 1,
+   "localidad": 5
+  },
+  {
+   "lugar": "Buenos Aires ",
+   "id": 258,
+   "comuna": 18,
+   "tipo": 1,
+   "localidad": 5
+  },
+  {
+   "lugar": "Barrio Caldas ",
+   "id": 259,
+   "comuna": 18,
+   "tipo": 1,
+   "localidad": 5
+  },
+  {
+   "lugar": "Los Chorros ",
+   "id": 260,
+   "comuna": 18,
+   "tipo": 1,
+   "localidad": 5
+  },
+  {
+   "lugar": "Melendez ",
+   "id": 261,
+   "comuna": 18,
+   "tipo": 1,
+   "localidad": 5
+  },
+  {
+   "lugar": "Los Farallones ",
+   "id": 262,
+   "comuna": 18,
+   "tipo": 1,
+   "localidad": 5
+  },
+  {
+   "lugar": "Fransisco Eladio Ramirez",
+   "id": 263,
+   "comuna": 18,
+   "tipo": 1,
+   "localidad": 5
+  },
+  {
+   "lugar": "Prados del Sur ",
+   "id": 264,
+   "comuna": 18,
+   "tipo": 1,
+   "localidad": 5
+  },
+  {
+   "lugar": "Horizontes",
+   "id": 265,
+   "comuna": 18,
+   "tipo": 1,
+   "localidad": 5
+  },
+  {
+   "lugar": "Mario Correa Rengifo ",
+   "id": 266,
+   "comuna": 18,
+   "tipo": 1,
+   "localidad": 5
+  },
+  {
+   "lugar": "Lourdes",
+   "id": 267,
+   "comuna": 18,
+   "tipo": 1,
+   "localidad": 5
+  },
+  {
+   "lugar": "Colinas del Sur ",
+   "id": 268,
+   "comuna": 18,
+   "tipo": 1,
+   "localidad": 5
+  },
+  {
+   "lugar": "Alferez Real ",
+   "id": 269,
+   "comuna": 18,
+   "tipo": 1,
+   "localidad": 5
+  },
+  {
+   "lugar": "Napoles ",
+   "id": 270,
+   "comuna": 18,
+   "tipo": 1,
+   "localidad": 5
+  },
+  {
+   "lugar": "El Jordan ",
+   "id": 271,
+   "comuna": 18,
+   "tipo": 1,
+   "localidad": 5
+  },
+  {
+   "lugar": "Cuarteles Napoles ",
+   "id": 272,
+   "comuna": 18,
+   "tipo": 1,
+   "localidad": 5
+  },
+  {
+   "lugar": "Sector Altos de los Chorros ",
+   "id": 273,
+   "comuna": 18,
+   "tipo": 1,
+   "localidad": 5
+  },
+  {
+   "lugar": "Polvorines ",
+   "id": 274,
+   "comuna": 18,
+   "tipo": 1,
+   "localidad": 5
+  },
+  {
+   "lugar": "Sector Melendez ",
+   "id": 275,
+   "comuna": 18,
+   "tipo": 1,
+   "localidad": 5
+  },
+  {
+   "lugar": "Sector Alto Jordan ",
+   "id": 276,
+   "comuna": 18,
+   "tipo": 1,
+   "localidad": 5
+  },
+  {
+   "lugar": "Alto Napoles ",
+   "id": 277,
+   "comuna": 18,
+   "tipo": 1,
+   "localidad": 5
+  },
+  {
+   "lugar": "El Refugio ",
+   "id": 278,
+   "comuna": 19,
+   "tipo": 1,
+   "localidad": 2
+  },
+  {
+   "lugar": "La Cascada ",
+   "id": 279,
+   "comuna": 19,
+   "tipo": 1,
+   "localidad": 2
+  },
+  {
+   "lugar": "El Lido",
+   "id": 280,
+   "comuna": 19,
+   "tipo": 1,
+   "localidad": 2
+  },
+  {
+   "lugar": "Urbanizacion Tequendama ",
+   "id": 281,
+   "comuna": 19,
+   "tipo": 1,
+   "localidad": 2
+  },
+  {
+   "lugar": "Barrio Eucaristico ",
+   "id": 282,
+   "comuna": 19,
+   "tipo": 1,
+   "localidad": 2
+  },
+  {
+   "lugar": "San Fernando Nuevo ",
+   "id": 283,
+   "comuna": 19,
+   "tipo": 1,
+   "localidad": 2
+  },
+  {
+   "lugar": "Urbanizacion Nueva Granada ",
+   "id": 284,
+   "comuna": 19,
+   "tipo": 1,
+   "localidad": 2
+  },
+  {
+   "lugar": "Santa Isabel ",
+   "id": 285,
+   "comuna": 19,
+   "tipo": 1,
+   "localidad": 2
+  },
+  {
+   "lugar": "Bellavista ",
+   "id": 286,
+   "comuna": 19,
+   "tipo": 1,
+   "localidad": 2
+  },
+  {
+   "lugar": "San Fernando Viejo ",
+   "id": 287,
+   "comuna": 19,
+   "tipo": 1,
+   "localidad": 2
+  },
+  {
+   "lugar": "Miraflores ",
+   "id": 288,
+   "comuna": 19,
+   "tipo": 1,
+   "localidad": 2
+  },
+  {
+   "lugar": "3 de Julio ",
+   "id": 289,
+   "comuna": 19,
+   "tipo": 1,
+   "localidad": 2
+  },
+  {
+   "lugar": "El Cedro ",
+   "id": 290,
+   "comuna": 19,
+   "tipo": 1,
+   "localidad": 2
+  },
+  {
+   "lugar": "Champagnat",
+   "id": 291,
+   "comuna": 19,
+   "tipo": 1,
+   "localidad": 2
+  },
+  {
+   "lugar": "Urbanizacion Coseguros ",
+   "id": 292,
+   "comuna": 19,
+   "tipo": 1,
+   "localidad": 2
+  },
+  {
+   "lugar": "Los Cambulos ",
+   "id": 293,
+   "comuna": 19,
+   "tipo": 1,
+   "localidad": 2
+  },
+  {
+   "lugar": "El Mortiñal ",
+   "id": 294,
+   "comuna": 19,
+   "tipo": 1,
+   "localidad": 2
+  },
+  {
+   "lugar": "Urbanizacion Militar",
+   "id": 295,
+   "comuna": 19,
+   "tipo": 1,
+   "localidad": 2
+  },
+  {
+   "lugar": "Cuarto de Legua - Guadalupe ",
+   "id": 296,
+   "comuna": 19,
+   "tipo": 1,
+   "localidad": 2
+  },
+  {
+   "lugar": "Nueva Tequendama ",
+   "id": 297,
+   "comuna": 19,
+   "tipo": 1,
+   "localidad": 2
+  },
+  {
+   "lugar": "Camino Real - J. Borrero S. ",
+   "id": 298,
+   "comuna": 19,
+   "tipo": 1,
+   "localidad": 2
+  },
+  {
+   "lugar": "Camino Real - Los Fundadores ",
+   "id": 299,
+   "comuna": 19,
+   "tipo": 1,
+   "localidad": 2
+  },
+  {
+   "lugar": "Sector Altos de Santa Isabel ",
+   "id": 300,
+   "comuna": 19,
+   "tipo": 1,
+   "localidad": 2
+  },
+  {
+   "lugar": "Santa Barbara ",
+   "id": 301,
+   "comuna": 19,
+   "tipo": 1,
+   "localidad": 2
+  },
+  {
+   "lugar": "Tejares - Cristales ",
+   "id": 302,
+   "comuna": 19,
+   "tipo": 1,
+   "localidad": 2
+  },
+  {
+   "lugar": "Unidad Residencial Santiago de Cali",
+   "id": 303,
+   "comuna": 19,
+   "tipo": 1,
+   "localidad": 2
+  },
+  {
+   "lugar": "Unidad Residencial El Coliseo ",
+   "id": 304,
+   "comuna": 19,
+   "tipo": 1,
+   "localidad": 2
+  },
+  {
+   "lugar": "Cañaveralejo - Seguro Patria ",
+   "id": 305,
+   "comuna": 19,
+   "tipo": 1,
+   "localidad": 2
+  },
+  {
+   "lugar": "Cañaveral ",
+   "id": 306,
+   "comuna": 19,
+   "tipo": 1,
+   "localidad": 2
+  },
+  {
+   "lugar": "Pampa Linda",
+   "id": 307,
+   "comuna": 19,
+   "tipo": 1,
+   "localidad": 2
+  },
+  {
+   "lugar": "Sector Cañaveralejo Guadalupe ",
+   "id": 308,
+   "comuna": 19,
+   "tipo": 1,
+   "localidad": 2
+  },
+  {
+   "lugar": "Sector Bosque Municipal ",
+   "id": 309,
+   "comuna": 19,
+   "tipo": 1,
+   "localidad": 2
+  },
+  {
+   "lugar": "Unidad Deportiva A. Galindo - Plaza de Toros ",
+   "id": 310,
+   "comuna": 19,
+   "tipo": 1,
+   "localidad": 2
+  },
+  {
+   "lugar": "El Cortijo ",
+   "id": 311,
+   "comuna": 20,
+   "tipo": 1,
+   "localidad": 2
+  },
+  {
+   "lugar": "Belisario Caicedo ",
+   "id": 312,
+   "comuna": 20,
+   "tipo": 1,
+   "localidad": 2
+  },
+  {
+   "lugar": "Siloe ",
+   "id": 313,
+   "comuna": 20,
+   "tipo": 1,
+   "localidad": 2
+  },
+  {
+   "lugar": "Lleras Carmargo ",
+   "id": 314,
+   "comuna": 20,
+   "tipo": 1,
+   "localidad": 2
+  },
+  {
+   "lugar": "Belen ",
+   "id": 315,
+   "comuna": 20,
+   "tipo": 1,
+   "localidad": 2
+  },
+  {
+   "lugar": "Brisas de Mayo ",
+   "id": 316,
+   "comuna": 20,
+   "tipo": 1,
+   "localidad": 2
+  },
+  {
+   "lugar": "Tierra Blanca ",
+   "id": 317,
+   "comuna": 20,
+   "tipo": 1,
+   "localidad": 2
+  },
+  {
+   "lugar": "Pueblo Joven ",
+   "id": 318,
+   "comuna": 20,
+   "tipo": 1,
+   "localidad": 2
+  },
+  {
+   "lugar": "Cementerio - Carabineros ",
+   "id": 319,
+   "comuna": 20,
+   "tipo": 1,
+   "localidad": 2
+  },
+  {
+   "lugar": "Venezuela - Urbanizacion Cañaveralejo",
+   "id": 320,
+   "comuna": 20,
+   "tipo": 1,
+   "localidad": 2
+  },
+  {
+   "lugar": "La Sultana ",
+   "id": 321,
+   "comuna": 20,
+   "tipo": 1,
+   "localidad": 2
+  },
+  {
+   "lugar": "Pizamos I",
+   "id": 322,
+   "comuna": 21,
+   "tipo": 1,
+   "localidad": 7
+  },
+  {
+   "lugar": "Pizamos II",
+   "id": 323,
+   "comuna": 21,
+   "tipo": 1,
+   "localidad": 7
+  },
+  {
+   "lugar": "Calimio Desepaz",
+   "id": 324,
+   "comuna": 21,
+   "tipo": 1,
+   "localidad": 7
+  },
+  {
+   "lugar": "El Remanso ",
+   "id": 325,
+   "comuna": 21,
+   "tipo": 1,
+   "localidad": 7
+  },
+  {
+   "lugar": "Los Lideres",
+   "id": 326,
+   "comuna": 21,
+   "tipo": 1,
+   "localidad": 7
+  },
+  {
+   "lugar": "Desepaz Invicali",
+   "id": 327,
+   "comuna": 21,
+   "tipo": 1,
+   "localidad": 7
+  },
+  {
+   "lugar": "Compartir",
+   "id": 328,
+   "comuna": 21,
+   "tipo": 1,
+   "localidad": 7
+  },
+  {
+   "lugar": "Ciudad Talanga ",
+   "id": 329,
+   "comuna": 21,
+   "tipo": 1,
+   "localidad": 7
+  },
+  {
+   "lugar": "Villamercedes I - Villa Luz - las Garzas ",
+   "id": 330,
+   "comuna": 21,
+   "tipo": 1,
+   "localidad": 7
+  },
+  {
+   "lugar": "Pizamos III - Las Dalias ",
+   "id": 331,
+   "comuna": 21,
+   "tipo": 1,
+   "localidad": 7
+  },
+  {
+   "lugar": "Potrero Grande ",
+   "id": 332,
+   "comuna": 21,
+   "tipo": 1,
+   "localidad": 7
+  },
+  {
+   "lugar": "Ciudadela del Rio - CVC",
+   "id": 333,
+   "comuna": 21,
+   "tipo": 1,
+   "localidad": 7
+  },
+  {
+   "lugar": "Valle Grande ",
+   "id": 334,
+   "comuna": 21,
+   "tipo": 1,
+   "localidad": 7
+  },
+  {
+   "lugar": "Planta de Tratamiento ",
+   "id": 335,
+   "comuna": 21,
+   "tipo": 1,
+   "localidad": 7
+  },
+  {
+   "lugar": "Urbanizacion Ciudad Jardin ",
+   "id": 336,
+   "comuna": 22,
+   "tipo": 1,
+   "localidad": 5
+  },
+  {
+   "lugar": "Parcelaciones Pance ",
+   "id": 337,
+   "comuna": 22,
+   "tipo": 1,
+   "localidad": 5
+  },
+  {
+   "lugar": "Urbanizacion Rio Lili",
+   "id": 338,
+   "comuna": 22,
+   "tipo": 1,
+   "localidad": 5
+  },
+  {
+   "lugar": "Ciudad Campestre ",
+   "id": 339,
+   "comuna": 22,
+   "tipo": 1,
+   "localidad": 5
+  },
+  {
+   "lugar": "Club Campestre",
+   "id": 340,
+   "comuna": 22,
+   "tipo": 1,
+   "localidad": 5
+  },
+  {
+   "lugar": "La Leonera",
+   "id": 341,
+   "comuna": 0,
+   "tipo": 0,
+   "localidad": 1
+  },
+  {
+   "lugar": "Felidia",
+   "id": 342,
+   "comuna": 0,
+   "tipo": 0,
+   "localidad": 1
+  },
+  {
+   "lugar": "El Saladito",
+   "id": 343,
+   "comuna": 0,
+   "tipo": 0,
+   "localidad": 1
+  },
+  {
+   "lugar": "La Elvira",
+   "id": 344,
+   "comuna": 0,
+   "tipo": 0,
+   "localidad": 1
+  },
+  {
+   "lugar": "La Castilla",
+   "id": 345,
+   "comuna": 0,
+   "tipo": 0,
+   "localidad": 1
+  },
+  {
+   "lugar": "La Paz",
+   "id": 346,
+   "comuna": 0,
+   "tipo": 0,
+   "localidad": 1
+  },
+  {
+   "lugar": "Montebello",
+   "id": 347,
+   "comuna": 0,
+   "tipo": 0,
+   "localidad": 1
+  },
+  {
+   "lugar": "Golondrinas",
+   "id": 348,
+   "comuna": 0,
+   "tipo": 0,
+   "localidad": 1
+  },
+  {
+   "lugar": "Los Andes",
+   "id": 349,
+   "comuna": 0,
+   "tipo": 0,
+   "localidad": 2
+  },
+  {
+   "lugar": "Pichindé",
+   "id": 350,
+   "comuna": 0,
+   "tipo": 0,
+   "localidad": 2
+  },
+  {
+   "lugar": "Villacarmelo",
+   "id": 351,
+   "comuna": 0,
+   "tipo": 0,
+   "localidad": 2
+  },
+  {
+   "lugar": "La Buitrera",
+   "id": 352,
+   "comuna": 0,
+   "tipo": 0,
+   "localidad": 2
+  },
+  {
+   "lugar": "El Navarro",
+   "id": 353,
+   "comuna": 0,
+   "tipo": 0,
+   "localidad": 7
+  },
+  {
+   "lugar": "El Hormiguero",
+   "id": 354,
+   "comuna": 0,
+   "tipo": 0,
+   "localidad": 5
+  },
+  {
+   "lugar": "Pance",
+   "id": 355,
+   "comuna": 0,
+   "tipo": 0,
+   "localidad": 5
+  }
+ ]
+}

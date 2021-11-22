@@ -14,15 +14,18 @@ function Iniciative() {
     return () => {
       unSubscribeFromDoc();
     }
-
-
   }, [])
 
   return (
     <div>
       {initiative ?
         <div>
+          <h5> {"Iniciativas > " + initiative.name}</h5>
+          <br />
           <h1>{initiative.name}</h1>
+          <h5>{initiative.keywords.join(", ")}</h5>
+          <br />
+          <h4>{initiative.description}</h4>
         </div>
         : "Loading..."}
     </div>

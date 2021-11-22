@@ -1,33 +1,55 @@
 import React, { createContext, useState } from "react";
-import { auth, createUserWithEmailAndPasswordF, signInWithEmailAndPasswordF, onAuthStateChangedF, signOutF } from "../firebase";
+import { auth, createUserWithEmailAndPasswordF, signInWithEmailAndPasswordF, onAuthStateChangedF, signOutF, updateProfileF, collectionF, setDocF, db, docF } from "../firebase";
+
+
 export const UserContext = createContext();
 
 function UserContextProvider(props) {
+
+ const collection = "users";
+ const usersCollectionRef = collectionF(db, collection);
  const [registerEmail, setRegisterEmail] = useState("");
  const [registerPassword, setRegisterPassword] = useState("");
+ const [registerName, setRegisterName] = useState("");
  const [loginEmail, setLoginEmail] = useState("");
  const [loginPassword, setLoginPassword] = useState("");
+ const [errorMessage, setErrorMessage] = useState()
 
  const [user, setUser] = useState({});
 
  onAuthStateChangedF(auth, (currentUser) => {
   setUser(currentUser);
-  console.log("User:", user)
 
  });
 
- const register = async () => {
+ const register = async (info, intereses) => {
+
+  console.log("Info inside User Context", info)
+
   try {
-   const user = await createUserWithEmailAndPasswordF(
-    auth,
-    registerEmail,
-    registerPassword
-   );
-   console.log(user);
+   await createUserWithEmailAndPasswordF(auth, registerEmail, registerPassword).then(async (userRec) => {
+    const user = userRec.user;
+    await setDocF(docF(db, "users", user.uid), {
+     nombre: info.lugar,
+     id: info.id,
+     tipo: info.tipo,
+     localidad: info.localidad,
+     intereses: intereses
+
+    }).catch((error) => {
+     console.log(error);
+    });
+   }).catch((error) => {
+    console.log(error);
+   });
+   await updateProfileF(auth.currentUser, {
+    displayName: registerName
+   });
+
   } catch (error) {
-   console.log(error.message);
+   setErrorMessage(error.message);
   }
- };
+ }
 
  const login = async () => {
   try {
@@ -37,17 +59,21 @@ function UserContextProvider(props) {
     loginPassword
    );
    console.log("user", user);
+
   } catch (error) {
-   console.log(error.message);
+   setErrorMessage(error.message);
   }
+
+
  };
 
  const logout = async () => {
   await signOutF(auth);
+
  };
 
  return (
-  <UserContext.Provider value={{ user, setUser, logout, login, register, setRegisterEmail, setRegisterPassword, setLoginEmail, setLoginPassword }}>
+  <UserContext.Provider value={{ errorMessage, user, setUser, logout, login, register, setRegisterEmail, setRegisterPassword, setLoginEmail, setLoginPassword, setRegisterName }}>
    {props.children}
   </UserContext.Provider>
  )
