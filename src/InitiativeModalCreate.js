@@ -12,7 +12,7 @@ function IniciativeModalCreate() {
   const [sent, setSent] = useState();
   const { handleNewInitiative, uploadImage, progress } = useContext(InitiativeContext)
   const { toggleModalCreate } = useContext(SettingsContext)
-  const { user } = useContext(UserContext)
+  const { user, userInfo } = useContext(UserContext)
 
   const formEl = useRef();
 
@@ -28,6 +28,7 @@ function IniciativeModalCreate() {
 
 
   const handleImages = async (e) => {
+
     var imageUrl = "";
     try {
       imageUrl = await uploadImage(e.target.files[0], e.target.files[0].name);
@@ -55,7 +56,12 @@ function IniciativeModalCreate() {
     }).filter((value) => Object.keys(value).length !== 0).filter((value) => Object.keys(value)[0] !== "");
 
     const newSubmitted = formInputs.reduce((acc, input) => {
-      return { ...acc, ...input, keywords: kArray, userId: user.uid, creator: user.displayName };
+      return {
+        ...acc, ...input, keywords: kArray, userId: user.uid, creator: user.displayName, lugar: userInfo.lugar,
+        id_lugar: userInfo.id_lugar,
+        tipo_lugar: userInfo.tipo_lugar,
+        localidad_lugar: userInfo.localidad_lugar
+      };
     }, 0);
 
     return { ...newSubmitted, createdAt: serverTimestampF(), img: file }

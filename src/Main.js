@@ -1,8 +1,10 @@
 import React, { useContext, useEffect } from "react";
 import { Route, useHistory } from "react-router-dom";
 import Barranav from "./Barranav";
-import Card from './Card';
+import Inititatives from './Initiatives';
 import InitiativeModalCreate from "./InitiativeModalCreate";
+
+import Inicio from "./Inicio";
 import { SettingsContext } from "./providers/SettingsContext";
 import { UserContext } from "./providers/UserContext";
 
@@ -13,29 +15,32 @@ function Main() {
 
  const { user } = useContext(UserContext);
 
-
  const history = useHistory();
 
  useEffect(() => {
-  console.log("user info", user);
+
   if (!user) {
    history.push("/login");
   }
+
  }, [user])
 
 
  return (
-  <div>
+  <div className="app">
 
    {modalCreate ?
     <InitiativeModalCreate />
-    : <button onClick={toggleModalCreate}> Nuevo </button>
-   }
+    : <button className="button-add" onClick={toggleModalCreate}>  + </button>}
 
    <Barranav />
 
    <Route exact path="/">
-    <Card />
+    <Inicio />
+   </Route>
+
+   <Route exact path="/iniciativas">
+    <Inititatives />
    </Route>
    <Route path="/iniciativas/:iniciativeId">
     <Iniciative />

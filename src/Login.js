@@ -9,7 +9,7 @@ function Login() {
  const history = useHistory();
 
  useEffect(() => {
-  console.log("user info", user);
+
   if (user?.email) {
    history.push("/");
   }

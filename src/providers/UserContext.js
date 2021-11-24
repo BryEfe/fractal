@@ -1,13 +1,11 @@
 import React, { createContext, useState } from "react";
-import { auth, createUserWithEmailAndPasswordF, signInWithEmailAndPasswordF, onAuthStateChangedF, signOutF, updateProfileF, collectionF, setDocF, db, docF } from "../firebase";
+import { auth, createUserWithEmailAndPasswordF, signInWithEmailAndPasswordF, onAuthStateChangedF, signOutF, updateProfileF, collectionF, setDocF, db, docF, getDocF } from "../firebase";
 
 
 export const UserContext = createContext();
 
 function UserContextProvider(props) {
 
- const collection = "users";
- const usersCollectionRef = collectionF(db, collection);
  const [registerEmail, setRegisterEmail] = useState("");
  const [registerPassword, setRegisterPassword] = useState("");
  const [registerName, setRegisterName] = useState("");
@@ -15,7 +13,8 @@ function UserContextProvider(props) {
  const [loginPassword, setLoginPassword] = useState("");
  const [errorMessage, setErrorMessage] = useState()
 
- const [user, setUser] = useState({});
+ const [user, setUser] = useState();
+ const [userInfo, setUserInfo] = useState();
 
  onAuthStateChangedF(auth, (currentUser) => {
   setUser(currentUser);
@@ -30,10 +29,10 @@ function UserContextProvider(props) {
    await createUserWithEmailAndPasswordF(auth, registerEmail, registerPassword).then(async (userRec) => {
     const user = userRec.user;
     await setDocF(docF(db, "users", user.uid), {
-     nombre: info.lugar,
-     id: info.id,
-     tipo: info.tipo,
-     localidad: info.localidad,
+     lugar: info.lugar,
+     id_lugar: info.id,
+     tipo_lugar: info.tipo,
+     localidad_lugar: info.localidad,
      intereses: intereses
 
     }).catch((error) => {
@@ -46,6 +45,9 @@ function UserContextProvider(props) {
     displayName: registerName
    });
 
+   getUserInfo(auth.currentUser.uid);
+
+
   } catch (error) {
    setErrorMessage(error.message);
   }
@@ -53,27 +55,35 @@ function UserContextProvider(props) {
 
  const login = async () => {
   try {
-   const user = await signInWithEmailAndPasswordF(
+   await signInWithEmailAndPasswordF(
     auth,
     loginEmail,
     loginPassword
-   );
-   console.log("user", user);
+   ).then(u => { getUserInfo(u.user.uid); });
 
   } catch (error) {
    setErrorMessage(error.message);
   }
 
-
  };
 
  const logout = async () => {
   await signOutF(auth);
-
  };
 
+ const getUserInfo = async (id) => {
+  const docRef = docF(db, "users", id);
+  const docSnap = await getDocF(docRef);
+  console.log("Userinfo", docSnap.data)
+  if (docSnap.exists()) {
+   setUserInfo(docSnap.data());
+  } else {
+   console.log("No such document!");
+  }
+ }
+
  return (
-  <UserContext.Provider value={{ errorMessage, user, setUser, logout, login, register, setRegisterEmail, setRegisterPassword, setLoginEmail, setLoginPassword, setRegisterName }}>
+  <UserContext.Provider value={{ userInfo, errorMessage, user, getUserInfo, setUser, logout, login, register, setRegisterEmail, setRegisterPassword, setLoginEmail, setLoginPassword, setRegisterName }}>
    {props.children}
   </UserContext.Provider>
  )
