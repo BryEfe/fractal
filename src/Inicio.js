@@ -15,11 +15,6 @@ function Inicio() {
  return (
   <div>
 
-   {user ?
-    <div><h3>{user ? `Hola, ${user.displayName.split(" ").length >= 4 ? user.displayName.split(" ").slice(0, 3).join(" ") : user.displayName.split(" ")[0]}` : ""}</h3>
-
-     <h5>{userInfo ? <div><p>{`Sabemos que te interesan iniciativas sobre ${userInfo.intereses.join(",")}.`}</p> <p> Las siguientes iniciativas te pueden interesar</p></div> : ""}</h5></div>
-    : ""}
   </div>
  )
 }
