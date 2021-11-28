@@ -3,10 +3,12 @@ import { Route, useHistory } from "react-router-dom";
 import Barranav from "./Barranav";
 import Inititatives from './Initiatives';
 import InitiativeModalCreate from "./InitiativeModalCreate";
+import Filtros from "./Filtros";
 
 import Inicio from "./Inicio";
 import { SettingsContext } from "./providers/SettingsContext";
 import { UserContext } from "./providers/UserContext";
+
 
 import Iniciative from "./Iniciative";
 function Main() {
@@ -29,19 +31,23 @@ function Main() {
  return (
   <div className="app">
 
-   {modalCreate ?
-    <InitiativeModalCreate />
-    : <button className="button-add" onClick={toggleModalCreate}>  + </button>}
 
    <Barranav />
 
    <Route exact path="/">
     <Inicio />
+    <Inititatives />
    </Route>
 
    <Route exact path="/iniciativas">
+    <Filtros />
     <Inititatives />
+    {modalCreate ?
+     <InitiativeModalCreate />
+     : <button className="button-add" onClick={toggleModalCreate}> + </button>}
+
    </Route>
+
    <Route path="/iniciativas/:iniciativeId">
     <Iniciative />
    </Route>

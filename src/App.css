@@ -85,7 +85,8 @@ nav > a > img {
   width: 200px;
 }
 
-input {
+input,
+select {
   border: 1px solid var(--main-gray);
 }
 
@@ -115,6 +116,10 @@ a {
 
 a:hover {
   color: var(--main-highlight-color-1);
+}
+
+p {
+  color: var(--main-font-color);
 }
 
 .active {
@@ -178,12 +183,15 @@ a:hover {
 .initiative-subnavbar-filters {
   display: flex;
   align-items: center;
-  width: 40%;
+  width: 50%;
 }
 
-.initiative-subnavbar-filters input {
+.initiative-subnavbar-filters input,
+.initiative-subnavbar-filters select {
   margin-left: 16px;
   border-radius: 8px;
+
+  height: 32px;
 }
 .initiative-subnavbar-filters div {
   white-space: nowrap;
@@ -212,10 +220,19 @@ a:hover {
   padding: 32px;
 }
 
+.container-description {
+  height: 80px;
+}
+
+.container h4 {
+  color: var(--main-highlight-color-1);
+}
+
 .container img {
   height: 84px;
   width: 128px;
   margin-right: 8px;
+  object-fit: cover;
 }
 
 .container-author-time {

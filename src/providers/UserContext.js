@@ -74,7 +74,6 @@ function UserContextProvider(props) {
  const getUserInfo = async (id) => {
   const docRef = docF(db, "users", id);
   const docSnap = await getDocF(docRef);
-  console.log("Userinfo", docSnap.data)
   if (docSnap.exists()) {
    setUserInfo(docSnap.data());
   } else {

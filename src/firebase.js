@@ -1,5 +1,5 @@
 import { initializeApp } from "firebase/app"
-import { getFirestore, collection, onSnapshot, addDoc, serverTimestamp, deleteDoc, doc, setDoc, getDoc } from "@firebase/firestore";
+import { getFirestore, collection, onSnapshot, addDoc, serverTimestamp, deleteDoc, doc, setDoc, getDoc, query, where } from "@firebase/firestore";
 import { getStorage, ref, uploadBytesResumable, getDownloadURL } from "@firebase/storage";
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut, updateProfile } from "firebase/auth";
 
@@ -55,5 +55,11 @@ export const updateProfileF = updateProfile;
 export const setDocF = setDoc;
 
 export const getDocF = getDoc;
+
+export const queryF = query;
+
+export const whereF = where;
+
+
 
 

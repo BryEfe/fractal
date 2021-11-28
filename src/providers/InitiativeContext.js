@@ -1,5 +1,5 @@
 import React, { createContext, useState } from "react";
-import { db, collectionF, onSnapshotF, addDocF, docF, getStorageF, sRef, uploadBytesResumableF, getDownloadURLF } from "../firebase";
+import { db, collectionF, onSnapshotF, addDocF, docF, getStorageF, sRef, uploadBytesResumableF, getDownloadURLF, queryF, whereF } from "../firebase";
 
 export const InitiativeContext = createContext();
 
@@ -12,16 +12,19 @@ const InitiativeContextProvider = (props) => {
  const [initiative, setInitiative] = useState(null);
  const [progress, setProgress] = useState(0);
 
+ const [pickedLugar, setPickedLugar] = useState("")
+
  var unsubscribeInititatives = () => { };
  var unsubscribeInititative = () => { };
 
 
- const handleFeed = () => {
-
-  unsubscribeInititatives = onSnapshotF(initiativesCollectionRef, (data) => {
+ const handleFeed = (type, operator, value) => {
+  const q = queryF(collectionF(db, "initiatives"), whereF(type, operator, value));
+  unsubscribeInititatives = onSnapshotF(q, (data) => {
    console.log("Awake")
+
    setInitiatives(data.docs.map((doc) => ({ ...doc.data(), id: doc.id }), (error) => {
-    console.log("handle feed OnSnapshot errro:", error)
+    console.log("handle feed OnSnapshot error:", error)
    }))
   })
  }
@@ -37,8 +40,11 @@ const InitiativeContextProvider = (props) => {
  }
 
  const handleGetDoc = (ref) => {
+
   console.log("mount Doc")
   const docRef = docF(db, collection, ref);
+
+
   unsubscribeInititative = onSnapshotF(docRef, (doc) => {
    setInitiative(doc.data())
   }, (error) => {
@@ -72,7 +78,7 @@ const InitiativeContextProvider = (props) => {
 
 
  return (
-  <InitiativeContext.Provider value={{ initiatives, initiative, progress, uploadImage, handleFeed, unSubscribeFromFeed, handleNewInitiative, handleGetDoc, unSubscribeFromDoc, handleFeed }}>
+  <InitiativeContext.Provider value={{ initiatives, initiative, progress, setPickedLugar, uploadImage, handleFeed, unSubscribeFromFeed, handleNewInitiative, handleGetDoc, unSubscribeFromDoc, handleFeed }}>
    {props.children}
   </InitiativeContext.Provider>
  )
