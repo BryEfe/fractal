@@ -100,10 +100,23 @@ button {
   border-radius: 4px;
 }
 
-button:hover {
+button:hover,
+button:focus {
   color: white;
   outline: none;
   background-color: var(--main-highlight-color-1);
+}
+
+.like {
+  color: white;
+  outline: none;
+  background-color: var(--main-highlight-color-1);
+}
+
+.unlike {
+  color: var(--main-font-color) !important;
+  background-color: transparent !important;
+  outline: 1px solid var(--main-font-color) !important;
 }
 
 hr {
@@ -186,11 +199,15 @@ p {
   width: 50%;
 }
 
+.title-button {
+  display: flex;
+  justify-content: space-between;
+}
+
 .initiative-subnavbar-filters input,
 .initiative-subnavbar-filters select {
   margin-left: 16px;
   border-radius: 8px;
-
   height: 32px;
 }
 .initiative-subnavbar-filters div {

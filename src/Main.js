@@ -4,7 +4,6 @@ import Barranav from "./Barranav";
 import Inititatives from './Initiatives';
 import InitiativeModalCreate from "./InitiativeModalCreate";
 import Filtros from "./Filtros";
-
 import Inicio from "./Inicio";
 import { SettingsContext } from "./providers/SettingsContext";
 import { UserContext } from "./providers/UserContext";
@@ -13,49 +12,45 @@ import { UserContext } from "./providers/UserContext";
 import Iniciative from "./Iniciative";
 function Main() {
 
- const { modalCreate, toggleModalCreate } = useContext(SettingsContext)
+  const { modalCreate, toggleModalCreate } = useContext(SettingsContext)
 
- const { user } = useContext(UserContext);
+  const { user } = useContext(UserContext);
 
- const history = useHistory();
+  const history = useHistory();
 
- useEffect(() => {
+  useEffect(() => {
 
-  if (!user) {
-   history.push("/login");
-  }
+    if (!user) {
+      history.push("/login");
+    }
 
- }, [user])
-
-
- return (
-  <div className="app">
+  }, [user])
 
 
-   <Barranav />
+  return (
+    <div className="app">
 
-   <Route exact path="/">
-    <Inicio />
-    <Inititatives />
-   </Route>
+      <Barranav />
 
-   <Route exact path="/iniciativas">
-    <Filtros />
-    <Inititatives />
-    {modalCreate ?
-     <InitiativeModalCreate />
-     : <button className="button-add" onClick={toggleModalCreate}> + </button>}
+      <Route exact path="/">
+        <Inicio />
+        <Inititatives />
+      </Route>
 
-   </Route>
+      <Route exact path="/iniciativas">
+        <Filtros />
+        <Inititatives />
+        {modalCreate ?
+          <InitiativeModalCreate />
+          : <button className="button-add" onClick={toggleModalCreate}> + </button>}
+      </Route>
 
-   <Route path="/iniciativas/:iniciativeId">
-    <Iniciative />
-   </Route>
+      <Route path="/iniciativas/:iniciativeId">
+        <Iniciative />
+      </Route>
 
-
-
-  </div>
- )
+    </div>
+  )
 }
 
 export default Main

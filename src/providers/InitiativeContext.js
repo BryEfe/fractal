@@ -1,5 +1,5 @@
 import React, { createContext, useState } from "react";
-import { db, collectionF, onSnapshotF, addDocF, docF, getStorageF, sRef, uploadBytesResumableF, getDownloadURLF, queryF, whereF } from "../firebase";
+import { db, collectionF, onSnapshotF, addDocF, docF, setDocF, getStorageF, sRef, uploadBytesResumableF, getDownloadURLF, queryF, whereF } from "../firebase";
 
 export const InitiativeContext = createContext();
 
@@ -57,6 +57,15 @@ const InitiativeContextProvider = (props) => {
   unsubscribeInititative();
  }
 
+ const setLike = async (id, uid, oldArray) => {
+
+  var newArray = oldArray.includes(uid) ? oldArray.filter(oi => oi != uid) : [...oldArray, uid]
+
+  console.log("hola", newArray)
+  await setDocF(docF(db, "initiatives", id), { followers: newArray }, { merge: true });
+
+ }
+
  const uploadImage = (imageToUpload, name) => {
 
   const storage = getStorageF();
@@ -68,8 +77,8 @@ const InitiativeContextProvider = (props) => {
   return new Promise((resolve, reject) => {
    uploadTask.on('state_changed', (snap) => {
 
-
     setProgress(Math.round((snap.bytesTransferred / snap.totalBytes) * 100));
+
    }, (error) => { reject(error); },
     () => getDownloadURLF(uploadTask.snapshot.ref).then((downloadURL) => { setProgress(0); resolve(downloadURL); })
    )
@@ -78,7 +87,7 @@ const InitiativeContextProvider = (props) => {
 
 
  return (
-  <InitiativeContext.Provider value={{ initiatives, initiative, progress, setPickedLugar, uploadImage, handleFeed, unSubscribeFromFeed, handleNewInitiative, handleGetDoc, unSubscribeFromDoc, handleFeed }}>
+  <InitiativeContext.Provider value={{ initiatives, initiative, progress, setPickedLugar, setLike, uploadImage, handleFeed, unSubscribeFromFeed, handleNewInitiative, handleGetDoc, unSubscribeFromDoc, handleFeed }}>
    {props.children}
   </InitiativeContext.Provider>
  )
