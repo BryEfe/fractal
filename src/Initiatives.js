@@ -14,7 +14,6 @@ function Card() {
     var optionsTime = { hour12: "false" };
 
     const like = (array) => {
-        console.log("user", user.uid.localeCompare(array[0]))
         return array[0] ? user.uid.localeCompare(array[0]) : false;
     }
 
@@ -25,11 +24,12 @@ function Card() {
                 {initiatives
                     ?
                     <div>{initiatives.length > 1 ? <div className="initiative-container">{initiatives.map(i => {
-                        return <div key={i.id}>
+                        return < Link to={`iniciativas/${i.id}`
+                        } key={i.id}>
                             <div className="container">
                                 <div className="title-button">
                                     <h4>{i.name}</h4>
-                                    {user.uid !== i.userId ? <button onClick={() => setLike(i.id, user.uid, i.followers)} className={like(i.followers) === 0 ? "like" : "unlike"}>Seguir</button> : ""}
+                                    {user.uid !== i.userId ? <button onClick={(e) => { e.preventDefault(); setLike(i.id, user.uid, i.followers) }} className={like(i.followers) === 0 ? "like" : "unlike"}>Seguir</button> : ""}
                                 </div>
 
                                 <div className="container-author-time">
@@ -47,7 +47,7 @@ function Card() {
 
                                 <Link to={`iniciativas/${i.id}`}> Ver Más...</Link>
                             </div>
-                        </div>
+                        </Link >
                     })}</div> : ""}</div>
 
                     :

@@ -61,7 +61,6 @@ const InitiativeContextProvider = (props) => {
 
   var newArray = oldArray.includes(uid) ? oldArray.filter(oi => oi != uid) : [...oldArray, uid]
 
-  console.log("hola", newArray)
   await setDocF(docF(db, "initiatives", id), { followers: newArray }, { merge: true });
 
  }
