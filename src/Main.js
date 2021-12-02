@@ -7,9 +7,9 @@ import Filtros from "./Filtros";
 import Inicio from "./Inicio";
 import { SettingsContext } from "./providers/SettingsContext";
 import { UserContext } from "./providers/UserContext";
+import Iniciative from "./Initiative/Iniciative";
 
 
-import Iniciative from "./Iniciative";
 function Main() {
 
   const { modalCreate, toggleModalCreate } = useContext(SettingsContext)

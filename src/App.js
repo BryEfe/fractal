@@ -4,7 +4,6 @@ import Login from "./Login";
 import Main from "./Main";
 import SignUp from "./SignUp";
 
-import Iniciative from "./Iniciative";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 

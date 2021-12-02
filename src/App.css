@@ -185,6 +185,7 @@ p {
 
 .initiative {
   margin: 16px;
+  width: 100%;
 }
 
 .initiative-subnavbar {
@@ -579,31 +580,25 @@ h4 {
 
 /*initiative.js */
 
-.initiative-name-actions {
+.images-iniciativa {
   display: flex;
   flex-direction: row;
-  align-items: center;
+  overflow-x: scroll;
+}
+
+.images-iniciativa img {
+  width: 375px !important;
+  height: 272px !important;
+  margin-right: 8px;
+  border-radius: 8px;
+  background-color: lightgray;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
 }
 
 .initiative p {
   max-width: 800px;
-}
-
-.images-iniciativa {
-  display: flex;
-  flex-direction: row;
-}
-
-.images-iniciativa div {
-  height: 272px;
-  width: 368px;
-  margin-right: 8px;
-}
-
-.images-iniciativa img {
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
 }
 
 .info-initiative {
@@ -613,4 +608,57 @@ h4 {
 
 .info-initiative h5 {
   margin-right: 10px;
+}
+
+.initiative-description-likes {
+  display: grid;
+  padding-top: 16px;
+  grid-gap: 32px;
+  grid-template-columns: repeat(auto-fill, minmax(45%, 1fr));
+  color: lightgray;
+}
+
+.initiative-name-follow {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.initiative-name-follow h2 {
+  margin-right: 32px;
+}
+
+.initiative-breadcrumbs-nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+.initiative-actions ul {
+  margin-right: 16px;
+  display: flex;
+}
+.initiative-actions li {
+  list-style-type: none;
+}
+
+.initiative-actions li a {
+  margin-right: 16px;
+  padding: 8px;
+
+  border-radius: 4px;
+  outline: 1px solid var(--main-font-color);
+}
+
+.initiative-actions li a:hover {
+  color: white;
+  background-color: var(--main-highlight-color-1) !important;
+  outline: none;
+  transition: 0.2s background-color;
+}
+.initiative-actions li .active {
+  margin-right: 16px;
+  outline: none;
+  color: white;
+
+  background-color: var(--main-highlight-color-1);
+  list-style-type: none;
 }

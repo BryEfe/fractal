@@ -5,9 +5,14 @@ export const InitiativeContext = createContext();
 
 const InitiativeContextProvider = (props) => {
  // Reference to the collection this context works for. 
- const collection = "initiatives";
 
- const initiativesCollectionRef = collectionF(db, collection);
+
+ const initiativesCollectionRef = collectionF(db, "initiatives");
+
+ const discussionCollectionRef = collectionF(db, "discussion");
+
+ const changesCollectionRef = collectionF(db, "changes");
+
  const [initiatives, setInitiatives] = useState([]);
  const [initiative, setInitiative] = useState(null);
  const [progress, setProgress] = useState(0);
@@ -39,11 +44,17 @@ const InitiativeContextProvider = (props) => {
   return docRef.id;
  }
 
+
+ const handleNewChange = async (payload) => {
+  const docRef = await addDocF(changesCollectionRef, payload);
+  return docRef.id;
+ }
+
+
  const handleGetDoc = (ref) => {
 
   console.log("mount Doc")
-  const docRef = docF(db, collection, ref);
-
+  const docRef = docF(db, "initiatives", ref);
 
   unsubscribeInititative = onSnapshotF(docRef, (doc) => {
    setInitiative(doc.data())
@@ -54,7 +65,9 @@ const InitiativeContextProvider = (props) => {
 
  const unSubscribeFromDoc = () => {
   console.log("unmount")
+  setInitiative();
   unsubscribeInititative();
+
  }
 
  const setLike = async (id, uid, oldArray) => {
