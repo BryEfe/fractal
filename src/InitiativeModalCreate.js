@@ -32,9 +32,7 @@ function IniciativeModalCreate({ toggleModalCreate }) {
     try {
       imageUrl = await uploadImage(e.target.files[0], e.target.files[0].name);
       console.log("Promise Image", imageUrl)
-    } catch (error) {
-      console.log("Promise Image", error)
-    }
+    } catch (error) { console.log("Promise Image", error) }
     setFile((oldFile) => [...oldFile, imageUrl]);
   }
 
@@ -47,7 +45,6 @@ function IniciativeModalCreate({ toggleModalCreate }) {
           kArray.push(e.name)
         }
       }
-
       return !e.hasOwnProperty('checked') ? { [e.name]: e.value } : {}
     }).filter((value) => Object.keys(value).length !== 0).filter((value) => Object.keys(value)[0] !== "");
 
@@ -69,7 +66,6 @@ function IniciativeModalCreate({ toggleModalCreate }) {
         <div onClick={toggleModalCreate}><strong>x</strong> </div>
         {!sent ?
           <div className="modal-form">
-
             <form ref={formEl} onSubmit={(e) => handleNew(e)} id="confirmationForm">
               <label htmlFor="name-input"> Titulo del Proyecto</label>
               <input id="name-input" name="name" type="text" placeholder="Titulo de tu proyecto" />
@@ -81,6 +77,7 @@ function IniciativeModalCreate({ toggleModalCreate }) {
                   <input type="file" id="file" name="img" accept="image/*" onChange={(e) => handleImages(e)} />
 
                   <label htmlFor="file"> <progress id="file" value={progress} max="100" style={progress === 0 ? {} : { background: "#FF8D97" }} />{progress === 0 ? <p>+</p> : <p>{progress + "%"}</p>}</label>
+
                   {file
                     ? file.map((f, index) => {
                       return <div className="image-added" key={index}>
@@ -90,6 +87,7 @@ function IniciativeModalCreate({ toggleModalCreate }) {
                       </div>
                     })
                     : ""}
+
                 </div>
               </div>
               <label>Palabras Clave</label>

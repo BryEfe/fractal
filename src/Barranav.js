@@ -5,9 +5,7 @@ import { UserContext } from "./providers/UserContext";
 
 function Barranav() {
 
-    const history = useHistory();
 
-    const goToLogin = () => history.push("/login");
 
     const { user, logout } = useContext(UserContext);
 
@@ -21,7 +19,7 @@ function Barranav() {
                 <li><NavLink to="/iniciativas" activeClassName='active'>Iniciativas</NavLink></li>
 
                 <li>{user?.displayName}</li>
-                <button onClick={user?.email ? logout : goToLogin}> Sign {user?.email ? "Out" : "In"} </button>
+                <button onClick={user?.email ? logout : ""}> Sign {user?.email ? "Out" : "In"} </button>
             </ul>
         </nav>
     )

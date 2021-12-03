@@ -18,16 +18,12 @@ function App() {
         <Route path="/iniciativas">
           <Main />
         </Route>
-        <Route exact path="/signup">
-          <SignUp />
-        </Route>
         <Route exact path="/login">
           <Login />
         </Route>
         <Route path="*">
           <h2>Error 404</h2>
         </Route>
-
       </Switch>
     </BrowserRouter >
   );

@@ -1,20 +1,30 @@
-import React, { useContext, useState, useRef } from 'react'
+import React, { useContext, useEffect } from 'react'
 import { InitiativeContext } from "./providers/InitiativeContext";
 import { Link } from "react-router-dom";
 import { UserContext } from "./providers/UserContext";
+import { useHistory } from "react-router-dom";
 
 function Card() {
 
     const { initiatives, setLike } = useContext(InitiativeContext)
-
-
     const { user } = useContext(UserContext)
+
+
+    const history = useHistory();
+
+    useEffect(() => {
+
+        if (!user) {
+            history.push("/login");
+        }
+
+    }, [user])
+
     var options = { weekday: "long", month: "long", day: "numeric" };
 
     var optionsTime = { hour12: "false" };
 
     const like = (array) => {
-
         return array[0] ? user.uid.localeCompare(array[0]) : false;
     }
 
@@ -30,7 +40,9 @@ function Card() {
                             <div className="container">
                                 <div className="title-button">
                                     <h4>{i.name}</h4>
-                                    {user.uid !== i.userId ? <button onClick={(e) => { e.preventDefault(); setLike(i.id, user.uid, i.followers) }} className={like(i.followers) === 0 ? "like" : "unlike"}>{like(i.followers) === 0 ? "Siguiendo" : "Seguir"}</button> : ""}
+                                    {user ? user.uid !== i.userId ? <button onClick={(e) => { e.preventDefault(); setLike(i.id, user.uid, i.followers) }} className={like(i.followers) === 0 ? "like" : "unlike"}>
+                                        {like(i.followers) === 0 ? "Siguiendo" : "Seguir"}
+                                    </button> : "" : ""}
                                 </div>
 
                                 <div className="container-author-time">

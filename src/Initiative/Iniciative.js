@@ -35,7 +35,6 @@ function Iniciative() {
 
   return (
     <div className="initiative">
-
       {initiative ?
         <div>
           <div className="initiative-breadcrumbs-nav">

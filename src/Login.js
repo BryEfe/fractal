@@ -15,6 +15,8 @@ function Login() {
 
   if (user?.email) {
    history.push("/");
+   setLoginEmail();
+   setLoginPassword();
   }
 
  }, [user])
@@ -51,7 +53,7 @@ function Login() {
       }}
      />
 
-     <h5>{errorMessage}</h5>
+     <h5>{errorMessage ? "Usuario o Cuenta incorrecta" : ""}</h5>
      <div className="login-buttons">
       <div onClick={login}>Ingresar</div>
       <div onClick={() => { setPopUpSignUp(true) }}>Crear Cuenta</div>

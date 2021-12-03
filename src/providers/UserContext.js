@@ -18,6 +18,7 @@ function UserContextProvider(props) {
 
  onAuthStateChangedF(auth, (currentUser) => {
   setUser(currentUser);
+  console.log("nombre", registerName, registerName)
 
  });
 
@@ -54,6 +55,7 @@ function UserContextProvider(props) {
  }
 
  const login = async () => {
+
   try {
    await signInWithEmailAndPasswordF(
     auth,
@@ -68,6 +70,7 @@ function UserContextProvider(props) {
  };
 
  const logout = async () => {
+
   await signOutF(auth);
  };
 
