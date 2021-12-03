@@ -15,7 +15,7 @@ function Change({ user, id }) {
  return (
 
   <div className="initiative">
-   {updates ?
+   {updates.length > 0 ?
     <div className="initiative-container">{
      updates.map(i => {
       return <div className="container update">
