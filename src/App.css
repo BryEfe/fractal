@@ -88,6 +88,9 @@ nav > a > img {
 input,
 select {
   border: 1px solid var(--main-gray);
+  border-color: var(--secondary-gray);
+  color: var(--main-font-color);
+  border-radius: 8px;
 }
 
 button {
@@ -97,7 +100,7 @@ button {
   border: none;
   padding: 8px 16px;
   transition: 0.2s background-color;
-  border-radius: 4px;
+  border-radius: 8px;
 }
 
 button:hover,
@@ -114,9 +117,10 @@ button:focus {
 }
 
 .unlike {
-  color: var(--main-font-color) !important;
+  color: var(--main-gray) !important;
   background-color: transparent !important;
-  outline: 1px solid var(--main-font-color) !important;
+  outline: 1px solid var(--secondary-gray) !important;
+  border-radius: 4px;
 }
 
 hr {
@@ -220,50 +224,12 @@ p {
   cursor: pointer;
 }
 
-.container p {
-  width: 100%;
-  overflow: hidden;
-  display: -webkit-box;
-  -webkit-line-clamp: 4;
-  -webkit-box-orient: vertical;
-}
 
-.container {
-  display: grid;
-  row-gap: 8px;
-  background-color: white;
-  border-style: solid;
-  border-width: 1px;
-  border-radius: 10px;
-  padding: 32px;
-}
-
-.container-description {
-  height: 80px;
-}
-
-.container h4 {
-  color: var(--main-highlight-color-1);
-}
-
-.container img {
-  height: 84px;
-  width: 128px;
-  margin-right: 8px;
-  object-fit: cover;
-}
-
-.container-author-time {
-  display: flex;
-}
-.container-author-time h5 {
-  margin-right: 8px;
-  text-transform: capitalize;
-}
 
 /* width */
 ::-webkit-scrollbar {
   width: 5px;
+  height: 5px;
 }
 
 /* Track */
@@ -304,25 +270,24 @@ p {
   padding: 32px;
   display: flex;
   flex-direction: column;
-  border-radius: 8px;
+  border-radius: 4px;
 }
 
 .modal-body input {
   font-size: 16px;
-
   margin-top: 4px;
   border-radius: 8px;
-  border-color: var(--secondary-gray);
-  color: var(--main-font-color);
 }
 
 .modal-body button {
   border-color: var(--secondary-gray);
-  color: var(--main-font-color);
+  color: white;
 }
 
-.modal-body h3 {
+.modal-body h4 {
   margin-bottom: 8px;
+  margin-top: 4px;
+  color: var(--main-font-color);
 }
 
 .modal-form {
@@ -332,9 +297,16 @@ p {
 
 .modal-form textarea,
 input {
+  border-radius: 4px;
   padding: 8px;
   width: 100%;
   font-family: "Inter", sans-serif;
+}
+
+.modal-form button {
+  color:white;
+  margin-top: 8px;
+  border-radius: 4px;
 }
 
 [type="file"] {
@@ -348,7 +320,7 @@ input {
 [type="file"] + label {
   position: relative;
   background: var(--main-gray);
-  border-radius: 5px;
+  border-radius: 4px;
   overflow: hidden;
   color: #fff;
   cursor: pointer;
@@ -379,7 +351,7 @@ progress {
 }
 progress::-webkit-progress-bar {
   background-color: transparent;
-  border-radius: 7px;
+  border-radius: 8px;
 }
 
 progress::-webkit-progress-value {
@@ -390,12 +362,12 @@ progress::-webkit-progress-value {
   display: flex;
   flex-direction: row;
   overflow: scroll;
-  padding: 4px;
 }
 
 .images {
   display: flex;
   flex-direction: row;
+  height: 88px;
 }
 
 .image-added {
@@ -432,7 +404,7 @@ progress::-webkit-progress-value {
   height: 84px;
   width: 128px;
   margin: 0px 8px;
-  border-radius: 5px;
+  border-radius: 8px;
   overflow: hidden;
 }
 
@@ -451,19 +423,12 @@ progress::-webkit-progress-value {
   float: left;
 }
 
-#ck-button {
-  margin: 4px;
-  background-color: #efefef;
-  border-radius: 4px;
-  border: 1px solid #d0d0d0;
-  overflow: auto;
-  float: left;
-}
+
 
 #ck-button:hover {
   margin: 4px;
   background-color: #efefef;
-  border-radius: 4px;
+  border-radius: 8px;
   border: 1px solid red;
   overflow: auto;
   float: left;
@@ -544,7 +509,19 @@ h4 {
   background: var(--main-highlight-color-2);
 }
 
-/* **/
+.login-input input{
+margin-top: 4px;
+}
+
+/* CONTAINER**/
+
+.container p,a {
+  font-size: var(--main-font-size);
+}
+
+.container img {
+  border-radius: 4px;
+}
 
 .container-toggle-switch {
   display: flex;
@@ -554,6 +531,55 @@ h4 {
 
 .container-toggle-switch p {
   margin: 0 5px;
+}
+
+.container p {
+  width: 100%;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+}
+
+.container {
+  display: grid;
+  row-gap: 8px;
+  background-color: white;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 8px;
+  padding: 32px;
+}
+
+.container-description {
+  height: 80px;
+}
+
+.container h4 {
+  color: var(--main-highlight-color-1);
+  font-size: 32px;
+}
+
+.container hr {
+  height: 1px;
+  border: 0; 
+  border-top: 1px solid;
+  border-color: var(--secondary-gray);
+}
+
+.container img {
+  height: 84px;
+  width: 128px;
+  margin-right: 8px;
+  object-fit: cover;
+}
+
+.container-author-time {
+  display: flex;
+}
+.container-author-time h5 {
+  margin-right: 8px;
+  text-transform: capitalize;
 }
 
 .toggle-switch {
@@ -663,8 +689,7 @@ h4 {
 .initiative-actions li a {
   margin-right: 16px;
   padding: 8px;
-
-  border-radius: 4px;
+  border-radius: 8px;
   outline: 1px solid var(--main-font-color);
 }
 
@@ -682,3 +707,4 @@ h4 {
   background-color: var(--main-highlight-color-1);
   list-style-type: none;
 }
+

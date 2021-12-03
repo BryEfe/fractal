@@ -63,15 +63,15 @@ function IniciativeModalCreate({ toggleModalCreate }) {
   return (
     <div className="modal" onClick={toggleModalCreate}>
       <div className="modal-body" onClick={(e) => e.stopPropagation()}>
-        <div onClick={toggleModalCreate}><strong>x</strong> </div>
+        <div onClick={toggleModalCreate}><button className="close">x</button> </div>
         {!sent ?
           <div className="modal-form">
             <form ref={formEl} onSubmit={(e) => handleNew(e)} id="confirmationForm">
-              <label htmlFor="name-input"> Titulo del Proyecto</label>
+              <h4 htmlFor="name-input"> Titulo del Proyecto</h4>
               <input id="name-input" name="name" type="text" placeholder="Titulo de tu proyecto" />
-              <label htmlFor="team-input">Descripción</label>
+              <h4 htmlFor="team-input">Descripción</h4>
               <textarea name="description" type="text" cols="40" rows="5" />
-              <label>Añadir Imágenes</label>
+              <h4>Añadir Imágenes</h4>
               <div className="modal-upload-images" >
                 <div className="images">
                   <input type="file" id="file" name="img" accept="image/*" onChange={(e) => handleImages(e)} />
@@ -90,7 +90,7 @@ function IniciativeModalCreate({ toggleModalCreate }) {
 
                 </div>
               </div>
-              <label>Palabras Clave</label>
+              <h4>Palabras Clave</h4>
               <div className="keywords">
                 {keywords.map((k, index) => {
                   return <label id="ck-button" key={index}>
@@ -100,7 +100,7 @@ function IniciativeModalCreate({ toggleModalCreate }) {
                 })}
               </div>
 
-              <button type="submit">SUBMIT</button>
+              <button type="submit">Añadir</button>
             </form>
           </div> : "Iniciativa Enviada"}
       </div>
