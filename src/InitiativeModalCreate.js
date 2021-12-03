@@ -50,7 +50,7 @@ function IniciativeModalCreate({ toggleModalCreate }) {
 
     const newSubmitted = formInputs.reduce((acc, input) => {
       return {
-        ...acc, ...input, keywords: kArray, userId: user.uid, creator: user.displayName, lugar: userInfo.lugar,
+        ...acc, ...input, keywords: kArray, userId: user.uid, creator: user.displayName, lugar: userInfo.lugar, followers: [],
         id_lugar: userInfo.id_lugar,
         tipo_lugar: userInfo.tipo_lugar,
         localidad_lugar: userInfo.localidad_lugar

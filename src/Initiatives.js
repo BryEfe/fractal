@@ -13,11 +13,9 @@ function Card() {
     const history = useHistory();
 
     useEffect(() => {
-
         if (!user) {
             history.push("/login");
         }
-
     }, [user])
 
     var options = { weekday: "long", month: "long", day: "numeric" };
@@ -34,7 +32,7 @@ function Card() {
             <div>
                 {initiatives
                     ?
-                    <div>{initiatives.length > 1 ? <div className="initiative-container">{initiatives.map(i => {
+                    <div>{initiatives.length > 0 ? <div className="initiative-container">{initiatives.map(i => {
                         return < Link to={`iniciativas/${i.id}/resumen`
                         } key={i.id}>
                             <div className="container">
