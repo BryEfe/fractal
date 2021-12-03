@@ -5,7 +5,7 @@ import { useHistory } from "react-router-dom";
 import { b } from "./barrios.json"
 import { t } from "./temas.json";
 
-function SignUp() {
+function SignUp({ setPopUpSignUp }) {
 
   const { user, register, setRegisterEmail, setRegisterPassword, setRegisterName } = useContext(UserContext);
 
@@ -53,8 +53,8 @@ function SignUp() {
   };
 
   return (
-    <div>
-      <div>
+    <div className="modal" onClick={() => setPopUpSignUp(false)}>
+      <div className="modal-body" onClick={(e) => e.stopPropagation()}>
         <h3>Crear Nueva Cuenta</h3>
         <div>
           <input

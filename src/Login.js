@@ -1,12 +1,15 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { UserContext } from "./providers/UserContext";
 import { useHistory, Link } from "react-router-dom";
+import SignUp from "./SignUp";
 
 function Login() {
 
  const { user, login, setLoginEmail, setLoginPassword, errorMessage } = useContext(UserContext);
 
  const history = useHistory();
+
+ const [popUpSignUp, setPopUpSignUp] = useState(false)
 
  useEffect(() => {
 
@@ -39,6 +42,7 @@ function Login() {
        setLoginEmail(event.target.value);
       }}
      />
+
      <input
       placeholder="Contraseña"
       type="password"
@@ -46,16 +50,15 @@ function Login() {
        setLoginPassword(event.target.value);
       }}
      />
+
      <h5>{errorMessage}</h5>
      <div className="login-buttons">
       <div onClick={login}>Ingresar</div>
-      <Link to="/signup"><div onClick={login}>Crear Cuenta</div></Link>
-
+      <div onClick={() => { setPopUpSignUp(true) }}>Crear Cuenta</div>
      </div>
     </div>
-
    </div>
-
+   {popUpSignUp ? <SignUp setPopUpSignUp={setPopUpSignUp} /> : ""}
   </div>
  )
 }
