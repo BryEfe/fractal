@@ -28,7 +28,7 @@ function Filtros() {
 
     }
     return () => { unSubscribeFromFeed() };
-  }, [userInfo]);
+  }, []);
 
 
   const handleBarrios = (event) => {
