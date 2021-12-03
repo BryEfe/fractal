@@ -98,7 +98,6 @@ function SignUp({ setPopUpSignUp }) {
         </datalist>
 
         {barrio ? <div>
-          <p> {`El ${barrio.tipo === 1 ? `barrio ${barrio.lugar} esta actualmente ubicado en la comuna ${barrio.comuna}.` : `corregimiento es ${barrio.lugar}`}`}</p>
           <p>{`En Cali, Distrito Especial, tu ${barrio.tipo === 1 ? "barrio" : "corregimiento"} estará en la localidad ${barrio.localidad}`}</p>  </div >
           : ""}
 

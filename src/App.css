@@ -91,9 +91,9 @@ select {
 }
 
 button {
-  color: var(--main-font-color);
-  outline: 1px solid var(--main-font-color);
-  background-color: transparent;
+  color: white;
+
+  background-color: var(--main-highlight-color-1);
   border: none;
   padding: 8px 16px;
   transition: 0.2s background-color;
@@ -104,7 +104,7 @@ button:hover,
 button:focus {
   color: white;
   outline: none;
-  background-color: var(--main-highlight-color-1);
+  background-color: var(--main-highlight-color-2);
 }
 
 .like {
@@ -297,13 +297,32 @@ p {
 }
 
 .modal-body {
+  font-size: 16px;
   background: white;
   z-index: 1;
-  height: 500px;
   width: 400px;
-  padding: 10px;
+  padding: 32px;
   display: flex;
   flex-direction: column;
+  border-radius: 8px;
+}
+
+.modal-body input {
+  font-size: 16px;
+
+  margin-top: 4px;
+  border-radius: 8px;
+  border-color: var(--secondary-gray);
+  color: var(--main-font-color);
+}
+
+.modal-body button {
+  border-color: var(--secondary-gray);
+  color: var(--main-font-color);
+}
+
+.modal-body h3 {
+  margin-bottom: 8px;
 }
 
 .modal-form {
@@ -424,6 +443,7 @@ progress::-webkit-progress-value {
 
 #ck-button {
   margin: 4px;
+  padding: 4px;
   background-color: #efefef;
   border-radius: 4px;
   border: 1px solid #d0d0d0;
