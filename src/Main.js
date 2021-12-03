@@ -34,7 +34,7 @@ function Main() {
 
       <Route exact path="/">
         <Inicio />
-        <Inititatives />
+
       </Route>
 
       <Route exact path="/iniciativas">

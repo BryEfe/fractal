@@ -9,7 +9,7 @@ const InitiativeContextProvider = (props) => {
  const [initiatives, setInitiatives] = useState([]);
  const [initiative, setInitiative] = useState(null);
  const [progress, setProgress] = useState(0);
-
+ const [updates, setUpdates] = useState(null)
  const [pickedLugar, setPickedLugar] = useState("");
 
  var unsubscribeInititatives = () => { };
@@ -19,9 +19,16 @@ const InitiativeContextProvider = (props) => {
  const handleQuery = (collection, type, operator, value) => {
   const q = queryF(collectionF(db, collection), whereF(type, operator, value));
   unsubscribeInititatives = onSnapshotF(q, (data) => {
-   setInitiatives(data.docs.map((doc) => ({ ...doc.data(), id: doc.id }), (error) => {
-    console.log("handle feed OnSnapshot error:", error)
-   }))
+   switch (collection) {
+    case "initiatives":
+     setInitiatives(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })))
+     break;
+    case "changes":
+     setUpdates(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })))
+     break;
+   }
+  }, (error) => {
+   console.log("handle feed OnSnapshot error:", error)
   })
  }
 
@@ -75,7 +82,7 @@ const InitiativeContextProvider = (props) => {
 
 
  return (
-  <InitiativeContext.Provider value={{ initiatives, initiative, progress, setPickedLugar, setLike, uploadImage, handleQuery, unSubscribeFromFeed, handleNewDoc, handleGetDoc, unSubscribeFromDoc }}>
+  <InitiativeContext.Provider value={{ initiatives, updates, initiative, progress, setPickedLugar, setLike, uploadImage, handleQuery, unSubscribeFromFeed, handleNewDoc, handleGetDoc, unSubscribeFromDoc }}>
    {props.children}
   </InitiativeContext.Provider>
  )

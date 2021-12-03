@@ -48,8 +48,6 @@ function Iniciative() {
               </ul>
             </div>
           </div>
-
-
           <Route exact path={`/iniciativas/${iniciativeId}/resumen`} >
             <Summary initiative={initiative} user={user} setLike={setLike} id={iniciativeId} />
           </Route >
