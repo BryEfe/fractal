@@ -5,13 +5,16 @@ import Summary from "./Summary";
 import Change from "./Change";
 import Discussion from "./Discussion";
 import { useParams, Route, NavLink, useHistory } from "react-router-dom";
-
+import DiscussionModalCreate from "../DiscussionModalCreate";
+import { SettingsContext } from "../providers/SettingsContext";
 
 function Iniciative() {
 
   const history = useHistory();
 
   let { iniciativeId } = useParams();
+
+  const { modalCreate, toggleModalCreate } = useContext(SettingsContext)
 
   const { handleGetDoc, initiative, unSubscribeFromDoc, setLike } = useContext(InitiativeContext)
 
@@ -54,7 +57,9 @@ function Iniciative() {
 
           <Route exact path={`/iniciativas/${iniciativeId}/anuncios`} >
             <Change initiative={initiative} user={user} setLike={setLike} id={iniciativeId} />
-
+            {modalCreate ?
+              <DiscussionModalCreate toggleModalCreate={toggleModalCreate} id={iniciativeId} />
+              : <button className="button-add" onClick={toggleModalCreate} >  + </button>}
           </Route >
           <Route exact path={`/iniciativas/${iniciativeId}/discusion`} >
             <Discussion initiative={initiative} user={user} setLike={setLike} id={iniciativeId} />

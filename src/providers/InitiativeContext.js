@@ -6,68 +6,44 @@ export const InitiativeContext = createContext();
 const InitiativeContextProvider = (props) => {
  // Reference to the collection this context works for. 
 
-
- const initiativesCollectionRef = collectionF(db, "initiatives");
-
- const discussionCollectionRef = collectionF(db, "discussion");
-
- const changesCollectionRef = collectionF(db, "changes");
-
  const [initiatives, setInitiatives] = useState([]);
  const [initiative, setInitiative] = useState(null);
  const [progress, setProgress] = useState(0);
 
- const [pickedLugar, setPickedLugar] = useState("")
+ const [pickedLugar, setPickedLugar] = useState("");
 
  var unsubscribeInititatives = () => { };
  var unsubscribeInititative = () => { };
 
 
- const handleFeed = (type, operator, value) => {
-  const q = queryF(collectionF(db, "initiatives"), whereF(type, operator, value));
+ const handleQuery = (collection, type, operator, value) => {
+  const q = queryF(collectionF(db, collection), whereF(type, operator, value));
   unsubscribeInititatives = onSnapshotF(q, (data) => {
-   console.log("Awake")
-
    setInitiatives(data.docs.map((doc) => ({ ...doc.data(), id: doc.id }), (error) => {
     console.log("handle feed OnSnapshot error:", error)
    }))
   })
  }
 
- const unSubscribeFromFeed = () => {
-  console.log("unmount")
-  unsubscribeInititatives();
- }
+ const unSubscribeFromFeed = () => { unsubscribeInititatives(); }
 
- const handleNewInitiative = async (payload) => {
-  const docRef = await addDocF(initiativesCollectionRef, payload);
+ const handleNewDoc = async (collection, payload) => {
+  const docRef = await addDocF(collectionF(db, collection), payload);
   return docRef.id;
  }
-
-
- const handleNewChange = async (payload) => {
-  const docRef = await addDocF(changesCollectionRef, payload);
-  return docRef.id;
- }
-
 
  const handleGetDoc = (ref) => {
-
-  console.log("mount Doc")
   const docRef = docF(db, "initiatives", ref);
-
   unsubscribeInititative = onSnapshotF(docRef, (doc) => {
    setInitiative(doc.data())
   }, (error) => {
-   console.log("handle get Doc OnSnapshot errro:", error)
+   console.log("handle get Doc OnSnapshot error:", error)
   });
  }
 
  const unSubscribeFromDoc = () => {
-  console.log("unmount")
   setInitiative();
   unsubscribeInititative();
-
  }
 
  const setLike = async (id, uid, oldArray) => {
@@ -99,7 +75,7 @@ const InitiativeContextProvider = (props) => {
 
 
  return (
-  <InitiativeContext.Provider value={{ initiatives, initiative, progress, setPickedLugar, setLike, uploadImage, handleFeed, unSubscribeFromFeed, handleNewInitiative, handleGetDoc, unSubscribeFromDoc, handleFeed }}>
+  <InitiativeContext.Provider value={{ initiatives, initiative, progress, setPickedLugar, setLike, uploadImage, handleQuery, unSubscribeFromFeed, handleNewDoc, handleGetDoc, unSubscribeFromDoc }}>
    {props.children}
   </InitiativeContext.Provider>
  )

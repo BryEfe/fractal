@@ -1,24 +1,25 @@
-import React, { useRef, useState, useContext, useEffect } from 'react'
+import React, { useRef, useState, useContext } from 'react'
 import { InitiativeContext } from "./providers/InitiativeContext";
-import { SettingsContext } from "./providers/SettingsContext";
 import { UserContext } from "./providers/UserContext";
 import { serverTimestampF } from "./firebase";
+import { t } from "./temas.json";
 
-function IniciativeModalCreate() {
+function IniciativeModalCreate({ toggleModalCreate }) {
 
-  const [keywords, setKeywords] = useState(["Seguridad", "Infraestructura", "Movilidad", "Educación", "Medio Ambiente", "Transparencia"])
+  const [keywords, setKeywords] = useState(t)
 
   const [file, setFile] = useState([]);
   const [sent, setSent] = useState();
-  const { handleNewInitiative, uploadImage, progress } = useContext(InitiativeContext)
-  const { toggleModalCreate } = useContext(SettingsContext)
+
+  const { handleNewDoc, uploadImage, progress } = useContext(InitiativeContext)
+
   const { user, userInfo } = useContext(UserContext)
 
   const formEl = useRef();
 
   const handleNew = async (e) => {
     console.log(handleSubmit(e));
-    const referencia = await handleNewInitiative(handleSubmit(e));
+    const referencia = await handleNewDoc("initiatives", handleSubmit(e));
     console.log("referencia es:", referencia);
     setSent(true);
     setTimeout(() => {
@@ -26,9 +27,7 @@ function IniciativeModalCreate() {
     }, 5000);
   }
 
-
   const handleImages = async (e) => {
-
     var imageUrl = "";
     try {
       imageUrl = await uploadImage(e.target.files[0], e.target.files[0].name);
@@ -40,12 +39,9 @@ function IniciativeModalCreate() {
   }
 
   const handleSubmit = (event) => {
-
     event.preventDefault();
-
     var kArray = []
     const formInputs = [...formEl.current.elements].map(e => {
-
       if (e.hasOwnProperty('checked')) {
         if (e.checked) {
           kArray.push(e.name)

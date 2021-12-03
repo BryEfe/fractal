@@ -41,7 +41,7 @@ function Main() {
         <Filtros />
         <Inititatives />
         {modalCreate ?
-          <InitiativeModalCreate />
+          <InitiativeModalCreate toggleModalCreate={toggleModalCreate} />
           : <button className="button-add" onClick={toggleModalCreate}> + </button>}
       </Route>
 

@@ -10,7 +10,7 @@ function Filtros() {
 
   const [keywords, setKeywords] = useState(t);
 
-  const { unSubscribeFromFeed, handleFeed, setPickedLugar } = useContext(InitiativeContext);
+  const { unSubscribeFromFeed, handleQuery } = useContext(InitiativeContext);
 
   const { user, userInfo, getUserInfo } = useContext(UserContext);
   const { initiatives } = useContext(InitiativeContext)
@@ -21,7 +21,7 @@ function Filtros() {
     if (user) {
       getUserInfo(user.uid)
       setSelected({ tipo: "Barrio", texto: "", valor: userInfo.lugar });
-      handleFeed("lugar", "==", userInfo.lugar)
+      handleQuery("initiatives", "lugar", "==", userInfo.lugar)
 
     }
     return () => { unSubscribeFromFeed() };
@@ -30,17 +30,17 @@ function Filtros() {
 
   const handleBarrios = (event) => {
     setSelected({ tipo: "Barrio", texto: "en el barrio", valor: event });
-    handleFeed("lugar", "==", event);
+    handleQuery("initiatives", "lugar", "==", event);
   }
 
   const handleLocalidades = (event) => {
     setSelected({ tipo: "Localidad", texto: "en la localidad", valor: event });
-    handleFeed("localidad_lugar", "==", parseInt(event));
+    handleQuery("initiatives", "localidad_lugar", "==", parseInt(event));
   }
 
   const handleTemas = (event) => {
     setSelected({ tipo: "Temática", texto: "sobre", valor: event });
-    handleFeed("keywords", "array-contains", event);
+    handleQuery("initiatives", "keywords", "array-contains", event);
   }
 
 
