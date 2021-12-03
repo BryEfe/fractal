@@ -14,7 +14,7 @@ function Card() {
 
     useEffect(() => {
 
-        if (localStorage.getItem('user') === "null") { history.push("/login") }
+        if (localStorage.getItem('user') === "null" || !localStorage.getItem('user')) { history.push("/login") }
 
 
     }, [localStorage.getItem('user')])

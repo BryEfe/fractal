@@ -23,7 +23,7 @@ function Iniciative() {
   const { user } = useContext(UserContext)
 
   useEffect(() => {
-    if (localStorage.getItem('user') === "null") { history.push("/login") }
+    if (localStorage.getItem('user') === "null" || !localStorage.getItem('user')) { history.push("/login") }
 
     handleGetDoc(iniciativeId);
     return () => {
