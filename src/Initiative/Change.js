@@ -15,7 +15,7 @@ function Change({ user, id }) {
  return (
 
   <div className="initiative">
-   {updates ? {
+   {updates ? <div>{
     updates.length > 0 ?
      <div className="initiative-container">{
       updates.map(i => {
@@ -26,7 +26,7 @@ function Change({ user, id }) {
      }
      </div>
      : "Aún no hay anuncios para esta iniciativa."
-   } : ""}
+   }</div> : ""}
   </div>
  )
 }
