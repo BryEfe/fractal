@@ -21,14 +21,13 @@ function Filtros() {
     console.log("Iniciativas Filtro", initiatives.length)
     if (user) {
       await getUserInfo(user.uid);
-      if (userInfo) {
+      if (userInfo && !selected) {
         handleBarrios(userInfo.lugar);
         setSelected({ tipo: "Barrio", texto: "", valor: userInfo.lugar });
       }
-
     }
     return () => { unSubscribeFromFeed() };
-  }, []);
+  }, [user]);
 
 
   const handleBarrios = (event) => {
