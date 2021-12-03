@@ -12,13 +12,7 @@ function Login() {
  const [popUpSignUp, setPopUpSignUp] = useState(false)
 
  useEffect(() => {
-
-  if (user?.email) {
-   history.push("/");
-   setLoginEmail();
-   setLoginPassword();
-  }
-
+  if (user?.email) { history.push("/"); setLoginEmail(); setLoginPassword(); }
  }, [user])
 
 

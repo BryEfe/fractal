@@ -18,8 +18,6 @@ function UserContextProvider(props) {
 
  onAuthStateChangedF(auth, (currentUser) => {
   setUser(currentUser);
-  console.log("nombre", registerName, registerName)
-
  });
 
  const register = async (info, intereses) => {
@@ -61,7 +59,7 @@ function UserContextProvider(props) {
     auth,
     loginEmail,
     loginPassword
-   ).then(u => { getUserInfo(u.user.uid); });
+   ).then(u => { getUserInfo(u.user.uid); localStorage.setItem('user', u.user.uid); });
 
   } catch (error) {
    setErrorMessage(error.message);
@@ -70,7 +68,8 @@ function UserContextProvider(props) {
  };
 
  const logout = async () => {
-
+  localStorage.setItem('user', null);
+  setErrorMessage();
   await signOutF(auth);
  };
 
@@ -85,7 +84,7 @@ function UserContextProvider(props) {
  }
 
  return (
-  <UserContext.Provider value={{ userInfo, errorMessage, user, getUserInfo, setUser, logout, login, register, setRegisterEmail, setRegisterPassword, setLoginEmail, setLoginPassword, setRegisterName }}>
+  <UserContext.Provider value={{ userInfo, errorMessage, user, auth, getUserInfo, setUser, logout, login, register, setRegisterEmail, setRegisterPassword, setLoginEmail, setLoginPassword, setRegisterName }}>
    {props.children}
   </UserContext.Provider>
  )

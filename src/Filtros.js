@@ -17,15 +17,18 @@ function Filtros() {
 
   const [selected, setSelected] = useState();
 
-  useEffect(() => {
+  useEffect(async () => {
+    console.log("Iniciativas Filtro", initiatives.length)
     if (user) {
-      getUserInfo(user.uid)
-      setSelected({ tipo: "Barrio", texto: "", valor: userInfo.lugar });
-      handleQuery("initiatives", "lugar", "==", userInfo.lugar)
+      await getUserInfo(user.uid);
+      if (userInfo) {
+        handleBarrios(userInfo.lugar);
+        setSelected({ tipo: "Barrio", texto: "", valor: userInfo.lugar });
+      }
 
     }
     return () => { unSubscribeFromFeed() };
-  }, []);
+  }, [userInfo]);
 
 
   const handleBarrios = (event) => {
@@ -45,52 +48,51 @@ function Filtros() {
 
 
   return (
-    <div>
-      <div className="initiative-subnavbar">
-        <h4>{`Iniciativas  ${selected ? `> ${selected.tipo} > ${selected.valor}` : ""}`} </h4>
+    userInfo ?
+      <div>
+        <div className="initiative-subnavbar">
+          <h4>{`Iniciativas  ${selected ? `> ${selected.tipo} > ${selected.valor}` : ""}`} </h4>
 
-        <div className="initiative-subnavbar-filters">
+          <div className="initiative-subnavbar-filters">
 
-          <div>Ir a Cali</div>
+            <div>Ir a Cali</div>
 
-          <select value={selected ? selected.tipo === "Localidad" ? selected.valor : "none" : ""} refplaceholder="Localidad" onChange={(event) => {
-            handleLocalidades(event.target.value)
-          }}>
-            <option value="none" selected disabled hidden>Localidad</option>
-            <option value="1" >Localidad 1</option>
-            <option value="2" >Localidad 2</option>
-            <option value="3" >Localidad 3</option>
-            <option value="4" >Localidad 4</option>
-            <option value="5" >Localidad 5</option>
-            <option value="6" >Localidad 6</option>
-          </select>
-
-
-          <select value={selected ? selected.tipo === "Barrio" ? selected.valor : "none" : ""} placeholder="Barrio" onChange={(event) => {
-            handleBarrios(event.target.value)
-          }} >
-            <option value="none" selected disabled hidden>Barrio</option>
-            {barrios.map((e, index) => {
-              return <option key={index} value={e.lugar} >{e.lugar}</option>
-            })} </select>
+            <select value={selected ? selected.tipo === "Localidad" ? selected.valor : "none" : ""} refplaceholder="Localidad" onChange={(event) => {
+              handleLocalidades(event.target.value)
+            }}>
+              <option value="none" selected disabled hidden>Localidad</option>
+              <option value="1" >Localidad 1</option>
+              <option value="2" >Localidad 2</option>
+              <option value="3" >Localidad 3</option>
+              <option value="4" >Localidad 4</option>
+              <option value="5" >Localidad 5</option>
+              <option value="6" >Localidad 6</option>
+            </select>
 
 
-          <select placeholder="Tema" value={selected ? selected.tipo === "Temática" ? selected.valor : "none" : ""} onChange={(event) => {
-            handleTemas(event.target.value)
-          }} >
-            <option value="none" selected disabled hidden>Tema</option>
-            {keywords.map((e, index) => {
-              return <option key={index} value={e} >{e}</option>
-            })} </select>
+            <select value={selected ? selected.tipo === "Barrio" ? selected.valor : "none" : ""} placeholder="Barrio" onChange={(event) => {
+              handleBarrios(event.target.value)
+            }} >
+              <option value="none" selected disabled hidden>Barrio</option>
+              {barrios.map((e, index) => {
+                return <option key={index} value={e.lugar} >{e.lugar}</option>
+              })} </select>
+
+
+            <select placeholder="Tema" value={selected ? selected.tipo === "Temática" ? selected.valor : "none" : ""} onChange={(event) => {
+              handleTemas(event.target.value)
+            }} >
+              <option value="none" selected disabled hidden>Tema</option>
+              {keywords.map((e, index) => {
+                return <option key={index} value={e} >{e}</option>
+              })} </select>
+          </div>
         </div>
 
 
-      </div>
+        {initiatives.length === 0 && selected ? `Todavía no hay iniciativas  ${selected.texto} ${selected.valor}` : ""}</div>
 
-
-      {initiatives.length < 1 && selected ? `Todavía no hay iniciativas  ${selected.texto} ${selected.valor}` : ""}</div>
-
-  )
+      : <div className="modal loader"><div id="loading"></div></div>)
 }
 
 export default Filtros

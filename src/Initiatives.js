@@ -13,10 +13,12 @@ function Card() {
     const history = useHistory();
 
     useEffect(() => {
-        if (!user) {
-            history.push("/login");
-        }
-    }, [user])
+
+        if (localStorage.getItem('user') === "null") { history.push("/login") }
+
+
+    }, [localStorage.getItem('user')])
+
 
     var options = { weekday: "long", month: "long", day: "numeric" };
 
@@ -46,7 +48,6 @@ function Card() {
                                 <div className="container-author-time">
 
                                     <h5>{"Por " + i.creator}</h5>
-
                                     <h5>{i.createdAt ? i.createdAt.toDate().toLocaleDateString("es-ES", options) + " " + i.createdAt.toDate().toLocaleTimeString("es-ES", optionsTime) : ""}</h5>
 
                                 </div>

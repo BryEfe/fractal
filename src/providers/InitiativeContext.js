@@ -15,7 +15,6 @@ const InitiativeContextProvider = (props) => {
  var unsubscribeInititatives = () => { };
  var unsubscribeInititative = () => { };
 
-
  const handleQuery = (collection, type, operator, value) => {
   const q = queryF(collectionF(db, collection), whereF(type, operator, value));
   unsubscribeInititatives = onSnapshotF(q, (data) => {
@@ -50,6 +49,7 @@ const InitiativeContextProvider = (props) => {
 
  const unSubscribeFromDoc = () => {
   setInitiative();
+  setUpdates();
   unsubscribeInititative();
  }
 

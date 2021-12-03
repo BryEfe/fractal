@@ -20,37 +20,32 @@ function Main() {
 
   useEffect(() => {
 
-    if (!user) {
-      history.push("/login");
-    }
+    if (localStorage.getItem('user') === "null") { history.push("/login") }
 
-  }, [user])
+
+  }, [localStorage.getItem('user')])
 
 
   return (
-    <div className="app">
+    user ?
+      <div className="app">
+        <Barranav />
+        <Route exact path="/">
+          <Inicio />
+        </Route>
+        <Route exact path="/iniciativas">
+          <Filtros />
+          <Inititatives />
+          {modalCreate ?
+            <InitiativeModalCreate toggleModalCreate={toggleModalCreate} />
+            : <button className="button-add" onClick={toggleModalCreate}> + </button>}
+        </Route>
+        <Route path="/iniciativas/:iniciativeId">
+          <Iniciative />
+        </Route>
 
-      <Barranav />
-
-      <Route exact path="/">
-        <Inicio />
-
-      </Route>
-
-      <Route exact path="/iniciativas">
-        <Filtros />
-        <Inititatives />
-        {modalCreate ?
-          <InitiativeModalCreate toggleModalCreate={toggleModalCreate} />
-          : <button className="button-add" onClick={toggleModalCreate}> + </button>}
-      </Route>
-
-      <Route path="/iniciativas/:iniciativeId">
-        <Iniciative />
-      </Route>
-
-    </div>
-  )
+      </div>
+      : <div className="modal loader"><div id="loading"></div></div>)
 }
 
 export default Main

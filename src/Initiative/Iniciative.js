@@ -23,15 +23,14 @@ function Iniciative() {
   const { user } = useContext(UserContext)
 
   useEffect(() => {
-    if (!user || !iniciativeId) {
-      history.push("/login");
-    }
+    if (localStorage.getItem('user') === "null") { history.push("/login") }
+
     handleGetDoc(iniciativeId);
     return () => {
       unSubscribeFromDoc();
     }
 
-  }, [])
+  }, [localStorage.getItem('user')])
 
   return (
     <div className="initiative">

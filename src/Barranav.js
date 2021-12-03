@@ -5,11 +5,7 @@ import { UserContext } from "./providers/UserContext";
 
 function Barranav() {
 
-
-
     const { user, logout } = useContext(UserContext);
-
-
 
     return (
         <nav className="navbar">
