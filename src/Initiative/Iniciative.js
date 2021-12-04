@@ -17,7 +17,7 @@ function Iniciative() {
 
   const { modalCreate, toggleModalCreate } = useContext(SettingsContext)
 
-  const { handleGetDoc, initiative, unSubscribeFromDoc, setLike } = useContext(InitiativeContext)
+  const { handleGetDoc, initiative, unSubscribeFromDoc, setArray } = useContext(InitiativeContext)
 
   const [location, setLocation] = useState("Resumen")
 
@@ -50,20 +50,20 @@ function Iniciative() {
             </div>
           </div>
           <Route exact path={`/iniciativas/${iniciativeId}/resumen`} >
-            <Summary initiative={initiative} user={user} setLike={setLike} id={iniciativeId} />
+            <Summary initiative={initiative} user={user} setArray={setArray} id={iniciativeId} />
           </Route>
 
           <Route exact path={`/iniciativas/${iniciativeId}/anuncios`} >
-            <Change initiative={initiative} user={user} setLike={setLike} id={iniciativeId} />
+            <Change initiative={initiative} user={user} setArray={setArray} id={iniciativeId} />
             {modalCreate ?
               <DiscussionModalCreate toggleModalCreate={toggleModalCreate} id={iniciativeId} />
               : <button className="button-add" onClick={toggleModalCreate} >  + </button>}
           </Route >
           <Route exact path={`/iniciativas/${iniciativeId}/discusion`} >
-            <Discussion initiative={initiative} user={user} setLike={setLike} id={iniciativeId} />
+            <Discussion initiative={initiative} user={user} setArray={setArray} id={iniciativeId} />
           </Route >
           <Route exact path={`/iniciativas/${iniciativeId}/discusion/:commentId`} >
-            <Comment initiative={initiative} user={user} setLike={setLike} id={iniciativeId} />
+            <Comment initiative={initiative} user={user} setArray={setArray} id={iniciativeId} />
           </Route >
         </div>
         : "Loading..."}

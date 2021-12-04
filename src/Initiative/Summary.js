@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 
-function Summary({ initiative, user, setLike, id }) {
+function Summary({ initiative, user, setArray, id }) {
 
 
   const like = (array) => {
@@ -16,7 +16,7 @@ function Summary({ initiative, user, setLike, id }) {
           <h2>{initiative.name}</h2>
 
           {user ? user.uid !== initiative.userId ?
-            <button onClick={(e) => { e.preventDefault(); setLike(id, user.uid, initiative.followers) }} className={like(initiative.followers) === 0 ? "like" : "unlike"}>{like(initiative.followers) === 0 ? "Siguiendo" : "Seguir"}</button> : "" : ""}
+            <button onClick={(e) => { e.preventDefault(); setArray("initiatives", id, user.uid, initiative.followers) }} className={like(initiative.followers) === 0 ? "like" : "unlike"}>{like(initiative.followers) === 0 ? "Siguiendo" : "Seguir"}</button> : "" : ""}
         </div>
 
         <div className="info-initiative">
