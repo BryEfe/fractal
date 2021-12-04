@@ -124,7 +124,11 @@ button:focus {
 }
 
 hr {
-  color: var(--main-gray);
+  height: 1px;
+  border: 0;
+  border-top: 1px solid;
+  border-color: var(--secondary-gray);
+  margin-top: 16px;
 }
 
 a {
@@ -146,7 +150,6 @@ p {
 
 .app {
   width: 85vw;
-  margin-top: 64px;
   display: flex;
   flex-direction: column;
   position: relative;
@@ -155,9 +158,13 @@ p {
 .navbar {
   justify-content: space-between;
   height: 30px;
-  padding-bottom: 32px;
-  border-bottom-style: solid;
-  border-bottom-width: 1px;
+  font-size: var(--main-font-size);
+  margin-top: 64px;
+
+}
+
+.navbar ul img {
+  max-width: 24px;
 }
 
 .button-add {
@@ -180,28 +187,69 @@ p {
   color: var(--main-font-color) !important;
 }
 
-.initiative-container {
-  margin: 24px 0px;
-  display: grid;
-  grid-gap: 16px;
-  grid-template-columns: repeat(auto-fill, minmax(49%, 1fr));
-}
 
 .initiative {
-  margin: 16px;
+  display: flex;
+  flex-flow: column wrap;
+
+}
+
+.initiative-parent {
   width: 100%;
+  margin-top: 16px;
+}
+
+.initiative-sub-one {
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+
+}
+
+.initiative-sub-two {
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.initiative-container{
+  margin-top: 16px;
+  width:100%;
+  display: flex;
+  flex-flow: row wrap;
+  gap: 16px;
+}
+
+.initiative-container a{
+  flex: auto;
+
+}
+
+.top-initiative-subnavbar {
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top-style: solid;
+  border-top-width: 1px;
 }
 
 .initiative-subnavbar {
-  margin: 6px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  font-size: var(--main-font-size);
+  max-height: 32px;
+
+}
+
+.initiative-subnavbar h4 {
+  display: flexbox;
+  font-size: var(--main-font-size);
 }
 
 .initiative-subnavbar-filters {
   display: flex;
   align-items: center;
-  width: 50%;
+
 }
 
 .title-button {
@@ -213,7 +261,7 @@ p {
 .initiative-subnavbar-filters select {
   margin-left: 16px;
   border-radius: 8px;
-  height: 32px;
+  height: 36px;
 }
 .initiative-subnavbar-filters div {
   white-space: nowrap;
@@ -322,7 +370,7 @@ input {
   overflow: hidden;
   color: #fff;
   cursor: pointer;
-  display: grid;
+  /*display: grid;*/
   place-items: center;
   font-weight: 900;
   margin-bottom: 1rem;
@@ -385,7 +433,7 @@ progress::-webkit-progress-value {
   width: 100%;
   position: absolute;
   color: transparent;
-  display: grid;
+  /*display: grid;*/
   place-items: center;
   font-weight: bold;
   cursor: pointer;
@@ -463,8 +511,7 @@ progress::-webkit-progress-value {
   height: 100vh;
 }
 
-.login h1,
-h4 {
+.login h1 {
   color: var(--main-font-color);
 }
 
@@ -472,30 +519,40 @@ h4 {
   width: 60%;
 }
 
-.login-info img {
-  width: 160px;
+.login-info-text {
+ 
 }
 
-.login-info-text {
-  margin-top: 20%;
+.login-info-text h4 {
+  color: var(--main-font-color);
 }
 
 .login-buttons {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
   width: 100%;
-  display: grid;
+
+  /*display: grid;
   grid-template-columns: 1fr 2fr;
   column-gap: 10px;
-  margin-top: 10px;
+  margin-top: 10px;*/
+}
+
+.login-buttons h4{
+  color: white;
 }
 
 .login-buttons div {
-  text-align: center;
-  display: grid;
-  place-items: center;
-  white-space: nowrap;
+  display: flex;
   cursor: pointer;
-  color: white;
-  height: 32px;
+  height: 40px;
+  width: 49%;
+  border-radius: 4px;
+  margin-top: 8px;
+  justify-content: center;
+  align-items: center;
 }
 
 .login-buttons div:first-child {
@@ -509,7 +566,30 @@ h4 {
   margin-top: 4px;
 }
 
+.login-input h5 {
+  font-size: var(--main-font-size);
+  color: var(--main-highlight-color-1);
+}
+
 /* CONTAINER**/
+
+.container {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-between;
+  background-color: white;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 8px;
+  padding: 24px 32px;
+  min-height: 358px;
+}
+
+.container h5 {
+  font-size: var(--main-font-size);
+  color: var(--main-highlight-color-1);
+  font-weight: 400;
+}
 
 .container p,
 a {
@@ -518,6 +598,11 @@ a {
 
 .container img {
   border-radius: 4px;
+}
+
+.container-img {
+  display: flex;
+  margin-top: 16px;
 }
 
 .container-toggle-switch {
@@ -538,17 +623,8 @@ a {
   -webkit-box-orient: vertical;
 }
 
-.container {
-  display: grid;
-  row-gap: 8px;
-  background-color: white;
-  border-style: solid;
-  border-width: 1px;
-  border-radius: 8px;
-  padding: 32px;
-}
-
 .container-description {
+  margin-top: 16px;
   height: 80px;
 }
 
@@ -562,6 +638,7 @@ a {
   border: 0;
   border-top: 1px solid;
   border-color: var(--secondary-gray);
+  margin-top: 16px;
 }
 
 .container img {
@@ -654,10 +731,10 @@ a {
 }
 
 .initiative-description-likes {
-  display: grid;
+  /*display: grid;
   padding-top: 16px;
   grid-gap: 32px;
-  grid-template-columns: repeat(auto-fill, minmax(45%, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(45%, 1fr));*/
   color: lightgray;
 }
 
@@ -671,23 +748,39 @@ a {
 }
 
 .initiative-breadcrumbs-nav {
+  width: 100%;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  height: 32px;
+}
+
+
+
+
+.initiative-breadcrumbs-nav h5 {
+  font-size: var(--main-font-size);
+  color: var(--main-highlight-color-1);
+}
+
+.initiative-actions {
 }
 
 .initiative-actions ul {
-  margin-right: 16px;
   display: flex;
+  gap: 16px;
+  width: 100%;
 }
+
 .initiative-actions li {
   list-style-type: none;
 }
 
 .initiative-actions li a {
-  margin-right: 16px;
   padding: 8px;
   border-radius: 8px;
-  outline: 1px solid var(--main-font-color);
+  outline: 1px solid var(--secondary-gray);
+
 }
 
 .initiative-actions li a:hover {
@@ -697,10 +790,8 @@ a {
   transition: 0.2s background-color;
 }
 .initiative-actions li .active {
-  margin-right: 16px;
   outline: none;
   color: white;
-
   background-color: var(--main-highlight-color-1);
   list-style-type: none;
 }

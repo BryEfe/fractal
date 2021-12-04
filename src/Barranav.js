@@ -15,7 +15,9 @@ function Barranav() {
                 <li><NavLink to="/iniciativas" activeClassName='active'>Iniciativas</NavLink></li>
 
                 <li>{user?.displayName}</li>
-                <button onClick={user?.email ? logout : ""}> Sign {user?.email ? "Out" : "In"} </button>
+                <li><img src="./svg/notificacion.svg" alt="" /></li>
+                
+                <button onClick={user?.email ? logout : ""}><img src="./svg/logout.svg" alt="" />Sign {user?.email ? "Out" : "In"}</button>
             </ul>
         </nav>
     )

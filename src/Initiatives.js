@@ -31,34 +31,38 @@ function Card() {
     return (
 
         <div className="initiative">
-            <div>
+            <div className="initiative-sub-one">
                 {initiatives
                     ?
-                    <div>{initiatives.length > 0 ? <div className="initiative-container">{initiatives.map(i => {
+                    <div className="initiative-sub-two">{initiatives.length > 0 ? <div className="initiative-container">{initiatives.map(i => {
                         return < Link to={`iniciativas/${i.id}/resumen`
                         } key={i.id}>
                             <div className="container">
-                                <div className="title-button">
-                                    <h4>{i.name}</h4>
-                                    {user ? user.uid !== i.userId ? <button onClick={(e) => { e.preventDefault(); setLike(i.id, user.uid, i.followers) }} className={like(i.followers) === 0 ? "like" : "unlike"}>
-                                        {like(i.followers) === 0 ? "Siguiendo" : "Seguir"}
-                                    </button> : "" : ""}
+                                <div className="container-top">
+                                    <div className="title-button">
+                                        <h4>{i.name}</h4>
+                                        {user ? user.uid !== i.userId ? <button onClick={(e) => { e.preventDefault(); setLike(i.id, user.uid, i.followers) }} className={like(i.followers) === 0 ? "like" : "unlike"}>
+                                            {like(i.followers) === 0 ? "Siguiendo" : "Seguir"}
+                                        </button> : "" : ""}
+                                    </div>
+
+                                    <div className="container-author-time">
+
+                                        <h5>{"Por " + i.creator}</h5>
+                                        <h5>{i.createdAt ? i.createdAt.toDate().toLocaleDateString("es-ES", options) + " " + i.createdAt.toDate().toLocaleTimeString("es-ES", optionsTime) : ""}</h5>
+
+                                    </div>
                                 </div>
+                                <div className="container-bot">
+                                    <div className="container-img">
+                                        {i.img.map((im, index) => { return <img key={index} src={im} alt="" /> })}
+                                    </div>
+                                    <div className="container-description"><p>{i.description}</p></div>
 
-                                <div className="container-author-time">
+                                    <hr />
 
-                                    <h5>{"Por " + i.creator}</h5>
-                                    <h5>{i.createdAt ? i.createdAt.toDate().toLocaleDateString("es-ES", options) + " " + i.createdAt.toDate().toLocaleTimeString("es-ES", optionsTime) : ""}</h5>
-
+                                    <Link to={`iniciativas/${i.id}/resumen`}> Ver Más...</Link>
                                 </div>
-                                <div className="container-img">
-                                    {i.img.map((im, index) => { return <img key={index} src={im} alt="" /> })}
-                                </div>
-                                <div className="container-description"><p>{i.description}</p></div>
-
-                                <hr />
-
-                                <Link to={`iniciativas/${i.id}/resumen`}> Ver Más...</Link>
                             </div>
                         </Link >
                     })}</div> : ""}</div>

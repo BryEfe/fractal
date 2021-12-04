@@ -33,9 +33,11 @@ function Iniciative() {
   }, [localStorage.getItem('user')])
 
   return (
+    
     <div className="initiative">
+      <hr />
       {initiative ?
-        <div>
+        <div className="initiative-parent">
           <div className="initiative-breadcrumbs-nav">
             <h5> {"Iniciativas > Localidad " + initiative.localidad_lugar + " >   " + initiative.lugar + " > " + initiative.name + " > " + location}</h5>
             <div className="initiative-actions">

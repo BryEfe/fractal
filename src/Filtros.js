@@ -48,7 +48,7 @@ function Filtros() {
 
   return (
     userInfo ?
-      <div>
+      <div className="top-initiative-subnavbar">
         <div className="initiative-subnavbar">
           <h4>{`Iniciativas  ${selected ? `> ${selected.tipo} > ${selected.valor}` : ""}`} </h4>
 

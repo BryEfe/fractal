@@ -3,6 +3,7 @@ import { UserContext } from "./providers/UserContext";
 import { useHistory, Link } from "react-router-dom";
 import SignUp from "./SignUp";
 
+
 function Login() {
 
  const { user, login, setLoginEmail, setLoginPassword, errorMessage } = useContext(UserContext);
@@ -22,7 +23,7 @@ function Login() {
 
    <div className="login">
 
-    <div className="login-info"> <Link to="/"><img className="logo" src="./svg/fractal.svg" alt="" /></Link>
+    <div className="login-info">
      <div className="login-info-text">
       <h1>Lorem Ipsum  dolor sit amet,  elit.</h1>
       <h4>Morbi nec diam nulla. Mauris quis cursus sem. Fusce in libero mi. Suspendisse varius enim eu nulla sodales.</h4>
@@ -49,13 +50,16 @@ function Login() {
 
      <h5>{errorMessage ? "Usuario o Cuenta incorrecta" : ""}</h5>
      <div className="login-buttons">
-      <div onClick={login}>Ingresar</div>
-      <div onClick={() => { setPopUpSignUp(true) }}>Crear Cuenta</div>
+      <div onClick={login}><h4>Ingresar</h4></div>
+      <div onClick={() => { setPopUpSignUp(true) }}><h4>Crear Cuenta</h4></div>
      </div>
     </div>
+
    </div>
    {popUpSignUp ? <SignUp setPopUpSignUp={setPopUpSignUp} /> : ""}
   </div>
+  
+
  )
 }
 
