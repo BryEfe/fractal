@@ -60,9 +60,11 @@ function Iniciative() {
 
           <Route exact path={`/iniciativas/${iniciativeId}/anuncios`} >
             <Change initiative={initiative} user={user} setArray={setArray} id={iniciativeId} />
-            {modalCreate ?
-              <DiscussionModalCreate toggleModalCreate={toggleModalCreate} id={iniciativeId} />
-              : <button className="button-add" onClick={toggleModalCreate} >  + </button>}
+
+            {user ? user.uid === initiative.userId ? modalCreate ? <DiscussionModalCreate toggleModalCreate={toggleModalCreate} id={iniciativeId} />
+              : <button className="button-add" onClick={toggleModalCreate} >  + </button> : "" : ""}
+
+
           </Route >
           <Route exact path={`/iniciativas/${iniciativeId}/discusion`} >
             <Discussion initiative={initiative} user={user} setArray={setArray} id={iniciativeId} />
