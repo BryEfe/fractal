@@ -704,6 +704,7 @@ a {
   display: flex;
   flex-direction: row;
   overflow-x: scroll;
+  margin-top: 16px;
 }
 
 .images-iniciativa img {
@@ -727,15 +728,25 @@ a {
 }
 
 .info-initiative h5 {
-  margin-right: 10px;
+  margin-right: 8px;
+  font-size: var(--main-font-size);
+  font-weight: var(--main-font-weight);
 }
 
 .initiative-description-likes {
-  /*display: grid;
-  padding-top: 16px;
-  grid-gap: 32px;
-  grid-template-columns: repeat(auto-fill, minmax(45%, 1fr));*/
+  display: flex;
+  justify-content: space-between;
+  margin-top: 16px;
   color: lightgray;
+}
+
+
+.initiative-description-likes p {
+  width: 50%;
+}
+
+.initiative-description-likes h2 {
+  width: 50%;
 }
 
 .initiative-name-follow {
