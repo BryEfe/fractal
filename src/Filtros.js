@@ -18,16 +18,15 @@ function Filtros() {
   const [selected, setSelected] = useState();
 
   useEffect(async () => {
-    console.log("Iniciativas Filtro", initiatives.length)
     if (user) {
       await getUserInfo(user.uid);
       if (userInfo && !selected) {
-        handleBarrios(userInfo.lugar);
         setSelected({ tipo: "Barrio", texto: "", valor: userInfo.lugar });
+        handleBarrios(userInfo.lugar);
       }
     }
-    return () => { unSubscribeFromFeed() };
-  }, [user]);
+    return () => { unSubscribeFromFeed(); setSelected() };
+  }, [user, userInfo]);
 
 
   const handleBarrios = (event) => {
@@ -47,7 +46,7 @@ function Filtros() {
 
 
   return (
-    userInfo ?
+    userInfo && selected ?
       <div className="top-initiative-subnavbar">
         <div className="initiative-subnavbar">
           <h4>{`Iniciativas  ${selected ? `> ${selected.tipo} > ${selected.valor}` : ""}`} </h4>

@@ -2,9 +2,7 @@ import React, { useEffect } from 'react'
 
 function Summary({ initiative, user, setArray, id }) {
 
-
   const like = (array) => {
-
     return array[0] ? user.uid.localeCompare(array[0]) : false;
   }
 
@@ -29,7 +27,7 @@ function Summary({ initiative, user, setArray, id }) {
               return <img key={index} src={i} alt="" />
             }) : ""}
         </div >
-        <div className="initiative-description-likes"> <p>{initiative.description}</p> <h2>{`${initiative.followers.length} ${initiative.followers.length > 1 ? "personas apoyan " : "persona apoya "} este proyecto.`}</h2></div> </div> : ""
+        <div className="initiative-description-likes"> <p>{initiative.description}</p> <h2>{initiative.followers.length === 0 ? "Sé la primera persona en apoyar esta iniciativa" : `${initiative.followers.length} ${initiative.followers.length > 1 ? "personas apoyan " : "persona apoya "} este proyecto.`}</h2></div> </div> : ""
 
   )
 }

@@ -14,7 +14,7 @@ function Main() {
 
   const { modalCreate, toggleModalCreate } = useContext(SettingsContext)
 
-  const { user } = useContext(UserContext);
+  const { user, userInfo } = useContext(UserContext);
 
   const history = useHistory();
 

@@ -24,8 +24,10 @@ function Iniciative() {
   const { user } = useContext(UserContext)
 
   useEffect(() => {
-    if (localStorage.getItem('user') === "null" || !localStorage.getItem('user')) { history.push("/login") }
+    if (localStorage.getItem('user') === "null" || !localStorage.getItem('user')) { history.push("/login"); }
+
     handleGetDoc(iniciativeId, "initiatives");
+
     return () => {
       unSubscribeFromDoc();
     }
@@ -42,9 +44,12 @@ function Iniciative() {
             <h5> {"Iniciativas > Localidad " + initiative.localidad_lugar + " >   " + initiative.lugar + " > " + initiative.name + " > " + location}</h5>
             <div className="initiative-actions">
               <ul>
-                <li onClick={() => setLocation("Resumen")}><NavLink activeClassName='active' exact={true} to={`/iniciativas/${iniciativeId}/resumen`} className="initiative-action">Resumen</NavLink></li>
-                <li onClick={() => setLocation("Anuncios")}>     <NavLink activeClassName='active' exact={true} to={`/iniciativas/${iniciativeId}/anuncios`} className="initiative-action">Anuncios</NavLink></li>
-                <li onClick={() => setLocation("Discusión")}>
+                <li onClick={() => {
+                  setLocation("Resumen");
+                  handleGetDoc(iniciativeId, "initiatives");
+                }}><NavLink activeClassName='active' exact={true} to={`/iniciativas/${iniciativeId}/resumen`} className="initiative-action">Resumen</NavLink></li>
+                <li onClick={() => { setLocation("Anuncios"); handleGetDoc(iniciativeId, "initiatives"); }}>     <NavLink activeClassName='active' exact={true} to={`/iniciativas/${iniciativeId}/anuncios`} className="initiative-action">Anuncios</NavLink></li>
+                <li onClick={() => { setLocation("Discusión"); handleGetDoc(iniciativeId, "initiatives"); }}>
                   <NavLink activeClassName='active' strict to={`/iniciativas/${iniciativeId}/discusion`} className="initiative-action">Discusión</NavLink></li>
               </ul>
             </div>
@@ -66,7 +71,7 @@ function Iniciative() {
             <Comment initiative={initiative} user={user} setArray={setArray} id={iniciativeId} />
           </Route >
         </div>
-        : "Loading..."}
+        : <div className="modal loader"><div id="loading"></div></div>}
 
 
     </div>

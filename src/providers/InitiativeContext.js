@@ -31,7 +31,6 @@ const InitiativeContextProvider = (props) => {
         case "comments":
           setComments(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })))
           break;
-
       }
 
     }, (error) => {
@@ -39,7 +38,7 @@ const InitiativeContextProvider = (props) => {
     })
   }
 
-  const unSubscribeFromFeed = () => { unsubscribeInititatives(); }
+  const unSubscribeFromFeed = () => { setInitiatives(); unsubscribeInititatives(); }
 
   const handleNewDoc = async (collection, payload) => {
     const docRef = await addDocF(collectionF(db, collection), payload);
@@ -78,7 +77,6 @@ const InitiativeContextProvider = (props) => {
     } else {
       newArray = [...oldArray, uid]
     }
-
 
     await setDocF(docF(db, collection, id), { followers: newArray }, { merge: true });
 
