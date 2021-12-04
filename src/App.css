@@ -160,7 +160,6 @@ p {
   height: 30px;
   font-size: var(--main-font-size);
   margin-top: 64px;
-
 }
 
 .navbar ul img {
@@ -187,11 +186,9 @@ p {
   color: var(--main-font-color) !important;
 }
 
-
 .initiative {
   display: flex;
   flex-flow: column wrap;
-
 }
 
 .initiative-parent {
@@ -203,7 +200,6 @@ p {
   width: 100%;
   display: flex;
   flex-flow: row wrap;
-
 }
 
 .initiative-sub-two {
@@ -212,17 +208,16 @@ p {
   flex-flow: row wrap;
 }
 
-.initiative-container{
+.initiative-container {
   margin-top: 16px;
-  width:100%;
+  width: 100%;
   display: flex;
   flex-flow: row wrap;
   gap: 16px;
 }
 
-.initiative-container a{
+.initiative-container a {
   flex: auto;
-
 }
 
 .top-initiative-subnavbar {
@@ -238,7 +233,6 @@ p {
   align-items: center;
   font-size: var(--main-font-size);
   max-height: 32px;
-
 }
 
 .initiative-subnavbar h4 {
@@ -249,7 +243,6 @@ p {
 .initiative-subnavbar-filters {
   display: flex;
   align-items: center;
-
 }
 
 .title-button {
@@ -363,7 +356,7 @@ input {
   opacity: 0;
 }
 
-[type="file"] + label {
+.modal [type="file"] + label {
   position: relative;
   background: var(--main-gray);
   border-radius: 4px;
@@ -380,7 +373,7 @@ input {
   transition: all 0.3s;
 }
 
-[type="file"] + label:hover {
+.modal [type="file"] + label:hover {
   background: var(--main-highlight-color-1);
 }
 
@@ -388,7 +381,7 @@ label p {
   z-index: 1;
 }
 
-progress {
+.modal progress {
   position: absolute;
   z-index: 0;
   width: 100%;
@@ -520,7 +513,6 @@ progress::-webkit-progress-value {
 }
 
 .login-info-text {
- 
 }
 
 .login-info-text h4 {
@@ -540,7 +532,7 @@ progress::-webkit-progress-value {
   margin-top: 10px;*/
 }
 
-.login-buttons h4{
+.login-buttons h4 {
   color: white;
 }
 
@@ -582,7 +574,7 @@ progress::-webkit-progress-value {
   border-width: 1px;
   border-radius: 8px;
   padding: 24px 32px;
-  min-height: 358px;
+  max-height: 358px;
 }
 
 .container h5 {
@@ -755,9 +747,6 @@ a {
   height: 32px;
 }
 
-
-
-
 .initiative-breadcrumbs-nav h5 {
   font-size: var(--main-font-size);
   color: var(--main-highlight-color-1);
@@ -780,7 +769,6 @@ a {
   padding: 8px;
   border-radius: 8px;
   outline: 1px solid var(--secondary-gray);
-
 }
 
 .initiative-actions li a:hover {
@@ -801,6 +789,43 @@ a {
 .update img {
   width: 100%;
   height: 200px;
+}
+
+/**/
+
+.discussion form img {
+  width: 100%;
+  object-fit: cover;
+  height: 200px;
+}
+.discussion .images {
+  height: initial;
+}
+
+.discussion form {
+  display: flex;
+}
+.discussion [type="file"] + label {
+  position: relative;
+  background: var(--main-gray);
+  border-radius: 4px;
+  overflow: hidden;
+  color: #fff;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  outline: none;
+  height: 40px;
+  width: 40px;
+  transition: all 0.3s;
+}
+
+.discussion button {
+  display: none;
+}
+
+.discussion [type="file"] + label:hover {
+  background: var(--main-highlight-color-1);
 }
 
 /*Spinner*/

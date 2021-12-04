@@ -6,19 +6,14 @@ import { useHistory } from "react-router-dom";
 
 function Card() {
 
-    const { initiatives, setLike } = useContext(InitiativeContext)
+    const { initiatives, setArray } = useContext(InitiativeContext)
     const { user } = useContext(UserContext)
-
 
     const history = useHistory();
 
     useEffect(() => {
-
         if (localStorage.getItem('user') === "null" || !localStorage.getItem('user')) { history.push("/login") }
-
-
     }, [localStorage.getItem('user')])
-
 
     var options = { weekday: "long", month: "long", day: "numeric" };
 
@@ -41,7 +36,7 @@ function Card() {
                                 <div className="container-top">
                                     <div className="title-button">
                                         <h4>{i.name}</h4>
-                                        {user ? user.uid !== i.userId ? <button onClick={(e) => { e.preventDefault(); setLike(i.id, user.uid, i.followers) }} className={like(i.followers) === 0 ? "like" : "unlike"}>
+                                        {user ? user.uid !== i.userId ? <button onClick={(e) => { e.preventDefault(); setArray("initiatives", i.id, user.uid, i.followers) }} className={like(i.followers) === 0 ? "like" : "unlike"}>
                                             {like(i.followers) === 0 ? "Siguiendo" : "Seguir"}
                                         </button> : "" : ""}
                                     </div>

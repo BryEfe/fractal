@@ -4,6 +4,7 @@ import { UserContext } from "../providers/UserContext";
 import Summary from "./Summary";
 import Change from "./Change";
 import Discussion from "./Discussion";
+import Comment from "./Comment";
 import { useParams, Route, NavLink, useHistory } from "react-router-dom";
 import DiscussionModalCreate from "../DiscussionModalCreate";
 import { SettingsContext } from "../providers/SettingsContext";
@@ -24,8 +25,7 @@ function Iniciative() {
 
   useEffect(() => {
     if (localStorage.getItem('user') === "null" || !localStorage.getItem('user')) { history.push("/login") }
-
-    handleGetDoc(iniciativeId);
+    handleGetDoc(iniciativeId, "initiatives");
     return () => {
       unSubscribeFromDoc();
     }
@@ -33,7 +33,7 @@ function Iniciative() {
   }, [localStorage.getItem('user')])
 
   return (
-    
+
     <div className="initiative">
       <hr />
       {initiative ?
@@ -42,16 +42,16 @@ function Iniciative() {
             <h5> {"Iniciativas > Localidad " + initiative.localidad_lugar + " >   " + initiative.lugar + " > " + initiative.name + " > " + location}</h5>
             <div className="initiative-actions">
               <ul>
-                <li onClick={() => setLocation("Resumen")}><NavLink activeClassName='active' exact={true} to={`resumen`} className="initiative-action">Resumen</NavLink></li>
-                <li onClick={() => setLocation("Anuncios")}>     <NavLink activeClassName='active' exact={true} to={`anuncios`} className="initiative-action">Anuncios</NavLink></li>
+                <li onClick={() => setLocation("Resumen")}><NavLink activeClassName='active' exact={true} to={`/iniciativas/${iniciativeId}/resumen`} className="initiative-action">Resumen</NavLink></li>
+                <li onClick={() => setLocation("Anuncios")}>     <NavLink activeClassName='active' exact={true} to={`/iniciativas/${iniciativeId}/anuncios`} className="initiative-action">Anuncios</NavLink></li>
                 <li onClick={() => setLocation("Discusión")}>
-                  <NavLink activeClassName='active' exact={true} to={`discusion`} className="initiative-action">Discusión</NavLink></li>
+                  <NavLink activeClassName='active' strict to={`/iniciativas/${iniciativeId}/discusion`} className="initiative-action">Discusión</NavLink></li>
               </ul>
             </div>
           </div>
           <Route exact path={`/iniciativas/${iniciativeId}/resumen`} >
             <Summary initiative={initiative} user={user} setLike={setLike} id={iniciativeId} />
-          </Route >
+          </Route>
 
           <Route exact path={`/iniciativas/${iniciativeId}/anuncios`} >
             <Change initiative={initiative} user={user} setLike={setLike} id={iniciativeId} />
@@ -61,6 +61,9 @@ function Iniciative() {
           </Route >
           <Route exact path={`/iniciativas/${iniciativeId}/discusion`} >
             <Discussion initiative={initiative} user={user} setLike={setLike} id={iniciativeId} />
+          </Route >
+          <Route exact path={`/iniciativas/${iniciativeId}/discusion/:commentId`} >
+            <Comment initiative={initiative} user={user} setLike={setLike} id={iniciativeId} />
           </Route >
         </div>
         : "Loading..."}

@@ -16,7 +16,7 @@ function Barranav() {
 
                 <li>{user?.displayName}</li>
                 <li><img src="./svg/notificacion.svg" alt="" /></li>
-                
+
                 <button onClick={user?.email ? logout : ""}><img src="./svg/logout.svg" alt="" />Sign {user?.email ? "Out" : "In"}</button>
             </ul>
         </nav>
