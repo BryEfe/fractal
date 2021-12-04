@@ -20,7 +20,7 @@ function Summary({ initiative, user, setLike, id }) {
         </div>
 
         <div className="info-initiative">
-          <h5>{"Por " + initiative.creator}</h5>
+          <h5>{"Por " + initiative.creator} |</h5>
           <h5>{"Temas: " + initiative.keywords.join(", ")}</h5>
         </div>
         <div className="images-iniciativa">

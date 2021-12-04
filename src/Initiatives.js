@@ -48,7 +48,7 @@ function Card() {
 
                                     <div className="container-author-time">
 
-                                        <h5>{"Por " + i.creator}</h5>
+                                        <h5>{"Por " + i.creator} | </h5>
                                         <h5>{i.createdAt ? i.createdAt.toDate().toLocaleDateString("es-ES", options) + " " + i.createdAt.toDate().toLocaleTimeString("es-ES", optionsTime) : ""}</h5>
 
                                     </div>
