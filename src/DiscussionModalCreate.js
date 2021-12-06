@@ -43,10 +43,7 @@ function DiscussionModalCreate({ toggleModalCreate, id }) {
 
     const newSubmitted = formInputs.reduce((acc, input) => {
       return {
-        ...acc, ...input, userId: user.uid, initiative_id: id, creator: user.displayName, lugar: userInfo.lugar,
-        id_lugar: userInfo.id_lugar,
-        tipo_lugar: userInfo.tipo_lugar,
-        localidad_lugar: userInfo.localidad_lugar
+        ...acc, ...input, userId: user.uid, initiative_id: id, creator: user.displayName
       };
     }, 0);
 

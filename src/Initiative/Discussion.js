@@ -6,99 +6,99 @@ import { NavLink, useHistory } from "react-router-dom";
 
 function Discussion({ user, id }) {
 
- const { handleQuery, unSubscribeFromFeed } = useContext(InitiativeContext)
+  const { handleQuery, unSubscribeFromFeed } = useContext(InitiativeContext)
 
 
- const history = useHistory();
- const formEl = useRef();
- const [file, setFile] = useState();
+  const history = useHistory();
+  const formEl = useRef();
+  const [file, setFile] = useState();
 
- const { comments, handleNewDoc, uploadImage, progress } = useContext(InitiativeContext)
- useEffect(() => {
-  console.log(user)
-  if (user) {
-   handleQuery("comments", "initiative_id", "==", id)
-   console.log(comments)
+  const { comments, handleNewDoc, uploadImage, progress } = useContext(InitiativeContext)
+  useEffect(() => {
+    console.log(user)
+    if (user) {
+      handleQuery("comments", "initiative_id", "==", id)
+      console.log(comments)
+    }
+    return () => { unSubscribeFromFeed() };
+  }, []);
+
+
+  const handleNew = async (e) => {
+    console.log(handleSubmit(e));
+    const referencia = await handleNewDoc("comments", handleSubmit(e));
+    formEl.current.reset()
+    console.log("referencia es:", referencia);
+
   }
-  return () => { unSubscribeFromFeed() };
- }, []);
 
-
- const handleNew = async (e) => {
-  console.log(handleSubmit(e));
-  const referencia = await handleNewDoc("comments", handleSubmit(e));
-  formEl.current.reset()
-  console.log("referencia es:", referencia);
-
- }
-
- const handleImages = async (e) => {
-  var imageUrl = "";
-  try {
-   imageUrl = await uploadImage(e.target.files[0], e.target.files[0].name);
-  } catch (error) {
-   console.log("Promise Image", error)
+  const handleImages = async (e) => {
+    var imageUrl = "";
+    try {
+      imageUrl = await uploadImage(e.target.files[0], e.target.files[0].name);
+    } catch (error) {
+      console.log("Promise Image", error)
+    }
+    setFile(imageUrl);
   }
-  setFile(imageUrl);
- }
 
- const handleSubmit = (event) => {
+  const handleSubmit = (event) => {
 
-  event.preventDefault();
+    event.preventDefault();
 
-  setFile();
-  const formInputs = [...formEl.current.elements].map(e => {
-   return { [e.name]: e.value }
-  }).filter((value) => Object.keys(value).length !== 0).filter((value) => Object.keys(value)[0] !== "");
+    setFile();
+    const formInputs = [...formEl.current.elements].map(e => {
+      return { [e.name]: e.value }
+    }).filter((value) => Object.keys(value).length !== 0).filter((value) => Object.keys(value)[0] !== "");
 
-  const newSubmitted = formInputs.reduce((acc, input) => {
-   return {
-    ...acc, ...input, userId: user.uid, initiative_id: id, creator: user.displayName, followers: []
-   };
-  }, 0);
+    const newSubmitted = formInputs.reduce((acc, input) => {
+      return {
+        ...acc, ...input, userId: user.uid, initiative_id: id, creator: user.displayName, replies: []
+      };
+    }, 0);
 
-  return { ...newSubmitted, createdAt: serverTimestampF(), img: file ? file : "" }
+    return { ...newSubmitted, createdAt: serverTimestampF(), img: file ? file : "" }
 
- };
+  };
 
- return (
-  <div className="initiative discussion">
+  return (
+    <div className="initiative discussion">
 
-   {comments ? <div>
+      {comments ? <div>
 
-    <form ref={formEl} onSubmit={(e) => handleNew(e)} id="confirmationForm">
+        <form ref={formEl} onSubmit={(e) => handleNew(e)} id="confirmationForm">
 
-     {file ? <img src={file} alt="" /> : ""}
+          {file ? <img src={file} alt="" /> : ""}
 
-     <input id="name-input" name="title" type="text" placeholder="¿Qué piensas?" />
+          <input id="name-input" name="content" type="text" placeholder="¿Qué piensas?" />
 
-     <div className="images">
-      <input type="file" id="file" name="img" accept="image/*" onChange={(e) => handleImages(e)} />
-      <label htmlFor="file">
-       {progress === 0 ? file ? "📸" : <p>📸</p> : <p>{progress + "%"}</p>}</label>
-     </div>
+          <div className="images">
+            <input type="file" id="file" name="img" accept="image/*" onChange={(e) => handleImages(e)} />
+            <label htmlFor="file">
+              {progress === 0 ? file ? "📸" : <p>📸</p> : <p>{progress + "%"}</p>}</label>
+          </div>
 
-     <button type="submit"></button>
-    </form>
+          <button type="submit"></button>
+        </form>
 
 
-    {
-     comments.length > 0 ?
-      <div className="initiative-container">
-       {comments.map(i => {
-        return <NavLink activeClassName='active' exact={true} to={`discusion/${i.id}`} key={i.id} className="container update">
-         <h3>{i.creator}</h3>
-         {i.img ? <img src={i.img} alt="" /> : ""}
-         {i.title}
+        {
+          comments.length > 0 ?
+            <div className="initiative-container">
+              {comments.map(i => {
+                return <NavLink activeClassName='active' exact={true} to={`discusion/${i.id}`} key={i.id} className="container update">
+                  <h3>{i.creator}</h3>
+                  {i.img ? <img src={i.img} alt="" /> : ""}
+                  {i.content}
 
-        </NavLink>
+                </NavLink>
 
-       })
-       }</div>
-      : "Aún no hay comentarios para esta iniciativa."
-    }</div> : ""}
-  </div>
- )
+              })
+              }</div>
+            : "Aún no hay comentarios para esta iniciativa."
+        }</div> : ""}
+    </div>
+  )
 }
 
 export default Discussion

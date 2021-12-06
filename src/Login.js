@@ -14,6 +14,7 @@ function Login() {
 
  useEffect(() => {
   if (user?.email) { history.push("/"); setLoginEmail(); setLoginPassword(); }
+  console.log(user);
  }, [user])
 
 
@@ -50,7 +51,7 @@ function Login() {
 
      <h5>{errorMessage ? "Usuario o Cuenta incorrecta" : ""}</h5>
      <div className="login-buttons">
-      <div onClick={login}><h4>Ingresar</h4></div>
+      <div onClick={() => login()}><h4>Ingresar</h4></div>
       <div onClick={() => { setPopUpSignUp(true) }}><h4>Crear Cuenta</h4></div>
      </div>
     </div>
@@ -58,7 +59,7 @@ function Login() {
    </div>
    {popUpSignUp ? <SignUp setPopUpSignUp={setPopUpSignUp} /> : ""}
   </div>
-  
+
 
  )
 }

@@ -9,23 +9,17 @@ function SignUp({ setPopUpSignUp }) {
 
   const { user, register, setRegisterEmail, setRegisterPassword, setRegisterName } = useContext(UserContext);
 
-  const checks = useRef()
+  const checks = useRef();
 
-  const [barrios, setBarrios] = useState(b)
+  const [barrios, setBarrios] = useState(b);
 
-  const [barrio, setBarrio] = useState()
+  const [barrio, setBarrio] = useState();
 
-  const [topics, setTopics] = useState([])
+  const [topics, setTopics] = useState([]);
+
   const history = useHistory();
 
-  const [keywords, setKeywords] = useState(t)
-
-  useEffect(() => {
-    console.log("user info", user);
-    if (user?.email) {
-      history.push("/");
-    }
-  }, [history, user])
+  const [keywords, setKeywords] = useState(t);
 
 
   const handleLocation = (event) => {
@@ -112,7 +106,7 @@ function SignUp({ setPopUpSignUp }) {
           })}
         </div>
 
-        <button onClick={() => register(barrio, topics)}> Crear Usuario</button>
+        <button onClick={() => { register(barrio, topics); setPopUpSignUp(false) }}> Crear Usuario</button>
       </div>
 
 

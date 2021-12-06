@@ -9,9 +9,14 @@ function SettingsContextProvider(props) {
  const toggleModalCreate = () => {
   setModalCreate(!modalCreate);
  }
+ const [barUpdates, setBarUpdates] = useState(false)
+
+ const toggleBarUpdates = () => {
+  setBarUpdates(!barUpdates);
+ }
 
  return (
-  <SettingsContext.Provider value={{ modalCreate, toggleModalCreate }}>
+  <SettingsContext.Provider value={{ modalCreate, toggleModalCreate, barUpdates, toggleBarUpdates }}>
    {props.children}
   </SettingsContext.Provider>
  )

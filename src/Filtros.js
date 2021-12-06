@@ -12,18 +12,16 @@ function Filtros() {
 
   const { unSubscribeFromFeed, handleQuery } = useContext(InitiativeContext);
 
-  const { user, userInfo, getUserInfo } = useContext(UserContext);
+  const { user, userInfo } = useContext(UserContext);
+
   const { initiatives } = useContext(InitiativeContext)
 
   const [selected, setSelected] = useState();
 
-  useEffect(async () => {
-    if (user) {
-      await getUserInfo(user.uid);
-      if (userInfo && !selected) {
-        setSelected({ tipo: "Barrio", texto: "", valor: userInfo.lugar });
-        handleBarrios(userInfo.lugar);
-      }
+  useEffect(() => {
+    if (user && userInfo) {
+      setSelected({ tipo: "Barrio", texto: "", valor: userInfo.lugar });
+      handleBarrios(userInfo.lugar);
     }
     return () => { unSubscribeFromFeed(); setSelected() };
   }, [user, userInfo]);

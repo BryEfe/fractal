@@ -1,8 +1,7 @@
-import React, { useContext, useEffect } from "react";
+import React from "react";
 import './App.css';
 import Login from "./Login";
 import Main from "./Main";
-import SignUp from "./SignUp";
 
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 

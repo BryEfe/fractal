@@ -1,9 +1,11 @@
-import React, { useEffect } from 'react'
+import React, { useContext } from 'react'
+import { InitiativeContext } from "../providers/InitiativeContext";
+function Summary({ initiative, user, id }) {
 
-function Summary({ initiative, user, setArray, id }) {
+  const { setLikes } = useContext(InitiativeContext)
 
   const like = (array) => {
-    return array[0] ? user.uid.localeCompare(array[0]) : false;
+    return array[0] ? user.uid.localeCompare(array[0].uid) : false;
   }
 
   return (
@@ -14,7 +16,7 @@ function Summary({ initiative, user, setArray, id }) {
           <h2>{initiative.name}</h2>
 
           {user ? user.uid !== initiative.userId ?
-            <button onClick={(e) => { e.preventDefault(); setArray("initiatives", id, user.uid, initiative.followers) }} className={like(initiative.followers) === 0 ? "like" : "unlike"}>{like(initiative.followers) === 0 ? "Siguiendo" : "Seguir"}</button> : "" : ""}
+            <button onClick={(e) => { setLikes(id, { by: user?.displayName, uid: user.uid }, initiative.followers) }} className={like(initiative.followers) === 0 ? "like" : "unlike"}>{like(initiative.followers) === 0 ? "Siguiendo" : "Seguir"}</button> : "" : ""}
         </div>
 
         <div className="info-initiative">

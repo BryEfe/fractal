@@ -1,5 +1,5 @@
 import React, { createContext, useState } from "react";
-import { db, collectionF, onSnapshotF, addDocF, docF, setDocF, getStorageF, sRef, uploadBytesResumableF, getDownloadURLF, queryF, whereF } from "../firebase";
+import { db, collectionF, onSnapshotF, addDocF, docF, setDocF, getStorageF, sRef, uploadBytesResumableF, getDownloadURLF, queryF, whereF, getDocF } from "../firebase";
 
 export const InitiativeContext = createContext();
 
@@ -10,7 +10,9 @@ const InitiativeContextProvider = (props) => {
   const [initiative, setInitiative] = useState(null);
   const [comment, setComment] = useState(null);
   const [progress, setProgress] = useState(0);
-  const [updates, setUpdates] = useState(null)
+  const [myInitiativeUpdates, setMyInitiativeUpdates] = useState([])
+  const [myFollowedInitiatives, setMyFollowedInitiatives] = useState([])
+  const [changes, setChanges] = useState(null)
   const [comments, setComments] = useState()
   const [pickedLugar, setPickedLugar] = useState("");
 
@@ -23,27 +25,38 @@ const InitiativeContextProvider = (props) => {
     unsubscribeInititatives = onSnapshotF(q, (data) => {
       switch (collection) {
         case "initiatives":
-          setInitiatives(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })))
+          setInitiatives(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
           break;
         case "changes":
-          setUpdates(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })))
+          setChanges(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
           break;
         case "comments":
-          setComments(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })))
+          setComments(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+          break;
+        case "updates":
+          if (operator == "==") {
+            setMyInitiativeUpdates(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+          } else {
+            setMyFollowedInitiatives(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+          }
+
           break;
       }
-
     }, (error) => {
       console.log("handle feed OnSnapshot error:", error)
     })
   }
 
-  const unSubscribeFromFeed = () => { setInitiatives(); unsubscribeInititatives(); }
-
-  const handleNewDoc = async (collection, payload) => {
-    const docRef = await addDocF(collectionF(db, collection), payload);
-    return docRef.id;
+  const handleUserUpdates = (uid, name) => {
+    console.log("Updates")
+    handleQuery("updates", "followers", "array-contains", { by: name, uid: uid });
+    handleQuery("updates", "creatorId", "==", uid);
+    console.log("myFollowedInitiatives:", myFollowedInitiatives)
+    console.log("myInitiativeUpdates:", myInitiativeUpdates)
   }
+
+
+  const unSubscribeFromFeed = () => { setInitiatives(); unsubscribeInititatives(); }
 
   const handleGetDoc = (ref, collection) => {
     const docRef = docF(db, collection, ref);
@@ -66,20 +79,78 @@ const InitiativeContextProvider = (props) => {
   const unSubscribeFromDoc = () => {
     setInitiative();
     setComments();
-    setUpdates();
+    setChanges();
     unsubscribeInititative();
   }
 
-  const setArray = async (collection, id, uid, oldArray) => {
+  /*Writes initiatives, changes and top comments to database */
+  const handleNewDoc = async (collection, payload) => {
+
+    const docRef = await addDocF(collectionF(db, collection), payload);
+    if (collection != "updates") {
+      handleUpdates(collection === "initiatives" ? docRef.id : payload.initiative_id, collection, payload);
+    }
+    return docRef.id;
+  }
+
+  const handleUpdates = async (ref, action, payload) => {
+
+    const docRef = docF(db, "initiatives", ref);
+    const docSnap = await getDocF(docRef);
+    if (docSnap.exists()) {
+      const update = {
+        action: action,
+        followers: docSnap.data().followers,
+        creatorId: docSnap.data().userId,
+        createdAt: new Date(),
+        ...handleUpdateContent(action, payload)
+      }
+
+      handleNewDoc("updates", update)
+    } else {
+      console.log("No such document!");
+    }
+
+  }
+
+  const handleUpdateContent = (action, content) => {
+    var update = ""
+    switch (action) {
+      case "comments":
+        update = { content: content.content, by: content.creator }
+        break;
+      case "reply":
+        update = content
+        break;
+      case "like":
+        update = { content: action, by: content.by, by_id: content.uid }
+        break;
+    }
+    return update;
+  }
+
+  /* Writes likes and replies to db  */
+  const setLikes = async (id, uid, oldArray) => {
     var newArray = [];
-    if (collection === "initiatives") {
-      newArray = oldArray.includes(uid) ? oldArray.filter(oi => oi != uid) : [...oldArray, uid]
+    if (oldArray.filter((e) => { return e.uid === uid.uid; }).length > 0) {
+      newArray = oldArray.filter(oi => { return oi.uid !== uid.uid })
     } else {
       newArray = [...oldArray, uid]
     }
 
-    await setDocF(docF(db, collection, id), { followers: newArray }, { merge: true });
+    await setDocF(docF(db, "initiatives", id), { followers: newArray }, { merge: true });
 
+    if (!oldArray.filter((e) => { return e.uid === uid.uid; }).length > 0) {
+
+      handleUpdates(id, "like", uid);
+    }
+  }
+
+  const setReplies = async (commentId, initiativeId, content, oldArray) => {
+    var newArray = [];
+    newArray = [...oldArray, content]
+    await setDocF(docF(db, "comments", commentId), { replies: newArray }, { merge: true });
+    handleUpdates(initiativeId, "reply", content);
   }
 
   const uploadImage = (imageToUpload, name) => {
@@ -92,9 +163,7 @@ const InitiativeContextProvider = (props) => {
 
     return new Promise((resolve, reject) => {
       uploadTask.on('state_changed', (snap) => {
-
         setProgress(Math.round((snap.bytesTransferred / snap.totalBytes) * 100));
-
       }, (error) => { reject(error); },
         () => getDownloadURLF(uploadTask.snapshot.ref).then((downloadURL) => { setProgress(0); resolve(downloadURL); })
       )
@@ -103,7 +172,7 @@ const InitiativeContextProvider = (props) => {
 
 
   return (
-    <InitiativeContext.Provider value={{ initiatives, updates, initiative, comments, comment, progress, setPickedLugar, setArray, uploadImage, handleQuery, unSubscribeFromFeed, handleNewDoc, handleGetDoc, unSubscribeFromDoc }}>
+    <InitiativeContext.Provider value={{ setLikes, handleUserUpdates, myFollowedInitiatives, myInitiativeUpdates, initiatives, changes, initiative, comments, comment, progress, handleUpdates, setPickedLugar, setReplies, uploadImage, handleQuery, unSubscribeFromFeed, handleNewDoc, handleGetDoc, unSubscribeFromDoc }}>
       {props.children}
     </InitiativeContext.Provider>
   )

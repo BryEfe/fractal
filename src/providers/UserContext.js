@@ -12,12 +12,16 @@ function UserContextProvider(props) {
  const [loginEmail, setLoginEmail] = useState("");
  const [loginPassword, setLoginPassword] = useState("");
  const [errorMessage, setErrorMessage] = useState()
-
+ const [updates, setUpdates] = useState()
  const [user, setUser] = useState();
  const [userInfo, setUserInfo] = useState();
 
  onAuthStateChangedF(auth, (currentUser) => {
   setUser(currentUser);
+  if (currentUser && !userInfo) {
+   getUserInfo(currentUser.uid);
+  }
+  console.log("Current User", currentUser)
  });
 
  const register = async (info, intereses) => {
@@ -33,38 +37,26 @@ function UserContextProvider(props) {
      tipo_lugar: info.tipo,
      localidad_lugar: info.localidad,
      intereses: intereses
-
-    }).catch((error) => {
-     console.log(error);
-    });
-   }).catch((error) => {
-    console.log(error);
-   });
+    }).catch((error) => { console.log(error); });
+   }).catch((error) => { console.log(error); });
    await updateProfileF(auth.currentUser, {
     displayName: registerName
    });
-
-   getUserInfo(auth.currentUser.uid);
-
-
   } catch (error) {
    setErrorMessage(error.message);
   }
  }
 
  const login = async () => {
-
   try {
    await signInWithEmailAndPasswordF(
     auth,
     loginEmail,
     loginPassword
    ).then(u => { getUserInfo(u.user.uid); localStorage.setItem('user', u.user.uid); });
-
   } catch (error) {
    setErrorMessage(error.message);
   }
-
  };
 
  const logout = async () => {
@@ -82,6 +74,8 @@ function UserContextProvider(props) {
    console.log("No such document!");
   }
  }
+
+
 
  return (
   <UserContext.Provider value={{ userInfo, errorMessage, user, auth, getUserInfo, setUser, logout, login, register, setRegisterEmail, setRegisterPassword, setLoginEmail, setLoginPassword, setRegisterName }}>

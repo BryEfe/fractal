@@ -9,7 +9,7 @@ function Inicio() {
     if (user) {
       getUserInfo(user.uid)
     }
-  }, [])
+  }, [user])
 
   return (
     <div>
