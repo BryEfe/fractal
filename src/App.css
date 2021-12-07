@@ -152,7 +152,6 @@ p {
 .app {
   width: 85vw;
   padding-top: 120px;
-  padding-bottom: 32px;
   display: flex;
   flex-direction: column;
   position: relative;
@@ -236,7 +235,8 @@ p {
   border-radius: 4px;
   padding: 24px 32px;
   font-size: var(--main-font-size);
-  width: 49.5%;
+  width:49.5%;
+  gap: 16px;
 }
 
 .anuncio img{
@@ -404,7 +404,7 @@ p {
 }
 
 .modal-body h3 {
-  margin-bottom: 16px;
+ margin-bottom: 16px;
 }
 
 .modal-form {
@@ -704,6 +704,7 @@ a {
 
 .container-description {
   margin-top: 16px;
+
 }
 
 .container h4 {
@@ -1013,6 +1014,7 @@ a {
   font-size: 12px;
   margin: 0px 4px;
 }
+
 
 /*inicio*/
 .feed h3 {
