@@ -1,20 +1,29 @@
 import React from 'react'
-
+import my_anuncio from "./svg/my_anuncio.svg";
+import follow_anuncio from "./svg/follow_anuncio.svg";
+import { Link } from 'react-router-dom'
 function Notification({ updates }) {
-
-
-
  return (
   <div>
    {updates.map((a, index) => {
     return <div className="notification" key={index}>
-     <div>  <img src="" alt="" />
-      <p>{a.type}</p>
-      <p>{a.createdAt.toDate().toLocaleString()}</p>
-      <h5>{` Nuevo ${a.action} en ${a.initiativeName}`}</h5>
-     </div>
+     <img src={a.type == "Mine" ? my_anuncio : follow_anuncio} alt="" />
      <div>
-      <p>{` ${a.by} ${a.content == "seguidor" ? "" : ": " + a.content}`}</p>
+      <div className="notification-content">
+
+
+       <h5>
+        {` Nuevo ${a.action} en ${a.type == "Mine" ? "tu proyecto" : "el proyecto"}`}
+
+        <Link to={`/iniciativas/${a.initiative_id}/resumen`}>{a.initiativeName}</Link>
+
+        {`(${a.createdAt.toDate().toLocaleString()})`}</h5>
+      </div>
+
+      <div className="notification-content">
+       <Link to={`/usuario/${a.by_id}`}>{a.by}</Link>
+       <p>{`  ${a.content == "seguidor" ? "" : ": '" + a.content + "'"}`}</p>
+      </div>
      </div>
 
     </div>

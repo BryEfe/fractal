@@ -231,8 +231,6 @@ p {
 .top-initiative-subnavbar {
   margin-top: 16px;
   padding-top: 16px;
-  border-top-style: solid;
-  border-top-width: 1px;
 }
 
 .initiative-subnavbar {
@@ -306,7 +304,7 @@ p {
   align-items: center;
   justify-content: center;
   background-color: rgba(0, 0, 0, 0.5);
-  z-index: 0;
+  z-index: 10;
 }
 
 .modal-body {
@@ -851,6 +849,7 @@ a {
 
 .loader {
   background-color: var(--main-highlight-color-2);
+  z-index: 10;
 }
 
 #loading {
@@ -906,9 +905,20 @@ a {
 
 .notification {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  margin: 16px 0px;
 }
 
 .notification p {
   color: var(--main-gray) !important;
+}
+
+.notification-content {
+  display: flex;
+  flex-direction: row;
+}
+
+.notification-content h5 a {
+  font-size: 12px;
+  margin: 0px 4px;
 }

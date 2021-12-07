@@ -21,12 +21,17 @@ function Barranav() {
     const { update, setUpdate, myInitiativeUpdates, myFollowedInitiatives, handleUserUpdates } = useContext(InitiativeContext)
 
     useEffect(() => {
+
         if (user && !myInitiativeUpdates) {
             handleUserUpdates(user?.uid, user?.displayName)
             setUpdate(false);
         } else {
             var newArray = [...myInitiativeUpdates, ...myFollowedInitiatives]
-            newArray = newArray.filter(u => u.by_id != user.uid).sort((a) => { return new Date() - a.createdAt })
+
+
+            newArray = newArray.filter(u => u.by_id != user.uid)
+            newArray = newArray.sort((a, b) => { return b.createdAt - a.createdAt })
+
             if (newArray.length == updates.length) {
                 setUpdate(false)
             }

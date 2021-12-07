@@ -44,6 +44,9 @@ function Main() {
         <Route path="/iniciativas/:iniciativeId">
           <Iniciative />
         </Route>
+        <Route path="/usuarios/:userId">
+          <Iniciative />
+        </Route>
 
       </div>
       : <div className="modal loader"><div id="loading"></div></div>)
