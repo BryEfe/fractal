@@ -102,8 +102,8 @@ const InitiativeContextProvider = (props) => {
   /*Writes initiatives, changes and top comments to database */
   const handleNewDoc = async (collection, payload) => {
     const docRef = await addDocF(collectionF(db, collection), payload);
-    if (collection != "updates") {
-      handleUpdates(collection == "initiatives" ? docRef.id : payload.initiative_id, collection, payload);
+    if (collection != "updates" && collection != "initiatives") {
+      handleUpdates(payload.initiative_id, collection, payload);
     }
     return docRef.id;
   }
@@ -150,8 +150,6 @@ const InitiativeContextProvider = (props) => {
       case "reply":
         a = "réplica"
         break;
-
-
     }
 
     return a;
