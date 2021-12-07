@@ -35,6 +35,9 @@ function Card() {
                         } key={i.id}>
                             <div className="container">
                                 <div className="container-top">
+                                    <div className="container-location">
+                                        <h5>{`Localidad ${i.localidad_lugar} | ${i.lugar} | ${i.keywords.join(",")}`}</h5>
+                                    </div>
                                     <div className="title-button">
                                         <h4>{i.name}</h4>
                                         {user ? user.uid !== i.userId ? <button onClick={(e) => { e.preventDefault(); setLikes(i.id, { by: user?.displayName, uid: user.uid }, i.followers) }} className={like(i.followers) === 0 ? "like" : "unlike"}>

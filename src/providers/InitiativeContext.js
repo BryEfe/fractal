@@ -215,7 +215,7 @@ const InitiativeContextProvider = (props) => {
 
 
   return (
-    <InitiativeContext.Provider value={{ update, setUpdate, setLikes, handleUserUpdates, myFollowedInitiatives, myInitiativeUpdates, initiatives, changes, initiative, comments, comment, progress, handleUpdates, setPickedLugar, setReplies, uploadImage, handleQuery, unSubscribeFromFeed, handleNewDoc, handleGetDoc, unSubscribeFromDoc }}>
+    <InitiativeContext.Provider value={{ update, setUpdate, setMyFollowedInitiatives, setMyInitiativeUpdates, setLikes, handleUserUpdates, myFollowedInitiatives, myInitiativeUpdates, initiatives, changes, initiative, comments, comment, progress, handleUpdates, setPickedLugar, setReplies, uploadImage, handleQuery, unSubscribeFromFeed, handleNewDoc, handleGetDoc, unSubscribeFromDoc }}>
       {props.children}
     </InitiativeContext.Provider>
   )

@@ -18,15 +18,17 @@ function Barranav() {
     const history = useHistory();
     const [updates, setUpdates] = useState([])
 
-    const { update, setUpdate, myInitiativeUpdates, myFollowedInitiatives, handleUserUpdates } = useContext(InitiativeContext)
+    const { update, setUpdate, myInitiativeUpdates, myFollowedInitiatives, handleUserUpdates, setMyInitiativeUpdates, setMyFollowedInitiatives } = useContext(InitiativeContext)
 
     useEffect(() => {
 
         if (user && !myInitiativeUpdates) {
+
             handleUserUpdates(user?.uid, user?.displayName)
             setUpdate(false);
         } else {
-
+            setMyInitiativeUpdates([]);
+            setMyFollowedInitiatives([]);
             var newArray = [...myInitiativeUpdates, ...myFollowedInitiatives]
             newArray = newArray.filter(u => u.by_id != user.uid).sort((a, b) => { return b.createdAt - a.createdAt })
 
