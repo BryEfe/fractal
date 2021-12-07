@@ -23,12 +23,11 @@ function Barranav() {
     useEffect(() => {
 
         if (user && !myInitiativeUpdates) {
-
+            setMyInitiativeUpdates([]);
+            setMyFollowedInitiatives([]);
             handleUserUpdates(user?.uid, user?.displayName)
             setUpdate(false);
         } else {
-            setMyInitiativeUpdates([]);
-            setMyFollowedInitiatives([]);
             var newArray = [...myInitiativeUpdates, ...myFollowedInitiatives]
             newArray = newArray.filter(u => u.by_id != user.uid).sort((a, b) => { return b.createdAt - a.createdAt })
 

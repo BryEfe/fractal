@@ -21,7 +21,7 @@ function Change({ user, id }) {
             changes.map(i => {
               return <div className="container update">
                 {i.img ? <img src={i.img} alt="" /> : ""}
-                <h3>{i.title}</h3>{i.update}</div>
+                <h3>{i.content}</h3>{i.update}</div>
             })
           }
           </div>

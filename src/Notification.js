@@ -12,7 +12,13 @@ function Notification({ updates }) {
 
 
             <h5>
-              {` Nuevo ${a.action} en ${a.type == "Mine" ? "tu proyecto" : "el proyecto"}`}
+
+              <Link to={`/iniciativas/${a.initiative_id}/resumen`}>
+                {`Nuevo ${a.action}`}
+              </Link>
+
+
+              {`en ${a.type == "Mine" ? "tu proyecto" : "el proyecto"}`}
 
               <Link to={`/iniciativas/${a.initiative_id}/resumen`}>{a.initiativeName}</Link>
 
