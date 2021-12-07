@@ -63,7 +63,7 @@ function Comment({ user, id }) {
     </form>
 
     {
-     comment.replies.map((r, index) => { return <div key={index} className="container"><h3>{r.creator}</h3><p>{r.createdAt.toDate().toLocaleString()}</p> <p>{r.content}</p></div> })
+     comment.replies.sort((a, b) => { return b.createdAt - a.createdAt }).map((r, index) => { return <div key={index} className="container"><h3>{r.creator}</h3><p>{r.createdAt.toDate().toLocaleString()}</p> <p>{r.content}</p></div> })
     }
    </div> : ""}
   </div>

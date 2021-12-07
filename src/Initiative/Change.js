@@ -18,10 +18,11 @@ function Change({ user, id }) {
       {changes ? <div className="initiative-sub-two">{
         changes.length > 0 ?
           <div className="initiative-container">{
-            changes.map(i => {
+            changes.sort((a, b) => { return b.createdAt - a.createdAt }).map(i => {
               return <div className="anuncio">
                 {i.img ? <img src={i.img} alt="" /> : ""}
-                <h3>{i.content}</h3><p>{i.update}</p></div>
+                <p>{i.createdAt.toDate().toLocaleString()}</p>
+                <h3>{i.content}</h3>{i.update}</div>
             })
           }
           </div>

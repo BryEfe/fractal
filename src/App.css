@@ -152,6 +152,7 @@ p {
 .app {
   width: 85vw;
   padding-top: 120px;
+  padding-bottom: 32px;
   display: flex;
   flex-direction: column;
   position: relative;
@@ -235,8 +236,7 @@ p {
   border-radius: 4px;
   padding: 24px 32px;
   font-size: var(--main-font-size);
-  width:49.5%;
-  gap: 16px;
+  width: 49.5%;
 }
 
 .anuncio img{
@@ -404,7 +404,7 @@ p {
 }
 
 .modal-body h3 {
- margin-bottom: 16px;
+  margin-bottom: 16px;
 }
 
 .modal-form {
@@ -704,7 +704,6 @@ a {
 
 .container-description {
   margin-top: 16px;
-
 }
 
 .container h4 {
@@ -1013,4 +1012,24 @@ a {
 .notification-content h5 a {
   font-size: 12px;
   margin: 0px 4px;
+}
+
+/*inicio*/
+.feed h3 {
+  margin: 24px 0px 8px 0px;
+  color: var(--main-highlight-color-2);
+}
+
+.initiative-feed {
+  overflow-x: scroll;
+  padding: 16px 0px;
+}
+.initiative-feed-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.initiative-feed-container .container {
+  width: 860px;
+  margin-right: 16px;
 }

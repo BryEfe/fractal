@@ -18,7 +18,7 @@ function Barranav() {
     const history = useHistory();
     const [updates, setUpdates] = useState([])
 
-    const { update, setUpdate, myInitiativeUpdates, myFollowedInitiatives, handleUserUpdates, setMyInitiativeUpdates, setMyFollowedInitiatives } = useContext(InitiativeContext)
+    const { update, setUpdate, myInitiativeUpdates, myFollowedInitiatives, handleUserUpdates } = useContext(InitiativeContext)
 
     useEffect(() => {
 
@@ -26,7 +26,6 @@ function Barranav() {
             handleUserUpdates(user?.uid, user?.displayName);
             setUpdate(false);
         } else {
-
             var a = myInitiativeUpdates ? myInitiativeUpdates : [];
             var b = myFollowedInitiatives ? myFollowedInitiatives : [];
             var newArray = [...a, ...b]

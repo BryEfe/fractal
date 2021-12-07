@@ -85,9 +85,10 @@ function Discussion({ user, id }) {
         {
           comments.length > 0 ?
             <div className="initiative-container">
-              {comments.map(i => {
+              {comments.sort((a, b) => { return b.createdAt - a.createdAt }).map(i => {
                 return <NavLink activeClassName='active' exact={true} to={`discusion/${i.id}`} key={i.id} className="Comentario">
                   <h3>{i.creator}</h3>
+                  <p>{i.createdAt ? i.createdAt.toDate().toLocaleString() : ""}</p>
                   {i.img ? <img src={i.img} alt="" /> : ""}
                   {i.content}
 

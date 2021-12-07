@@ -21,7 +21,8 @@ function Card() {
     var optionsTime = { hour12: "false" };
 
     const like = (array) => {
-        return array[0] ? user.uid.localeCompare(array[0].uid) : false;
+        let result = array.map(a => a.uid);
+        return array.length > 0 ? result.includes(user.uid) : false;
     }
 
     return (
@@ -30,7 +31,7 @@ function Card() {
             <div className="initiative-sub-one">
                 {initiatives
                     ?
-                    <div className="initiative-sub-two">{initiatives.length > 0 ? <div className="initiative-container">{initiatives.map(i => {
+                    <div className="initiative-sub-two">{initiatives.length > 0 ? <div className="initiative-container">{initiatives.sort((a, b) => { return b.createdAt - a.createdAt }).map(i => {
                         return < Link to={`iniciativas/${i.id}/resumen`
                         } key={i.id}>
                             <div className="container">
@@ -40,8 +41,8 @@ function Card() {
                                     </div>
                                     <div className="title-button">
                                         <h4>{i.name}</h4>
-                                        {user ? user.uid !== i.userId ? <button onClick={(e) => { e.preventDefault(); setLikes(i.id, { by: user?.displayName, uid: user.uid }, i.followers) }} className={like(i.followers) === 0 ? "like" : "unlike"}>
-                                            {like(i.followers) === 0 ? "Apoyando" : "Apoyar"}
+                                        {user ? user.uid !== i.userId ? <button onClick={(e) => { e.preventDefault(); setLikes(i.id, { by: user?.displayName, uid: user.uid }, i.followers) }} className={like(i.followers) ? "like" : "unlike"}>
+                                            {like(i.followers) ? "Siguiendo" : "Seguir"}
                                         </button> : "" : ""}
                                     </div>
 

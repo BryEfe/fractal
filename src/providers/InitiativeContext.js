@@ -8,6 +8,10 @@ const InitiativeContextProvider = (props) => {
 
   const [initiatives, setInitiatives] = useState([]);
   const [initiative, setInitiative] = useState(null);
+
+  const [initiativesKeywords, setinitiativesKeywords] = useState()
+  const [initiativesLocalidad, setInitiativesLocalidad] = useState()
+  const [initiativesBarrio, setInitiativesBarrio] = useState()
   const [comment, setComment] = useState(null);
   const [progress, setProgress] = useState(0);
   const [myInitiativeUpdates, setMyInitiativeUpdates] = useState()
@@ -20,10 +24,8 @@ const InitiativeContextProvider = (props) => {
   var unsubscribeInititative = () => { };
 
 
-  const handleQuery = (collection, type, operator, value) => {
-
-    console.log("hello", collection, type, operator, value);
-
+  const handleQuery = (collection, type, operator, value, feed) => {
+    feed = feed ? feed : false;
     var q = ""
 
     if (collection == "updates") {
@@ -44,7 +46,18 @@ const InitiativeContextProvider = (props) => {
     unsubscribeInititatives = onSnapshotF(q, (data) => {
       switch (collection) {
         case "initiatives":
-          setInitiatives(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+          var d = data.docs.map((doc) => ({ ...doc.data(), id: doc.id }));
+          if (feed) {
+            if (operator == "==") {
+              setInitiativesLocalidad(d);
+              setInitiativesBarrio(d);
+            } else {
+              setinitiativesKeywords(d);
+            }
+          } else {
+            setInitiatives(d);
+          }
+
           break;
         case "changes":
           setChanges(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
@@ -69,6 +82,18 @@ const InitiativeContextProvider = (props) => {
   const handleUserUpdates = (uid, name) => {
     handleQuery("updates", "followers", "array-contains", { by: name, uid: uid });
     handleQuery("updates", "creatorId", "==", uid);
+  }
+
+  const handleUserFeed = (keyword, localidad, barrio) => {
+    console.log(keyword)
+
+    handleQuery("initiatives", "keywords", "array-contains", keyword, true);
+
+    handleQuery("initiatives", "localidad_lugar", "==", localidad, true);
+
+    handleQuery("initiatives", "lugar", "==", barrio, true);
+
+
   }
 
   const unSubscribeFromFeed = () => {
@@ -215,7 +240,7 @@ const InitiativeContextProvider = (props) => {
 
 
   return (
-    <InitiativeContext.Provider value={{ update, setUpdate, setMyFollowedInitiatives, setMyInitiativeUpdates, setLikes, handleUserUpdates, myFollowedInitiatives, myInitiativeUpdates, initiatives, changes, initiative, comments, comment, progress, handleUpdates, setPickedLugar, setReplies, uploadImage, handleQuery, unSubscribeFromFeed, handleNewDoc, handleGetDoc, unSubscribeFromDoc }}>
+    <InitiativeContext.Provider value={{ update, initiativesKeywords, handleUserFeed, setUpdate, setLikes, handleUserUpdates, initiativesLocalidad, initiativesBarrio, myFollowedInitiatives, myInitiativeUpdates, initiatives, changes, initiative, comments, comment, progress, handleUpdates, setPickedLugar, setReplies, uploadImage, handleQuery, unSubscribeFromFeed, handleNewDoc, handleGetDoc, unSubscribeFromDoc }}>
       {props.children}
     </InitiativeContext.Provider>
   )

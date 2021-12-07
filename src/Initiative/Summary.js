@@ -5,7 +5,8 @@ function Summary({ initiative, user, id }) {
   const { setLikes } = useContext(InitiativeContext)
 
   const like = (array) => {
-    return array[0] ? user.uid.localeCompare(array[0].uid) : false;
+    let result = array.map(a => a.uid);
+    return array.length > 0 ? result.includes(user.uid) : false;
   }
 
   return (
@@ -16,7 +17,7 @@ function Summary({ initiative, user, id }) {
           <h2>{initiative.name}</h2>
 
           {user ? user.uid !== initiative.userId ?
-            <button onClick={(e) => { setLikes(id, { by: user?.displayName, uid: user.uid }, initiative.followers) }} className={like(initiative.followers) === 0 ? "like" : "unlike"}>{like(initiative.followers) === 0 ? "Siguiendo" : "Seguir"}</button> : "" : ""}
+            <button onClick={(e) => { setLikes(id, { by: user?.displayName, uid: user.uid }, initiative.followers) }} className={like(initiative.followers) ? "like" : "unlike"}>{like(initiative.followers) ? "Siguiendo" : "Seguir"}</button> : "" : ""}
         </div>
 
         <div className="info-initiative">
