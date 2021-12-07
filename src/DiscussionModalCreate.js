@@ -47,7 +47,7 @@ function DiscussionModalCreate({ toggleModalCreate, id }) {
       };
     }, 0);
 
-    return { ...newSubmitted, createdAt: serverTimestampF(), img: file }
+    return { ...newSubmitted, createdAt: serverTimestampF(), img: file ? file : "" }
   };
 
   return (
@@ -59,7 +59,7 @@ function DiscussionModalCreate({ toggleModalCreate, id }) {
 
             <form ref={formEl} onSubmit={(e) => handleNew(e)} id="confirmationForm">
               <label htmlFor="name-input"> Titulo del Proyecto</label>
-              <input id="name-input" name="title" type="text" placeholder="Titulo de tu proyecto" />
+              <input id="name-input" name="content" type="text" placeholder="Titulo de tu proyecto" />
               <label htmlFor="team-input">Descripción</label>
               <textarea name="update" type="text" cols="40" rows="5" />
               <label>Añadir Imágenes</label>

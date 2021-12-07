@@ -13,7 +13,7 @@ function Inicio() {
 
   return (
     <div>
-      <hr />
+
       {user ?
         <div><h3>{user.displayName ? `Hola, ${user.displayName.split(" ").length >= 4 ? user.displayName.split(" ").slice(0, 3).join(" ") : user.displayName.split(" ")[0]}` : ""}</h3>
 

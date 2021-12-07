@@ -31,7 +31,7 @@ function Comment({ user, id }) {
   }).filter((value) => Object.keys(value).length !== 0).filter((value) => Object.keys(value)[0] !== "");
   const newSubmitted = formInputs.reduce((acc, input) => {
    return {
-    ...acc, ...input, userId: user.uid, creator: user.displayName
+    ...acc, ...input, userId: user.uid, by: user.displayName, by_id: user.uid
    };
   }, 0);
 

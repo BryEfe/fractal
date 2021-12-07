@@ -4,32 +4,37 @@ import { UserContext } from "./providers/UserContext";
 import fractal from './svg/fractal.svg';
 import logout_icon from './svg/logout_icon.svg';
 import notification from './svg/notificacion.svg'
-
 import notification2 from './svg/notificacion2.svg'
+
+import notificacion_pressed from './svg/notificacion_pressed.svg'
 import { InitiativeContext } from "./providers/InitiativeContext";
 import { SettingsContext } from "./providers/SettingsContext";
+import Notification from "./Notification";
+
 function Barranav() {
 
     const { user, logout } = useContext(UserContext);
     const { barUpdates, toggleBarUpdates } = useContext(SettingsContext);
 
     const [updates, setUpdates] = useState([])
-    const { myInitiativeUpdates, myFollowedInitiatives, handleUserUpdates } = useContext(InitiativeContext)
+
+    const { update, setUpdate, myInitiativeUpdates, myFollowedInitiatives, handleUserUpdates } = useContext(InitiativeContext)
 
     useEffect(() => {
-        if (user && updates.length < 1) {
+        if (user && !myInitiativeUpdates) {
             handleUserUpdates(user?.uid, user?.displayName)
-            setUpdates([...myInitiativeUpdates, ...myFollowedInitiatives])
+            setUpdate(false);
+        } else {
+            var newArray = [...myInitiativeUpdates, ...myFollowedInitiatives]
+            newArray = newArray.filter(u => u.by_id != user.uid).sort((a) => { return new Date() - a.createdAt })
+            if (newArray.length == updates.length) {
+                setUpdate(false)
+            }
+            setUpdates(newArray)
         }
 
-        if (updates.length > 0) {
-            console.log("myFollowedInitiatives:", myFollowedInitiatives)
-            console.log("myInitiativeUpdates:", myInitiativeUpdates)
-            setUpdates([...myInitiativeUpdates, ...myFollowedInitiatives])
-        }
-    }, [user, myFollowedInitiatives, handleUserUpdates])
 
-
+    }, [user, update])
 
     return (
         <div>
@@ -39,17 +44,14 @@ function Barranav() {
                     <li><NavLink activeClassName='active' exact={true} to="/">Inicio</NavLink></li>
                     <li><NavLink to="/iniciativas" activeClassName='active'>Iniciativas</NavLink></li>
                     <li>{user?.displayName}</li>
-                    <li><img onClick={toggleBarUpdates} src={barUpdates ? notification2 : notification} alt="" /></li>
+                    <li><img onClick={() => { toggleBarUpdates(); setUpdate(false) }} src={barUpdates ? notificacion_pressed : update ? notification2 : notification} alt="" /></li>
                     <button onClick={user?.email ? logout : ""}><img src={logout_icon} alt="" /></button>
                 </ul>
 
-            </nav> {barUpdates && updates.length > 0 ? <div className={`panel-wrap ${barUpdates ? "checked" : ""}`}>
+            </nav> {barUpdates ? <div className={`panel-wrap ${barUpdates ? "checked" : ""}`}>
                 <div className="panel">
-                    <div onClick={toggleBarUpdates}>x</div>{updates.map((a) => { return <p> {`Nuevo ${a.action} ${a.content}`}</p> })}
-                </div></div> : ""
-            }
-
-
+                    <div onClick={toggleBarUpdates}>x</div>{<Notification updates={updates} />}
+                </div></div> : ""}
         </div>
 
     )

@@ -20,7 +20,7 @@ function Change({ user, id }) {
           <div className="initiative-container">{
             changes.map(i => {
               return <div className="container update">
-                <img src={i.img} alt="" />
+                {i.img ? <img src={i.img} alt="" /> : ""}
                 <h3>{i.title}</h3>{i.update}</div>
             })
           }

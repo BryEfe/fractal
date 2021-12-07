@@ -21,7 +21,7 @@ function UserContextProvider(props) {
   if (currentUser && !userInfo) {
    getUserInfo(currentUser.uid);
   }
-  console.log("Current User", currentUser)
+
  });
 
  const register = async (info, intereses) => {
