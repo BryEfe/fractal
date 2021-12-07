@@ -22,7 +22,7 @@ function Barranav() {
 
     useEffect(() => {
 
-        if (user && !myInitiativeUpdates && !myFollowedInitiatives) {
+        if (user && !myInitiativeUpdates || !myFollowedInitiatives) {
             handleUserUpdates(user?.uid, user?.displayName);
             setUpdate(false);
         } else {
@@ -46,7 +46,9 @@ function Barranav() {
                 <ul>
                     <li><NavLink activeClassName='active' exact={true} to="/">Inicio</NavLink></li>
                     <li><NavLink to="/iniciativas" activeClassName='active'>Iniciativas</NavLink></li>
-                    <li>{user?.displayName}</li>
+                    <span>  </span>
+                    |
+                    <li><NavLink activeClassName='active' exact to={`/usuario/${user.uid}`}>{user?.displayName}</NavLink></li>
                     <li><img onClick={() => { toggleBarUpdates(); setUpdate(false) }} src={barUpdates ? notificacion_pressed : update ? notification2 : notification} alt="" /></li>
                     <button onClick={logout}><img src={logout_icon} alt="" /></button>
                 </ul>
@@ -56,10 +58,10 @@ function Barranav() {
                     <div className="panel">
 
                         <div onClick={toggleBarUpdates}></div>
-                         {<Notification updates={updates} />}
-                      
+                        {<Notification updates={updates} />}
+
                     </div></div> : ""
-            } 
+            }
         </div >
 
     )

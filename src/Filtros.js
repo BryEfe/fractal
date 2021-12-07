@@ -51,7 +51,6 @@ function Filtros() {
 
           <div className="initiative-subnavbar-filters">
 
-            <div>Ir a Cali</div>
 
             <select value={selected ? selected.tipo === "Localidad" ? selected.valor : "none" : ""} refplaceholder="Localidad" onChange={(event) => {
               handleLocalidades(event.target.value)

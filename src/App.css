@@ -152,6 +152,7 @@ p {
 .app {
   width: 85vw;
   padding-top: 120px;
+  padding-bottom: 32px;
   display: flex;
   flex-direction: column;
   position: relative;
@@ -190,7 +191,7 @@ p {
 }
 
 .button-add:hover {
-  background-color:var(--main-highlight-color-2) !important;
+  background-color: var(--main-highlight-color-2) !important;
   color: var(--main-font-color) !important;
 }
 
@@ -235,14 +236,14 @@ p {
   border-radius: 4px;
   padding: 24px 32px;
   font-size: var(--main-font-size);
-  width:49.5%;
+  width: 49.5%;
   gap: 16px;
 }
 
-.anuncio img{
+.anuncio img {
   height: 160px;
   margin-right: 8px;
-  object-fit:cover;
+  object-fit: cover;
 }
 
 .anuncio p {
@@ -264,14 +265,14 @@ p {
   padding: 24px 32px;
   font-size: var(--main-font-size);
   color: var(--main-font-color);
-  width:49.5%;
+  width: 49.5%;
   gap: 16px;
 }
 
-.Comentario img{
+.Comentario img {
   height: 160px;
   margin-right: 8px;
-  object-fit:cover;
+  object-fit: cover;
 }
 
 .Comentario p {
@@ -284,11 +285,11 @@ p {
 
 #confirmationForm {
   width: 100%;
-  font-size:var(--main-font-size);
+  font-size: var(--main-font-size);
 }
 
 .initiative-container a {
-  width: 49.51%;
+  width: 49.2%;
 }
 
 .top-initiative-subnavbar {
@@ -404,7 +405,7 @@ p {
 }
 
 .modal-body h3 {
- margin-bottom: 16px;
+  margin-bottom: 16px;
 }
 
 .modal-form {
@@ -426,8 +427,9 @@ input {
   border-radius: 4px;
 }
 
-.modal-form input, textarea {
-  margin-top:8px;
+.modal-form input,
+textarea {
+  margin-top: 8px;
   margin-bottom: 16px;
 }
 
@@ -704,7 +706,6 @@ a {
 
 .container-description {
   margin-top: 16px;
-
 }
 
 .container h4 {
@@ -1015,7 +1016,6 @@ a {
   margin: 0px 4px;
 }
 
-
 /*inicio*/
 .feed h3 {
   margin: 24px 0px 8px 0px;
@@ -1034,4 +1034,10 @@ a {
 .initiative-feed-container .container {
   width: 860px;
   margin-right: 16px;
+}
+
+/*users.js*/
+
+.user-content {
+  display: flex;
 }
