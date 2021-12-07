@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react'
-import { NavLink } from "react-router-dom";
+import { NavLink, useHistory } from "react-router-dom";
 import { UserContext } from "./providers/UserContext";
 import fractal from './svg/fractal.svg';
 import logout_icon from './svg/logout_icon.svg';
@@ -15,7 +15,7 @@ function Barranav() {
 
     const { user, logout } = useContext(UserContext);
     const { barUpdates, toggleBarUpdates } = useContext(SettingsContext);
-
+    const history = useHistory();
     const [updates, setUpdates] = useState([])
 
     const { update, setUpdate, myInitiativeUpdates, myFollowedInitiatives, handleUserUpdates } = useContext(InitiativeContext)
@@ -28,9 +28,7 @@ function Barranav() {
         } else {
             var newArray = [...myInitiativeUpdates, ...myFollowedInitiatives]
 
-
-            newArray = newArray.filter(u => u.by_id != user.uid)
-            newArray = newArray.sort((a, b) => { return b.createdAt - a.createdAt })
+            newArray = newArray.filter(u => u.by_id != user.uid).sort((a, b) => { return b.createdAt - a.createdAt })
 
             if (newArray.length == updates.length) {
                 setUpdate(false)
@@ -38,8 +36,8 @@ function Barranav() {
             setUpdates(newArray)
         }
 
-
     }, [user, update])
+
 
     return (
         <div>
@@ -50,14 +48,16 @@ function Barranav() {
                     <li><NavLink to="/iniciativas" activeClassName='active'>Iniciativas</NavLink></li>
                     <li>{user?.displayName}</li>
                     <li><img onClick={() => { toggleBarUpdates(); setUpdate(false) }} src={barUpdates ? notificacion_pressed : update ? notification2 : notification} alt="" /></li>
-                    <button onClick={user?.email ? logout : ""}><img src={logout_icon} alt="" /></button>
+                    <button onClick={logout}><img src={logout_icon} alt="" /></button>
                 </ul>
 
-            </nav> {barUpdates ? <div className={`panel-wrap ${barUpdates ? "checked" : ""}`}>
-                <div className="panel">
-                    <div onClick={toggleBarUpdates}>x</div>{<Notification updates={updates} />}
-                </div></div> : ""}
-        </div>
+            </nav> {
+                barUpdates ? <div className={`panel-wrap ${barUpdates ? "checked" : ""}`}>
+                    <div className="panel">
+                        <div onClick={toggleBarUpdates}>x</div>{<Notification updates={updates} />}
+                    </div></div> : ""
+            }
+        </div >
 
     )
 }

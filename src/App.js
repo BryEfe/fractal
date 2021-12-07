@@ -17,6 +17,9 @@ function App() {
         <Route path="/iniciativas">
           <Main />
         </Route>
+        <Route path="/usuario">
+          <Main />
+        </Route>
         <Route exact path="/login">
           <Login />
         </Route>

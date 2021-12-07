@@ -8,7 +8,7 @@ import Inicio from "./Inicio";
 import { SettingsContext } from "./providers/SettingsContext";
 import { UserContext } from "./providers/UserContext";
 import Iniciative from "./Initiative/Iniciative";
-
+import Users from "./Users";
 
 function Main() {
 
@@ -20,7 +20,7 @@ function Main() {
 
   useEffect(() => {
 
-    if (localStorage.getItem('user') === "null" || !localStorage.getItem('user')) {
+    if (localStorage.getItem('user') == "null" || !localStorage.getItem('user')) {
       history.push("/login")
     }
 
@@ -44,8 +44,8 @@ function Main() {
         <Route path="/iniciativas/:iniciativeId">
           <Iniciative />
         </Route>
-        <Route path="/usuarios/:userId">
-          <Iniciative />
+        <Route path="/usuario/:userId">
+          <Users />
         </Route>
 
       </div>

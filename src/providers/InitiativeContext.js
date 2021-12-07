@@ -71,7 +71,10 @@ const InitiativeContextProvider = (props) => {
     handleQuery("updates", "creatorId", "==", uid);
   }
 
-  const unSubscribeFromFeed = () => { setInitiatives(); unsubscribeInititatives(); }
+  const unSubscribeFromFeed = () => {
+    setMyInitiativeUpdates();
+    setMyFollowedInitiatives(); setInitiatives(); unsubscribeInititatives();
+  }
 
   const handleGetDoc = (ref, collection) => {
     const docRef = docF(db, collection, ref);

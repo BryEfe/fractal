@@ -21,6 +21,12 @@ function UserContextProvider(props) {
   if (currentUser && !userInfo) {
    getUserInfo(currentUser.uid);
   }
+  if (currentUser) {
+   if (localStorage.getItem('user') === "null" || !localStorage.getItem('user')) {
+    localStorage.setItem('user', currentUser.uid);
+   }
+
+  }
 
  });
 
@@ -36,12 +42,14 @@ function UserContextProvider(props) {
      id_lugar: info.id,
      tipo_lugar: info.tipo,
      localidad_lugar: info.localidad,
-     intereses: intereses
+     intereses: intereses,
+     nombre: user?.displayName
     }).catch((error) => { console.log(error); });
    }).catch((error) => { console.log(error); });
    await updateProfileF(auth.currentUser, {
     displayName: registerName
    });
+
   } catch (error) {
    setErrorMessage(error.message);
   }
@@ -53,7 +61,7 @@ function UserContextProvider(props) {
     auth,
     loginEmail,
     loginPassword
-   ).then(u => { getUserInfo(u.user.uid); localStorage.setItem('user', u.user.uid); });
+   );
   } catch (error) {
    setErrorMessage(error.message);
   }
