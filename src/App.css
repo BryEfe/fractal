@@ -225,8 +225,22 @@ p {
   gap: 16px;
 }
 
+.anuncio {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  background-color: white;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 8px;
+  padding: 24px 32px;
+  font-size: var(--main-font-size);
+  width:49.5%;
+}
+
 .initiative-container a {
   flex: auto;
+  width: 40%;
 }
 
 .top-initiative-subnavbar {
@@ -593,7 +607,7 @@ progress::-webkit-progress-value {
   border-width: 1px;
   border-radius: 8px;
   padding: 24px 32px;
-  height: 300px;
+  height: 320px;
 }
 
 .container h5 {
@@ -630,7 +644,7 @@ a {
   width: 100%;
   overflow: hidden;
   display: -webkit-box;
-  -webkit-line-clamp: 4;
+  -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
 }
 

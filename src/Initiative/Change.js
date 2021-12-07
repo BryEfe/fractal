@@ -15,11 +15,11 @@ function Change({ user, id }) {
   return (
 
     <div className="initiative">
-      {changes ? <div>{
+      {changes ? <div className="initiative-sub-two">{
         changes.length > 0 ?
           <div className="initiative-container">{
             changes.map(i => {
-              return <div className="container update">
+              return <div className="anuncio">
                 {i.img ? <img src={i.img} alt="" /> : ""}
                 <h3>{i.content}</h3>{i.update}</div>
             })
