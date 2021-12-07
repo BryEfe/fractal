@@ -86,7 +86,7 @@ function Discussion({ user, id }) {
           comments.length > 0 ?
             <div className="initiative-container">
               {comments.map(i => {
-                return <NavLink activeClassName='active' exact={true} to={`discusion/${i.id}`} key={i.id} className="container update">
+                return <NavLink activeClassName='active' exact={true} to={`discusion/${i.id}`} key={i.id} className="Comentario">
                   <h3>{i.creator}</h3>
                   {i.img ? <img src={i.img} alt="" /> : ""}
                   {i.content}

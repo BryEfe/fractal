@@ -43,11 +43,11 @@ function Comment({ user, id }) {
 
  return (
   <div>
-   {comment ? <div>
+   {comment ? <div className="initiative-sub-two">
 
     <div className="initiative-container">
 
-     <div className="container update">
+     <div className="ZoomComentario">
       <h3>{comment.creator}</h3>
       {comment.img ? <img src={comment.img} alt="" /> : ""}
       {comment.title}
