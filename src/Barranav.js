@@ -22,15 +22,15 @@ function Barranav() {
 
     useEffect(() => {
 
-        if (user && !myInitiativeUpdates) {
-            setMyInitiativeUpdates([]);
-            setMyFollowedInitiatives([]);
-            handleUserUpdates(user?.uid, user?.displayName)
+        if (user && !myInitiativeUpdates && !myFollowedInitiatives) {
+            handleUserUpdates(user?.uid, user?.displayName);
             setUpdate(false);
         } else {
-            var newArray = [...myInitiativeUpdates, ...myFollowedInitiatives]
-            newArray = newArray.filter(u => u.by_id != user.uid).sort((a, b) => { return b.createdAt - a.createdAt })
 
+            var a = myInitiativeUpdates ? myInitiativeUpdates : [];
+            var b = myFollowedInitiatives ? myFollowedInitiatives : [];
+            var newArray = [...a, ...b]
+            newArray = newArray.filter(u => u.by_id != user.uid).sort((a, b) => { return b.createdAt - a.createdAt })
             if (newArray.length == updates.length) {
                 setUpdate(false)
             }
