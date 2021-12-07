@@ -103,7 +103,7 @@ const InitiativeContextProvider = (props) => {
   const handleNewDoc = async (collection, payload) => {
     const docRef = await addDocF(collectionF(db, collection), payload);
     if (collection != "updates") {
-      handleUpdates(collection === "initiatives" ? docRef.id : payload.initiative_id, collection, payload);
+      handleUpdates(collection == "initiatives" ? docRef.id : payload.initiative_id, collection, payload);
     }
     return docRef.id;
   }

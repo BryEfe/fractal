@@ -66,18 +66,19 @@ function SignUp({ setPopUpSignUp }) {
 
         <input
           placeholder="Contraseña..."
+          type="password"
           onChange={(event) => {
             setRegisterPassword(event.target.value);
           }}
         />
 
         <div className="container-toggle-switch">
-          <p>Barrios</p>
+          <p>Vivo en un:       <b>barrio</b></p>
           <label className="toggle-switch">
             <input type="checkbox" checked={isToggled} onChange={onToggle} />
             <span className="switch" />
           </label>
-          <p>Corregimientos</p>
+          <p><b>corregimiento</b></p>
         </div>
 
         <input ref={checks} list="barrios" placeholder={!isToggled ? "Barrio" : "Corregimiento"}
