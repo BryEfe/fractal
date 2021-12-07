@@ -42,7 +42,7 @@ function Comment({ user, id }) {
  };
 
  return (
-  <div>
+  <div className="initiative-sub-two">
    {comment ? <div className="initiative-sub-two">
 
     <div className="initiative-container">

@@ -55,9 +55,12 @@ function Barranav() {
             </nav> {
                 barUpdates ? <div className={`panel-wrap ${barUpdates ? "checked" : ""}`}>
                     <div className="panel">
-                        <div onClick={toggleBarUpdates}>x</div>{<Notification updates={updates} />}
+
+                        <div onClick={toggleBarUpdates}></div>
+                         {<Notification updates={updates} />}
+                      
                     </div></div> : ""
-            }
+            } 
         </div >
 
     )

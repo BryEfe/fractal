@@ -41,7 +41,7 @@ function Card() {
                                     <div className="title-button">
                                         <h4>{i.name}</h4>
                                         {user ? user.uid !== i.userId ? <button onClick={(e) => { e.preventDefault(); setLikes(i.id, { by: user?.displayName, uid: user.uid }, i.followers) }} className={like(i.followers) === 0 ? "like" : "unlike"}>
-                                            {like(i.followers) === 0 ? "Siguiendo" : "Seguir"}
+                                            {like(i.followers) === 0 ? "Apoyando" : "Apoyar"}
                                         </button> : "" : ""}
                                     </div>
 

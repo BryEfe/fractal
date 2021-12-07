@@ -21,7 +21,7 @@ function Change({ user, id }) {
             changes.map(i => {
               return <div className="anuncio">
                 {i.img ? <img src={i.img} alt="" /> : ""}
-                <h3>{i.content}</h3>{i.update}</div>
+                <h3>{i.content}</h3><p>{i.update}</p></div>
             })
           }
           </div>

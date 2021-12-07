@@ -27,7 +27,7 @@ function Notification({ updates }) {
 
           <div className="notification-content">
             <Link to={`/usuario/${a.by_id}`}>{a.by}</Link>
-            <p>{`  ${a.content == "seguidor" ? "" : ": '" + a.content + "'"}`}</p>
+            <p>{`  ${a.content == "seguidor" ? "" :  a.content}`}</p>
           </div>
         </div>
 

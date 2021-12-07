@@ -64,7 +64,7 @@ function Discussion({ user, id }) {
   return (
     <div className="initiative discussion">
 
-      {comments ? <div>
+      {comments ? <div className="initiative-sub-two">
 
         <form ref={formEl} onSubmit={(e) => handleNew(e)} id="confirmationForm">
 
