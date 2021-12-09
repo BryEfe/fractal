@@ -14,14 +14,14 @@ function Change({ user, id }) {
 
   return (
 
-    <div className="initiative">
+    <div className="initiative initiative-change">
       {changes ? <div className="initiative-sub-two">{
         changes.length > 0 ?
           <div className="initiative-container">{
             changes.sort((a, b) => { return b.createdAt - a.createdAt }).map(i => {
               return <div className="anuncio">
                 {i.img ? <img src={i.img} alt="" /> : ""}
-                <p>{i.createdAt.toDate().toLocaleString()}</p>
+                <p>{i.createdAt? i.createdAt.toDate().toLocaleString():""}</p>
                 <h3>{i.content}</h3>{i.update}</div>
             })
           }

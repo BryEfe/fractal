@@ -6,6 +6,7 @@ function Inicio() {
 
   const { user, userInfo } = useContext(UserContext)
   const { unSubscribeFromFeed, handleUserFeed, initiativesLocalidad, initiativesBarrio, initiativesKeywords, setLikes } = useContext(InitiativeContext);
+  const [keywordsUser, setKeywordsUser] = useState([])
 
 
   var options = { weekday: "long", month: "long", day: "numeric" };
@@ -18,6 +19,7 @@ function Inicio() {
     if (user && userInfo) {
       handleUserFeed(userInfo.intereses[0], userInfo.localidad_lugar, userInfo.lugar)
       console.log("interestInitiatives", initiativesKeywords)
+      setKeywordsUser(userInfo.intereses)
     }
     return () => unSubscribeFromFeed();
   }, [user, userInfo])
@@ -33,12 +35,13 @@ function Inicio() {
 
       {user ?
         <div className="greeting"><h1>{user.displayName ? `Hola, ${user.displayName.split(" ").length >= 4 ? user.displayName.split(" ").slice(0, 3).join(" ") : user.displayName.split(" ")[0]}` : ""}</h1>
-          <h2>creemos que te podrían interesar las siguientes iniciativas :</h2></div>
+          <h2>creemos que te podrían interesar las siguientes iniciativas:</h2></div>
         : <div className="modal loader"><div id="loading"></div></div>}
 
+      {initiativesKeywords.filter(u => u.userId != user.uid).length > 0 ?
 
-      <h3>{userInfo ? userInfo.intereses[0] : ""}</h3>
-
+      <h3>{userInfo ? keywordsUser[0] : ""}</h3> : <div> <h3> {userInfo ? userInfo.intereses[0] : ""}</h3><p>{`Todavía nadie ha publicado iniciativas en la categoría ${userInfo.intereses[0]}. ¡Te invitamos a traer a tus amigos y generar cambio!`}</p></div>}
+      
       {initiativesKeywords
         ?
         <div className="initiative-feed">{initiativesKeywords.length > 0 ? <div className="initiative-feed-container">{initiativesKeywords.filter(u => u.userId != user.uid).sort((a, b) => { return b.createdAt - a.createdAt }).map(i => {
@@ -78,7 +81,9 @@ function Inicio() {
         <h5>Loading...</h5>
       }
 
-      <h3>{userInfo ? userInfo.lugar : ""}</h3>
+{initiativesBarrio.filter(u => u.userId != user.uid).length > 0 ?
+        <h3>{userInfo ? userInfo.lugar : ""}</h3> :
+        <div> <h3>Tu barrio</h3><p>{`Aún no hay iniciativas en el barrio ${userInfo ? userInfo.lugar : ""}. ¡Invita tus vecinos a crear una!`}</p></div>}
 
 
       {initiativesBarrio
@@ -120,7 +125,8 @@ function Inicio() {
         <h5>Loading...</h5>
       }
 
-      <h3>{userInfo ? `Localidad ${userInfo.localidad_lugar}` : ""}</h3>
+{initiativesLocalidad.filter(u => u.userId != user.uid).length > 0 ?
+        <h3>{userInfo ? `Localidad ${userInfo.localidad_lugar}` : ""}</h3> : <div> <h3> Tu localidad</h3><p>{`Aún no hay iniciativas en la Localidad ${userInfo.localidad_lugar}. ¡Qué esperas para que tu comunidad cree una iniciativa de cambio!`}</p></div>}
 
       {initiativesLocalidad
         ?

@@ -101,7 +101,10 @@ button {
   padding: 8px 16px;
   transition: 0.2s background-color;
   border-radius: 4px;
+  cursor: pointer;
 }
+
+
 
 button:hover,
 button:focus {
@@ -284,11 +287,14 @@ p {
 
 #confirmationForm {
   display: flex;
-  flex-flow: column nowrap;
+  flex-flow: row nowrap;
   width: 100%;
   font-size: var(--main-font-size);
 }
 
+#name-input {
+  width: 46%;
+}
 
 
 .clickable {
@@ -1274,10 +1280,9 @@ a {
       /*Formulario registro mobile*/
 
       .modal-body {
-
-        border-radius: 0;
         display: flex;
         flex-flow: column nowrap;
+        border-radius: 0;
         width: 100%;
         gap: 8px;
       }
@@ -1310,9 +1315,6 @@ a {
         padding: 0;
         position: absolute;
       }
-      .greeting {
-
-      }
       
       .app{
         padding-top: 80px;
@@ -1341,7 +1343,7 @@ a {
 
       .navbar {
           padding: 0; 
-          height: 80px;   
+          height: 12%;   
           }
 
       .navbar ul {
@@ -1364,7 +1366,7 @@ a {
 
       .navbar  ul :nth-child(5){
         position: fixed;
-        top: 0%;   
+        top: 0.6%;   
         left: 70%;
         width: 100%;
 
@@ -1372,7 +1374,7 @@ a {
 
       .navbar ul :nth-child(6){
         position: fixed;
-        top: 0%;  
+        top: 1%;  
         left: 80%;
         background-color: none;
 
@@ -1442,6 +1444,19 @@ a {
         width: 100%;
         display: flex;
         flex-flow: column nowrap;
+        margin-top: 124px;
+      }
+
+      .discussion .initiative-sub-two {
+        margin-top: 24px;
+      }
+
+      .anuncio {
+        width: 100%;
+      }
+
+      .initiative-change .initiative-sub-two {
+        margin-top: 20px;
       }
 
       .initiative-container{
@@ -1450,8 +1465,8 @@ a {
         flex-flow: column nowrap;
       }
 
-      .initiative-sub-two{
-        margin-top: 124px;
+      .initiative-container :nth-child(1){
+
         
       }
 
@@ -1523,7 +1538,8 @@ a {
       }
 
       .notfound {
-        margin-top: 80px;
+        position: absolute;
+        top: 620%;
       }
 
       .panel-wrap {
@@ -1542,7 +1558,7 @@ right: 10%;      }
         bottom: 0;
         left: 0;
         right: 0;
-        background: white;
+        backgro1und: white;
         color: var(--main-gray);
         border-left: 0.5px solid var(--secondary-gray);
         overflow: auto;
@@ -1569,6 +1585,12 @@ right: 10%;      }
 
       .initiative-actions {
         margin-top: 26px;
+      }
+
+ 
+      
+      #name-input {
+        width: 100%;
       }
 
 }
