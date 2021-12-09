@@ -1,0 +1,14 @@
+<svg width="212" height="212" viewBox="0 0 212 212" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="106" y="106" width="106" height="106" fill="#03256C"/>
+<rect width="106" height="106" transform="matrix(-1 0 0 1 106 106)" fill="#03256C"/>
+<rect width="106" height="106" transform="matrix(-1 0 0 1 212 0)" fill="#03256C"/>
+<rect width="106" height="106" fill="#03256C"/>
+<path d="M159 159L159 212L106 159L159 159Z" fill="white"/>
+<path d="M53 159L53 212L106 159L53 159Z" fill="white"/>
+<path d="M159 53L159 106L212 53L159 53Z" fill="white"/>
+<path d="M53 53L53 106L0 53L53 53Z" fill="white"/>
+<path d="M159 159L159 106L212 159L159 159Z" fill="white"/>
+<path d="M53 159L53 106L0 159L53 159Z" fill="white"/>
+<path d="M159 53L159 -1.49799e-06L106 53L159 53Z" fill="white"/>
+<path d="M53 53L53 -1.49799e-06L106 53L53 53Z" fill="white"/>
+</svg>
