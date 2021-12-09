@@ -22,12 +22,12 @@ function Users() {
  return (
   <div>
    {userRendered ? <div>
-    <h3>{userRendered.nombre}</h3>
-    <p>{"Intereses: " + userRendered.intereses.join(", ")}</p>
+    <h1>{userRendered.nombre}</h1>
+    <h2>{"Te interesan iniciativas sobre: " + userRendered.intereses.join(", ")}</h2>
 
-    <h4>{"Localidad: " + userRendered.localidad_lugar}</h4>
+    <h3>{"Perteneces a la localidad " + userRendered.localidad_lugar}</h3>
 
-    <h4>{`${userRendered.tipo_lugar == 1 ? "Barrio: " : "Corregimiento:"}` + userRendered.lugar}</h4>
+    <h3>{`${userRendered.tipo_lugar == 1 ? "Barrio: " : "Corregimiento:"}` + userRendered.lugar}</h3>
 
 
    </div> : ""}
