@@ -63,11 +63,13 @@ function IniciativeModalCreate({ toggleModalCreate }) {
   return (
     <div className="modal" onClick={toggleModalCreate}>
       <div className="modal-body" onClick={(e) => e.stopPropagation()}>
-        <div onClick={toggleModalCreate}><button className="close">x</button> </div>
+        
         {!sent ?
           <div className="modal-form">
             <form ref={formEl} onSubmit={(e) => handleNew(e)} id="confirmationForm">
-              <h4 htmlFor="name-input"> Titulo del Proyecto</h4>
+              <div className="titleclose">
+              <h4 htmlFor="name-input"> Titulo del Proyecto</h4> <div onClick={toggleModalCreate} className="clickable"><button className="close">x</button> </div>
+              </div>
               <input id="name-input" name="name" type="text" placeholder="Titulo de tu proyecto" />
               <h4 htmlFor="team-input">Descripción</h4>
               <textarea name="description" type="text" cols="40" rows="5" />

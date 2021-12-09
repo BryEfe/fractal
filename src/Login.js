@@ -28,8 +28,8 @@ function Login() {
 
     <div className="login-info">
      <div className="login-info-text">
-      <h1>Lorem Ipsum  dolor sit amet,  elit.</h1>
-      <h4>Morbi nec diam nulla. Mauris quis cursus sem. Fusce in libero mi. Suspendisse varius enim eu nulla sodales.</h4>
+      <h1>Transformemos la ciudad desde el barrio.</h1>
+      <h4>Con Fractal podrás formular y discutir los proyectos que transformarán a Cali. ¡Únete!</h4>
      </div>
 
     </div>

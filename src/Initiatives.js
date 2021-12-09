@@ -36,9 +36,7 @@ function Card() {
                         } key={i.id}>
                             <div className="container">
                                 <div className="container-top">
-                                    <div className="container-location">
-                                        <h5>{`Localidad ${i.localidad_lugar} | ${i.lugar} | ${i.keywords.join(",")}`}</h5>
-                                    </div>
+                                    
                                     <div className="title-button">
                                         <h4>{i.name}</h4>
                                         {user ? user.uid !== i.userId ? <button onClick={(e) => { e.preventDefault(); setLikes(i.id, { by: user?.displayName, uid: user.uid }, i.followers) }} className={like(i.followers) ? "like" : "unlike"}>
@@ -51,6 +49,9 @@ function Card() {
                                         <h5>{"Por " + i.creator} | </h5>
                                         <h5>{i.createdAt ? i.createdAt.toDate().toLocaleDateString("es-ES", options) + " " + i.createdAt.toDate().toLocaleTimeString("es-ES", optionsTime) : ""}</h5>
 
+                                    </div>
+                                    <div className="container-location">
+                                        <h5>{`Localidad ${i.localidad_lugar} | ${i.lugar} | ${i.keywords.join(",")}`}</h5>
                                     </div>
                                 </div>
                                 <div className="container-bot">
