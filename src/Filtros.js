@@ -47,7 +47,7 @@ function Filtros() {
     userInfo && selected && initiatives ?
       <div className="top-initiative-subnavbar">
         <div className="initiative-subnavbar">
-          <h4>{`Iniciativas  ${selected ? `> ${selected.tipo} > ${selected.valor}` : ""}`} </h4>
+          <div className="initiative-subnavbar-breadcrumb"><h4>{`Iniciativas  ${selected ? `> ${selected.tipo} > ${selected.valor}` : ""}`} </h4></div>
 
           <div className="initiative-subnavbar-filters">
 
@@ -85,7 +85,7 @@ function Filtros() {
         </div>
 
 
-        {initiatives.length === 0 && selected ? `Todavía no hay iniciativas  ${selected.texto} ${selected.valor}` : ""}</div>
+        {initiatives.length === 0 && selected ? <h2 className="notfound">{`Todavía no hay iniciativas  ${selected.texto} ${selected.valor}`}</h2> : ""}</div>
 
       : <div className="modal loader"><div id="loading"></div></div>)
 }

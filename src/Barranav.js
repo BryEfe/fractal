@@ -50,7 +50,7 @@ function Barranav() {
                     |
                     <li><NavLink activeClassName='active' exact to={`/usuario/${user.uid}`}>{user?.displayName}</NavLink></li>
                     <li><img onClick={() => { toggleBarUpdates(); setUpdate(false) }} src={barUpdates ? notificacion_pressed : update ? notification2 : notification} alt="" /></li>
-                    <button onClick={logout}><img src={logout_icon} alt="" /></button>
+                    <li><button onClick={logout}><img src={logout_icon} alt="" /></button></li>
                 </ul>
 
             </nav> {

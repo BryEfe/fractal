@@ -11,7 +11,7 @@ function Summary({ initiative, user, id }) {
 
   return (
     initiative ?
-      <div>
+      <div className="top-initiative-parent">
 
         <div className="initiative-name-follow">
           <h2>{initiative.name}</h2>

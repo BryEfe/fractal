@@ -345,8 +345,8 @@ p {
 
 /* width */
 ::-webkit-scrollbar {
-  width: 5px;
-  height: 5px;
+  width: 2px;
+  height: 2px;
 }
 
 /* Track */
@@ -1081,7 +1081,7 @@ a {
 
 /*Mobile version*/
 
-@media only screen and (max-device-width: 480px) {
+@media only screen and (max-device-width: 1024px) {
     html {
       background: #fff;
       overflow-y: scroll;
@@ -1305,6 +1305,19 @@ a {
       }
 
       /**/
+      .panel-wrap {
+        margin: 0;
+        padding: 0;
+        position: absolute;
+      }
+      .greeting {
+
+      }
+      
+      .app{
+        padding-top: 80px;
+
+      }
 
       .app h1 {
         font-size: 36px;
@@ -1325,9 +1338,55 @@ a {
         font-size: 20px;
         font-weight: 600;
       }
-      
+
+      .navbar {
+          padding: 0; 
+          height: 80px;   
+          }
+
       .navbar ul {
-        display: none;
+        
+        top: 92%;
+        bottom: 0;
+        position: fixed;
+        background-color: white;
+        width: 100%;
+        border: 1px solid var(--main-gray);
+        border-color: var(--secondary-gray);
+        left: 0em;
+        padding: 0 20px;
+        height: 60px;
+      }
+      
+      .navbar  ul :nth-child(4){
+        white-space: nowrap;
+      }
+
+      .navbar  ul :nth-child(5){
+        position: fixed;
+        top: 0%;   
+        left: 70%;
+        width: 100%;
+
+      }
+
+      .navbar ul :nth-child(6){
+        position: fixed;
+        top: 0%;  
+        left: 80%;
+        background-color: none;
+
+      }
+
+      .navbar ul :nth-child(6) button{
+        align-self: center;
+        background-color: white;
+        height: 18px;
+      }
+
+      .button-add {
+        top: 78%;
+        left: 80%;
       }
 
       /*Feed*/
@@ -1350,8 +1409,21 @@ a {
         display: none;
       }
 
+      .top-initiative-subnavbar{
+        margin-top: 32px;
+        margin-bottom: 24px;
+      }
+
+      .initiative-subnavbar-filters {
+        flex-direction: column;
+        gap: 8px;
+      }
+
       .initiative-subnavbar-filters select{
         margin: 0;
+        font-size: 16px;
+        padding: 0;
+        width: 100%;
       }
 
       .initiative {
@@ -1378,12 +1450,53 @@ a {
         flex-flow: column nowrap;
       }
 
+      .initiative-sub-two{
+        margin-top: 124px;
+        
+      }
+
       .initiative-container a{
         width: 100%;
       }
 
-      .initiative-subnavbar h4 {
+      .top-initiative-subnavbar {
+        position: relative;
+        margin:0px;
+        height: max-content;
+      }
+
+      .initiative-subnavbar {
+        height: max-content;
+        flex-direction: column;
+      }
+
+      .initiative-subnavbar-breadcrumb {
+        width: 100%;
+      }
+
+      .initiative-subnavbar-breadcrumb h4 {
+        height: 40px!important;
+        white-space: nowrap;
+        overflow-x: scroll;
+      }
+
+      .initiative-subnavbar-breadcrumb h5 {
+        height: 40px!important;
+        white-space: nowrap;
+        overflow-x: scroll;
+      }
+
+      .info-initiative {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .initiative-subnavbar-breadcrumb ::-webkit-scrollbar {
         display: none;
+      }
+
+      .top-initiative-parent {
+        margin-top: 30px;
       }
 
       .container-author-time {
@@ -1409,5 +1522,53 @@ a {
         display: none;
       }
 
+      .notfound {
+        margin-top: 80px;
+      }
+
+      .panel-wrap {
+        position: fixed;
+        top: 70px;
+        bottom: 0;
+        right: 0;
+        width: 90%;
+        transform: translateX(100%);
+        transition: 0.3s ease-out;
+right: 10%;      }
+
+      .panel {
+        width: 100vw;
+        top: 0px;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: white;
+        color: var(--main-gray);
+        border-left: 0.5px solid var(--secondary-gray);
+        overflow: auto;
+        padding: 1em;
+        display: flex;
+        flex-flow: column nowrap;
+      }
+
+      .initiative-breadcrumbs-nav {
+        flex-flow: column;
+        align-items: flex-start;
+        height: max-content;
+      }
+
+      .initiative-breadcrumbs-nav h5{
+        width: 100%;
+        white-space: nowrap;
+        overflow-x: scroll;
+      }
+
+      .initiative-breadcrumbs-nav ::-webkit-scrollbar {
+        display: none;
+      }
+
+      .initiative-actions {
+        margin-top: 26px;
+      }
 
 }
