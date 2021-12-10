@@ -36,25 +36,27 @@ function Barranav() {
             setUpdates(newArray)
         }
 
+
+
     }, [user, update])
 
 
     return (
-        <div>
+        <div >
             <nav className="navbar">
                 <NavLink to="/"><img className="logo" src={fractal} alt="" /></NavLink>
                 <ul>
-                    <li><NavLink activeClassName='active' exact={true} to="/">Inicio</NavLink></li>
-                    <li><NavLink to="/iniciativas" activeClassName='active'>Iniciativas</NavLink></li>
+                    <li onClick={() => { toggleBarUpdates("cerrar"); }}><NavLink activeClassName='active' exact={true} to="/">Inicio</NavLink></li>
+                    <li onClick={() => { toggleBarUpdates("cerrar"); }}><NavLink to="/iniciativas" activeClassName='active'>Iniciativas</NavLink></li>
                     <span>  </span>
                     |
-                    <li><NavLink activeClassName='active' exact to={`/usuario/${user.uid}`}>{user?.displayName}</NavLink></li>
+                    <li onClick={() => { toggleBarUpdates("cerrar"); }}><NavLink activeClassName='active' exact to={`/usuario/${user.uid}`}>{user?.displayName}</NavLink></li>
                     <li><img onClick={() => { toggleBarUpdates(); setUpdate(false) }} src={barUpdates ? notificacion_pressed : update ? notification2 : notification} alt="" /></li>
                     <li><button onClick={logout}><img src={logout_icon} alt="" /></button></li>
                 </ul>
 
             </nav> {
-                barUpdates ? <div className={`panel-wrap ${barUpdates ? "checked" : ""}`}>
+                barUpdates ? <div className={`panel-wrap ${barUpdates ? "checked" : ""}`} onClick={() => { toggleBarUpdates("cerrar"); }}>
                     <div className="panel">
 
                         <div onClick={toggleBarUpdates}></div>

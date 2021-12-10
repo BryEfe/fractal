@@ -66,6 +66,8 @@ function Discussion({ user, id }) {
 
       {comments ? <div className="initiative-sub-two">
 
+        <h4>{`Comentarios (${comments.length})`}</h4>
+
         <form ref={formEl} onSubmit={(e) => handleNew(e)} id="confirmationForm">
 
           {file ? <img src={file} alt="" /> : ""}

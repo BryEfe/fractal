@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { UserContext } from "./providers/UserContext";
 import { useHistory, Link } from "react-router-dom";
 import SignUp from "./SignUp";
-
+import home from "./svg/home.svg";
 
 function Login() {
 
@@ -57,7 +57,7 @@ function Login() {
       <div onClick={() => { setPopUpSignUp(true) }}><h4>Crear Cuenta</h4></div>
      </div>
     </div>
-
+    <img src={home} alt="" />
    </div>
    {popUpSignUp ? <SignUp setPopUpSignUp={setPopUpSignUp} /> : ""}
   </div>

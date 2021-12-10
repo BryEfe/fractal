@@ -55,7 +55,7 @@ function Comment({ user, id }) {
      </div>
 
     </div>
-    <form ref={formEl} onSubmit={(e) => handleNew(e)} id="confirmationForm">
+    <form className="comment-reply" ref={formEl} onSubmit={(e) => handleNew(e)} id="confirmationForm">
 
      <input id="name-input" name="content" type="text" placeholder="¿Qué piensas?" />
 

@@ -11,8 +11,13 @@ function SettingsContextProvider(props) {
  }
  const [barUpdates, setBarUpdates] = useState(false)
 
- const toggleBarUpdates = () => {
-  setBarUpdates(!barUpdates);
+ const toggleBarUpdates = (condition) => {
+  if (condition == "cerrar") {
+   setBarUpdates(false);
+  } else {
+   setBarUpdates(!barUpdates);
+  }
+
  }
 
  return (

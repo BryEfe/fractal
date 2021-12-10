@@ -104,8 +104,6 @@ button {
   cursor: pointer;
 }
 
-
-
 button:hover,
 button:focus {
   color: white;
@@ -285,7 +283,7 @@ p {
   -webkit-box-orient: vertical;
 }
 
-.initiative-sub-two #confirmationForm{
+.initiative-sub-two #confirmationForm {
   flex-flow: row nowrap;
 }
 
@@ -300,9 +298,8 @@ p {
   width: 46%;
 }
 
-
 .clickable {
-  display:flex;
+  display: flex;
   flex-flow: row-reverse;
 }
 
@@ -355,7 +352,7 @@ p {
 
 /* width */
 ::-webkit-scrollbar {
-  width: 4px;
+  width: 8px;
   height: 4px;
 }
 
@@ -417,7 +414,6 @@ p {
 }
 
 .modal-body h4 {
-
   color: var(--main-font-color);
 }
 
@@ -430,8 +426,8 @@ p {
   flex-direction: column;
 }
 
-.titleclose{
-  display:flex;
+.titleclose {
+  display: flex;
   justify-content: space-between;
   align-items: flex-end;
 }
@@ -609,10 +605,12 @@ progress::-webkit-progress-value {
 .login {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-end;
   flex-direction: row;
   flex-wrap: wrap;
   height: 100vh;
+  width: 100vw;
+  overflow: hidden;
 }
 
 .login h1 {
@@ -839,7 +837,22 @@ a {
 
 .info-initiative {
   display: flex;
+  flex-direction: column;
+}
+.info-initiative h3 {
+  color: var(--main-font-color);
+}
+.info-initiative h4 {
+  color: var(--main-gray);
+}
+
+.info-initiative-creator {
+  display: flex;
   flex-direction: row;
+}
+
+.top-initiative-parent .initiative-sub-two #confirmationForm {
+  display: none;
 }
 
 .info-initiative h5 {
@@ -849,10 +862,6 @@ a {
 }
 
 .initiative-description-likes {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 16px;
-  color: lightgray;
 }
 
 .initiative-description-likes p {
@@ -951,15 +960,14 @@ a {
   transition: all 0.3s;
 }
 
-.discussion button {
+.discussion button,
+.comment-reply button {
   display: none;
 }
 
 .discussion [type="file"] + label:hover {
   background: var(--main-highlight-color-1);
 }
-
-
 
 /*Spinner*/
 
@@ -990,6 +998,16 @@ a {
   }
 }
 
+/*Mapa*/
+.modal .mapa img {
+  height: 150px;
+  margin: auto;
+}
+
+.mapa {
+  display: flex;
+}
+
 /*Updates Bar*/
 
 .panel-wrap {
@@ -997,16 +1015,19 @@ a {
   top: 110px;
   bottom: 0;
   right: 0;
-  width: 573px;
+  width: 100vw;
   transform: translateX(100%);
   transition: 0.3s ease-out;
   z-index: 4;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 .panel {
   position: absolute;
+
+  width: 573px;
   top: 0;
   bottom: 0;
-  left: 0;
+  left: 1;
   right: 0;
   background: white;
   color: var(--main-gray);
@@ -1049,20 +1070,19 @@ a {
 
 /*inicio*/
 
-
 .feed h3 {
   color: var(--main-highlight-color-2);
   margin-top: 16px;
 }
 
-.greeting{
+.greeting {
   margin-top: 8px;
 }
-.greeting h1{
+.greeting h1 {
   color: var(--main-highlight-color-2);
 }
 
-.greeting h2{
+.greeting h2 {
   font-size: 80px;
   color: var(--main-gray);
 }
@@ -1087,513 +1107,541 @@ a {
   display: flex;
 }
 
+.location-users {
+  padding-top: 30px;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+.location-users-text {
+  z-index: 3;
+}
+
+.location-users-img img {
+  top: 22%;
+  right: 0;
+  height: 550px;
+  position: absolute;
+  opacity: 0.4;
+  z-index: 0;
+}
 
 /*Mobile version*/
 
 @media only screen and (max-device-width: 1024px) {
-    html {
-      background: #fff;
-      overflow-y: scroll;
-      -webkit-text-size-adjust: 100%;
-      -ms-text-size-adjust: 100%
-     }
-      html * {
-          outline: 0;
-          -webkit-text-size-adjust: none;
-      }
-      html,
-      body {
-          font-family: "Inter", sans-serif;
-
-      }
-      body,
-      div,
-      dl,
-      dt,
-      dd,
-      ul,
-      ol,
-      li,
-      h1,
-      h2,
-      h3,
-      h4,
-      h5,
-      h6,
-      pre,
-      code,
-      form,
-      fieldset,
-      legend,
-      input,
-      textarea,
-      p,
-      blockquote,
-      th,
-      td,
-      hr,
-      button,
-      article,
-      aside,
-      details,
-      figcaption,
-      figure,
-      footer,
-      header,
-      hgroup,
-      menu,
-      nav,
-      section {
-          margin: 0;
-          padding: 0
-      }
-      input,
-      select,
-      textarea {
-          font-size: 100%
-      }
-      table {
-          border-collapse: collapse;
-          border-spacing: 0
-      }
-      fieldset,
-      img {
-          border: 0
-      }
-      abbr,
-      acronym {
-          border: 0;
-          font-variant: normal
-      }
-      del {
-          text-decoration: line-through
-      }
-      address,
-      caption,
-      cite,
-      code,
-      dfn,
-      em,
-      th,
-      var {
-          font-style: normal;
-          font-weight: 500
-      }
-      ol,
-      ul {
-          list-style: none
-      }
-      caption,
-      th {
-          text-align: left
-      }
-      h1,
-      h2,
-      h3,
-      h4,
-      h5,
-      h6 {
-          font-size: 100%;
-          font-weight: 500
-      }
-      q:before,
-      q:after {
-          content: ''
-      }
-      sub,
-      sup {
-          font-size: 75%;
-          line-height: 0;
-          position: relative;
-          vertical-align: baseline
-      }
-      sup {
-          top: -.5em
-      }
-      sub {
-          bottom: -.25em
-      }
-      a:hover {
-          text-decoration: underline
-      }
-      ins,
-      a {
-          text-decoration: none
-      }
-
-      h1 {
-        font-size: 36px;
-        font-weight: 800;
-      }
-
-      h2 {
-        font-size: 32px;
-        font-weight: 700;
-      }
-
-      h3 {
-        font-size: 30px;
-        font-weight: 700;
-      }
-
-      h4 {
-        font-size: 20px;
-        font-weight: 600;
-      }
-
-      /*login mobile*/
-
-      .login {
-        display: flex;
-        flex-flow: column nowrap;
-        gap: 32px;
-        justify-content: center;
-        align-items: flex-start;
-
-      }
-
-      .login-info {
-        width: 100%;
-      }
-
-      .login-info-text {
-        display: flex;
-        flex-flow: column nowrap;
-        width: 100%;
-        padding: 0 40px;
-        gap: 16px;
-      }
-
-      .login-input {
-        padding: 0 40px;
-      }
-
-      .login-input input {
-        padding: 8px;
-      }
-      .login-buttons {
-        display: flex;
-        flex-flow: column;
-      }
-
-      .login-buttons div {
-        width: 100%;
-      }
-
-      /*Formulario registro mobile*/
-
-      .modal-body {
-        display: flex;
-        flex-flow: column nowrap;
-        border-radius: 0;
-        width: 100%;
-        gap: 8px;
-      }
-
-      .modal-body input {
-        padding: 8px;
-        margin: 0;
-      }
-
-      .modal-body button{
-        padding: 8px;
-        margin: 0;
-      }
-
-      .container-toggle-switch{
-        display: flex;
-        flex-flow: row nowrap;
-        justify-content: center;
-        align-items: center;
-        margin: 0;
-      }
-
-      .keywords {
-        margin: 0;
-      }
-
-      /**/
-      .panel-wrap {
-        margin: 0;
-        padding: 0;
-        position: absolute;
-      }
-      
-      .app{
-        padding-top: 80px;
-
-      }
-
-      .app h1 {
-        font-size: 36px;
-        font-weight: 800;
-      }
-
-      .app h2 {
-        font-size: 28px;
-        font-weight: 600;
-      }
-
-      .app h3 {
-        font-size: 30px;
-        font-weight: 700;
-      }
-
-      .app h4 {
-        font-size: 20px;
-        font-weight: 600;
-      }
-
-      .navbar {
-          padding: 0; 
-          height: 12%;   
-          }
-
-      .navbar ul {
-        
-        top: 92%;
-        bottom: 0;
-        position: fixed;
-        background-color: white;
-        width: 100%;
-        border: 1px solid var(--main-gray);
-        border-color: var(--secondary-gray);
-        left: 0em;
-        padding: 0 20px;
-        height: 60px;
-      }
-      
-      .navbar  ul :nth-child(4){
-        white-space: nowrap;
-      }
-
-      .navbar  ul :nth-child(5){
-        position: fixed;
-        top: 0.6%;   
-        left: 70%;
-        width: 100%;
-
-      }
-
-      .navbar ul :nth-child(6){
-        position: fixed;
-        top: 1%;  
-        left: 80%;
-        background-color: none;
-
-      }
-
-      .navbar ul :nth-child(6) button{
-        align-self: center;
-        background-color: white;
-        height: 18px;
-      }
-
-      .button-add {
-        top: 78%;
-        left: 80%;
-      }
-
-      /*Feed*/
-
-      .initiative-feed .container {
-        max-width: 300px;
-      }
-
-      /*Iniciativas*/
-
-      .container {
-        max-height: 160px;
-      }
-
-      .container img {
-        display: none;
-      }
-
-      .container hr {
-        display: none;
-      }
-
-      .top-initiative-subnavbar{
-        margin-top: 32px;
-        margin-bottom: 24px;
-      }
-
-      .initiative-subnavbar-filters {
-        flex-direction: column;
-        gap: 8px;
-      }
-
-      .initiative-subnavbar-filters select{
-        margin: 0;
-        font-size: 16px;
-        padding: 0;
-        width: 100%;
-      }
-
-      .initiative {
-        width: 100%;
-        display: flex;
-        flex-flow: column nowrap;
-      }
-
-      .initiative-sub-one{
-        width: 100%;
-        display: flex;
-        flex-flow: column nowrap;
-      }
-
-      .initiative-sub-two{
-        width: 100%;
-        display: flex;
-        flex-flow: column nowrap;
-        margin-top: 124px;
-      }
-
-      .discussion .initiative-sub-two {
-        margin-top: 24px;
-      }
-
-      .anuncio {
-        width: 100%;
-      }
-
-      .initiative-change .initiative-sub-two {
-        margin-top: 20px;
-      }
-
-      .initiative-container{
-        width: 100%;
-        display: flex;
-        flex-flow: column nowrap;
-      }
-
-      .initiative-container :nth-child(1){
-
-        
-      }
-
-      .initiative-container a{
-        width: 100%;
-      }
-
-      .top-initiative-subnavbar {
-        position: relative;
-        margin:0px;
-        height: max-content;
-      }
-
-      .initiative-subnavbar {
-        height: max-content;
-        flex-direction: column;
-      }
-
-      .initiative-subnavbar-breadcrumb {
-        width: 100%;
-      }
-
-      .initiative-subnavbar-breadcrumb h4 {
-        height: 40px!important;
-        white-space: nowrap;
-        overflow-x: scroll;
-      }
-
-      .initiative-subnavbar-breadcrumb h5 {
-        height: 40px!important;
-        white-space: nowrap;
-        overflow-x: scroll;
-      }
-
-      .info-initiative {
-        display: flex;
-        flex-direction: column;
-      }
-
-      .initiative-subnavbar-breadcrumb ::-webkit-scrollbar {
-        display: none;
-      }
-
-      .top-initiative-parent {
-        margin-top: 30px;
-      }
-
-      .container-author-time {
-        display: none;
-      }
-
-      .container-location {
-        display: none;
-      }
-
-      .title-button h4{
-        font-size: 30px;
-      }
-      .container-bot p {
-        font-size: 20px;
-      }
-
-      .container-description {
-        margin: 0;
-      }
-
-      .container-bot a{
-        display: none;
-      }
-
-      .notfound {
-        position: absolute;
-        top: 620%;
-      }
-
-      .panel-wrap {
-        position: fixed;
-        top: 70px;
-        bottom: 0;
-        right: 0;
-        width: 90%;
-        transform: translateX(100%);
-        transition: 0.3s ease-out;
-right: 10%;      }
-
-      .panel {
-        width: 100vw;
-        top: 0px;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        backgro1und: white;
-        color: var(--main-gray);
-        border-left: 0.5px solid var(--secondary-gray);
-        overflow: auto;
-        padding: 1em;
-        display: flex;
-        flex-flow: column nowrap;
-      }
-
-      .initiative-breadcrumbs-nav {
-        flex-flow: column;
-        align-items: flex-start;
-        height: max-content;
-      }
-
-      .initiative-breadcrumbs-nav h5{
-        width: 100%;
-        white-space: nowrap;
-        overflow-x: scroll;
-      }
-
-      .initiative-breadcrumbs-nav ::-webkit-scrollbar {
-        display: none;
-      }
-
-      .initiative-actions {
-        margin-top: 26px;
-      }
-
- 
-      
-      #name-input {
-        width: 100%;
-      }
-
+  html {
+    background: #fff;
+    overflow-y: scroll;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+  }
+  html * {
+    outline: 0;
+    -webkit-text-size-adjust: none;
+  }
+  html,
+  body {
+    font-family: "Inter", sans-serif;
+  }
+  body,
+  div,
+  dl,
+  dt,
+  dd,
+  ul,
+  ol,
+  li,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  pre,
+  code,
+  form,
+  fieldset,
+  legend,
+  input,
+  textarea,
+  p,
+  blockquote,
+  th,
+  td,
+  hr,
+  button,
+  article,
+  aside,
+  details,
+  figcaption,
+  figure,
+  footer,
+  header,
+  hgroup,
+  menu,
+  nav,
+  section {
+    margin: 0;
+    padding: 0;
+  }
+  input,
+  select,
+  textarea {
+    font-size: 100%;
+  }
+  table {
+    border-collapse: collapse;
+    border-spacing: 0;
+  }
+  fieldset,
+  img {
+    border: 0;
+  }
+  abbr,
+  acronym {
+    border: 0;
+    font-variant: normal;
+  }
+  del {
+    text-decoration: line-through;
+  }
+  address,
+  caption,
+  cite,
+  code,
+  dfn,
+  em,
+  th,
+  var {
+    font-style: normal;
+    font-weight: 500;
+  }
+  ol,
+  ul {
+    list-style: none;
+  }
+  caption,
+  th {
+    text-align: left;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-size: 100%;
+    font-weight: 500;
+  }
+  q:before,
+  q:after {
+    content: "";
+  }
+  sub,
+  sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+  }
+  sup {
+    top: -0.5em;
+  }
+  sub {
+    bottom: -0.25em;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+  ins,
+  a {
+    text-decoration: none;
+    font-size: 16px;
+  }
+
+  h1 {
+    font-size: 36px;
+    font-weight: 800;
+  }
+
+  h2 {
+    font-size: 32px;
+    font-weight: 700;
+  }
+
+  h3 {
+    font-size: 30px;
+    font-weight: 700;
+  }
+
+  h4 {
+    font-size: 20px;
+    font-weight: 600;
+  }
+
+  /*login mobile*/
+
+  .login {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 32px;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  .login-info {
+    width: 100%;
+  }
+
+  .login-info-text {
+    display: flex;
+    flex-flow: column nowrap;
+    width: 100%;
+    padding: 0 40px;
+    gap: 16px;
+  }
+
+  .login-input {
+    padding: 0 40px;
+  }
+
+  .login-input input {
+    padding: 8px;
+  }
+  .login-buttons {
+    display: flex;
+    flex-flow: column;
+  }
+
+  .login-buttons div {
+    width: 100%;
+  }
+
+  /*Formulario registro mobile*/
+
+  .modal-body {
+    display: flex;
+    flex-flow: column nowrap;
+    border-radius: 0;
+    width: 100%;
+    gap: 8px;
+  }
+
+  .modal-body input {
+    padding: 8px;
+    margin: 0;
+  }
+
+  .modal-body button {
+    padding: 8px;
+    margin: 0;
+  }
+
+  .container-toggle-switch {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+  }
+
+  .keywords {
+    margin: 0;
+  }
+
+  /**/
+  .panel-wrap {
+    margin: 0;
+    padding: 0;
+    position: absolute;
+  }
+
+  .app {
+    padding: 80px 0px;
+  }
+
+  .app h1 {
+    font-size: 36px;
+    font-weight: 800;
+  }
+
+  .app h2 {
+    font-size: 28px;
+    font-weight: 600;
+  }
+
+  .app h3 {
+    font-size: 30px;
+    font-weight: 700;
+  }
+
+  .app h4 {
+    font-size: 20px;
+    font-weight: 600;
+  }
+
+  .navbar {
+    padding: 32px 0px 16px 16px;
+    height: 12%;
+    width: 100%;
+    right: 2%;
+  }
+
+  .navbar ul {
+    top: 92%;
+    bottom: 0;
+    position: fixed;
+    background-color: white;
+    width: 100%;
+    border: 1px solid var(--main-gray);
+    border-color: var(--secondary-gray);
+    left: 0em;
+    padding: 10px 20px 16px 20px;
+    height: 60px;
+  }
+
+  .navbar ul :nth-child(4) {
+    white-space: nowrap;
+  }
+
+  .navbar ul :nth-child(5) {
+    position: fixed;
+    margin-right: 8px;
+    top: 1.6%;
+    left: 70%;
+    width: 100%;
+  }
+
+  .navbar ul :nth-child(6) {
+    position: fixed;
+    top: 1.9%;
+    left: 82%;
+    background-color: none;
+  }
+
+  .navbar ul :nth-child(6) button {
+    align-self: center;
+    background-color: white;
+    height: 18px;
+  }
+
+  .button-add {
+    top: 78%;
+    left: 80%;
+  }
+
+  /*Feed*/
+
+  .initiative-feed .container {
+    max-width: 300px;
+  }
+
+  /*Iniciativas*/
+
+  .container {
+    padding: 24px 16px;
+    max-height: 240px;
+  }
+
+  .title-button button,
+  .initiative-name-follow button {
+    height: 32px;
+    padding: 8px;
+    margin-left: 16px;
+  }
+
+  .container img {
+    display: none;
+  }
+
+  .container hr {
+    display: none;
+  }
+
+  .top-initiative-subnavbar {
+    margin-top: 32px;
+    margin-bottom: 24px;
+  }
+
+  .initiative-subnavbar-filters {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .initiative-subnavbar-filters select {
+    margin: 0;
+    font-size: 16px;
+    padding: 0;
+    width: 100%;
+  }
+
+  .initiative {
+    width: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+  }
+
+  .initiative-sub-one {
+    width: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+  }
+
+  .initiative-sub-two {
+    width: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    margin-top: 124px;
+  }
+
+  .discussion .initiative-sub-two {
+    margin-top: 24px;
+  }
+
+  .anuncio {
+    width: 100%;
+  }
+
+  .initiative-change .initiative-sub-two {
+    margin-top: 20px;
+  }
+
+  .initiative-container {
+    width: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+  }
+
+  .initiative-container a {
+    width: 100%;
+  }
+
+  .top-initiative-subnavbar {
+    position: relative;
+    margin: 0px;
+    height: max-content;
+  }
+
+  .initiative-subnavbar {
+    height: max-content;
+    flex-direction: column;
+  }
+
+  .initiative-subnavbar-breadcrumb {
+    width: 100%;
+  }
+
+  .initiative-subnavbar-breadcrumb h4 {
+    height: 40px !important;
+    white-space: nowrap;
+    overflow-x: scroll;
+  }
+
+  .initiative-subnavbar-breadcrumb h5 {
+    height: 40px !important;
+    white-space: nowrap;
+    overflow-x: scroll;
+  }
+
+  .info-initiative {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .initiative-subnavbar-breadcrumb ::-webkit-scrollbar {
+    display: none;
+  }
+
+  .top-initiative-parent {
+    margin-top: 30px;
+  }
+
+  .container-author-time {
+    display: flex;
+    flex-direction: column;
+  }
+  .container-author-time h5 {
+    font-size: 12px !important;
+    font-weight: bold;
+    color: var(--main-gray);
+  }
+
+  .container-location {
+    display: none;
+  }
+
+  .title-button h4 {
+    font-size: 30px;
+  }
+  .container-bot p {
+    font-size: 20px;
+  }
+
+  .container-description {
+    margin: 0;
+  }
+
+  .container-bot a {
+    display: none;
+  }
+
+  .notfound {
+    position: absolute;
+    top: 620%;
+  }
+
+  .panel-wrap {
+    position: fixed;
+    top: 70px;
+    bottom: 0;
+    right: 0;
+    width: 90%;
+    transform: translateX(100%);
+    transition: 0.3s ease-out;
+    right: 10%;
+  }
+
+  .panel {
+    width: 100vw;
+    top: 0px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: white;
+    color: var(--main-gray);
+    border-left: 0.5px solid var(--secondary-gray);
+    overflow: auto;
+    padding: 1em;
+    padding-bottom: 80px;
+    display: flex;
+    flex-flow: column nowrap;
+  }
+
+  .initiative-breadcrumbs-nav {
+    flex-flow: column;
+    align-items: flex-start;
+    height: max-content;
+  }
+
+  .initiative-breadcrumbs-nav h5 {
+    width: 100%;
+    white-space: nowrap;
+    overflow-x: scroll;
+  }
+
+  .initiative-breadcrumbs-nav ::-webkit-scrollbar {
+    display: none;
+  }
+
+  .initiative-actions {
+    margin-top: 26px;
+  }
+
+  #name-input {
+    width: 100%;
+  }
+
+  .initiative-change button {
+    height: 62px !important;
+  }
 }

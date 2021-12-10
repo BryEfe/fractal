@@ -1,13 +1,13 @@
 import React, { useContext, useEffect, useState, useRef } from 'react';
 import { UserContext } from "./providers/UserContext";
 import { useHistory } from "react-router-dom";
-
+import Map from "./Map";
 import { b } from "./barrios.json"
 import { t } from "./temas.json";
 
 function SignUp({ setPopUpSignUp }) {
 
-  const { user, register, setRegisterEmail, setRegisterPassword, setRegisterName } = useContext(UserContext);
+  const { user, register, setRegisterEmail, setRegisterPassword, registerPassword, setRegisterName } = useContext(UserContext);
 
   const checks = useRef();
 
@@ -71,6 +71,7 @@ function SignUp({ setPopUpSignUp }) {
             setRegisterPassword(event.target.value);
           }}
         />
+        <p>{registerPassword.split('').length < 6 && registerPassword.split('').length > 1 ? "La contraseña debe tener más de 6 caracteres" : ""}</p>
 
         <div className="container-toggle-switch">
           <p>Vivo en un:       <b>barrio</b></p>
@@ -91,12 +92,13 @@ function SignUp({ setPopUpSignUp }) {
             return <option key={index} value={e.lugar} />
           })}
         </datalist>
-
+        <br />
         {barrio ? <div>
-          <p>{`En Cali, Distrito Especial, tu ${barrio.tipo === 1 ? "barrio" : "corregimiento"} estará en la localidad ${barrio.localidad}`}</p>  </div >
+          <h5>{`En Cali, Distrito Especial, tu ${barrio.tipo === 1 ? "barrio" : "corregimiento"} estará en la Localidad ${barrio.localidad}`}</h5>  </div >
           : ""}
 
-
+        <Map localidad={barrio ? barrio.localidad : 0} />
+        <br />
         <h4>Intereses</h4>
         <div className="keywords">
           {keywords.map((k, index) => {

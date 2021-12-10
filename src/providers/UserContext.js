@@ -43,7 +43,7 @@ function UserContextProvider(props) {
      tipo_lugar: info.tipo,
      localidad_lugar: info.localidad,
      intereses: intereses,
-     nombre: user?.displayName
+     nombre: registerName
     }).catch((error) => { console.log(error); });
    }).catch((error) => { console.log(error); });
    await updateProfileF(auth.currentUser, {
@@ -77,7 +77,11 @@ function UserContextProvider(props) {
   const docRef = docF(db, "users", id);
   var docSnap = await getDocF(docRef);
   if (docSnap.exists()) {
-   setUserInfo(docSnap.data());
+   if (user) {
+    if (id == user.uid) {
+     setUserInfo(docSnap.data());
+    }
+   }
    docSnap = docSnap.data()
   } else {
    console.log("No such document!");
@@ -88,7 +92,7 @@ function UserContextProvider(props) {
 
 
  return (
-  <UserContext.Provider value={{ userInfo, errorMessage, user, auth, getUserInfo, setUser, logout, login, register, setRegisterEmail, setRegisterPassword, setLoginEmail, setLoginPassword, setRegisterName }}>
+  <UserContext.Provider value={{ userInfo, errorMessage, user, auth, registerPassword, getUserInfo, setUser, logout, login, register, setRegisterEmail, setRegisterPassword, setLoginEmail, setLoginPassword, setRegisterName }}>
    {props.children}
   </UserContext.Provider>
  )
